@@ -1,0 +1,9 @@
+# Session and editor state
+.remember/
+.vscode/
+.idea/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
