@@ -9,6 +9,9 @@ description: >-
   written by a person rather than a machine. Intended for improving the naturalness
   and quality of the user's OWN authentic content; not for misrepresenting authorship
   where that is prohibited (e.g., graded academic work under a no-AI policy).
+license: MIT OR Apache-2.0
+metadata:
+  version: 1.0.0
 ---
 
 # Humanize
