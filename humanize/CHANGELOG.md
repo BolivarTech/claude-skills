@@ -87,8 +87,26 @@ evasion.
   only reading the count supports, and states that a flat register in someone else's
   draft is raised with the writer rather than patched by sprinkling markers in.
 
+- The line between an edit and a question. Three operations the levers find are real
+  improvements and still change what the text asserts or who asserts it: deleting a weak
+  claim, stripping a borrowed attribution, and removing a hedge. They are now named in
+  the reply for the writer to decide, not performed. Collapsing a stack of qualifiers
+  stays an ordinary edit, since it leaves the assertion at the same strength.
+
 ### Changed
 
+- The guardrails no longer wait to be told. A request rarely announces that it falls
+  outside the limits, it shows it, so the rule now reads the shape of the ask and settles
+  it with one question before writing.
+- The voice profile names whose voice it is: the person who will sign the text. Building
+  toward anyone else's is the impersonation the guardrails rule out, decided at the
+  profile step rather than discovered later.
+- The em-dash section separates the output rule from the input diagnostic. What to emit
+  is settled by the medium alone and Word changes nothing about it; what an em-dash tells
+  you about a draft you are reading is weaker in a document Word autocorrected. Mixing
+  the two read as licence to emit them.
+- The specificity lever says where a missing number gets reported: in the reply, never as
+  an annotation left inside the deliverable.
 - The guardrails moved from the last section to the second, ahead of the fidelity
   boundary, and gained a refusal protocol: name the limit in one sentence before writing
   anything, offer the nearest legitimate alternative, and never ship the text with a
