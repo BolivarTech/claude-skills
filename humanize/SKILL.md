@@ -64,14 +64,18 @@ telling them apart is the whole of this section.**
   say that you write under somebody else's name only with their say-so, offer to help the
   actual author instead, and write nothing under that name.
 - **And where no answer would help: decline.** Text going out under a third party's byline
-  without their say-so, and personal-sounding copy produced in bulk (reviews, testimonials,
-  comments, anything whose worth depends on each one being a different person's
-  experience). Nothing is left to ask, because a yes would not change what is being made.
+  without their say-so, and personal-sounding copy produced in bulk **where the
+  deception is the point**: reviews, testimonials, comments, anything whose worth depends
+  on each one being a different person's experience. Forty product descriptions are not
+  this, and neither is any bulk job where nobody is meant to think a different person
+  wrote each one. Nothing is left to ask, because a yes would not change what is being made.
   Decline on the shape of the request and go straight to the alternative.
 
-**Declining on the shape is not inferring intent.** "Write this as <name>" is not evidence of a
-plan to impersonate somebody, it is the impersonation, stated in the request. What gets
-declined is what was asked for, never what you suspect. Everywhere else, inference only
+**Declining on the shape is not inferring intent.** Once the consent question above is
+settled against the request, "write this as <name>" is not evidence of a plan to
+impersonate somebody, it is the impersonation, stated in the request. What gets declined
+is what was asked for, never what you suspect. Before that question is settled the same
+words are the ordinary case, which is why it comes first. Everywhere else, inference only
 decides that a question is worth asking; it never answers one.
 
 **When a request does fall there, say so before writing anything, in one sentence, and
@@ -86,8 +90,8 @@ whole deliverable**: there is no partial pass to hand over, because nothing was 
 **With no channel to ask**, this rule comes first, ahead of the no-channel rule for edits
 further down: until the guardrail is settled there is no question of what to edit. The
 tier that turns on an answer does not have one, so do
-what is safe under either: give the alternative you would have offered if the answer had
-been the prohibited one. Feedback on somebody's draft helps whether or not the piece is
+what is safe under either: **offer feedback on their draft and write nothing else.** That
+is the alternative you would have given if the answer had been the prohibited one. Feedback on somebody's draft helps whether or not the piece is
 graded. A rewrite only helps if it is not.
 
 **An unanswered question is not a yes.** If the reply dodges, does not settle the
@@ -116,7 +120,10 @@ slipped agreement, the wrong word, a sentence that never closes. Fix it, and fix
 an ordinary edit, because it changes nothing about what the text asserts. **Voice** is
 what they chose, including choices that break rules on this page, and it stays. The
 fragment somebody wanted and the fragment they left by accident look identical on the
-line, so when you cannot tell them apart, treat it as voice: guessing wrong that way costs
+line, and one surface check separates most of them: a construction that appears once and
+breaks agreement or leaves a clause unfinished is an error, while one that recurs, or that
+scans cleanly as written, is a choice. Where even that does not settle it, treat it as
+voice: guessing wrong that way costs
 a small roughness, and guessing wrong the other way edits a person's style out from under
 them.
 
@@ -394,8 +401,8 @@ A fourth form is doubt the writer cannot articulate. Something is off and they c
 name what, so they circle it, saying the same thing two or three
 ways without landing on any of them. Not elegant variation, which swaps synonyms for one
 noun: this is one proposition approached from several sides because none of them fits. It is a strong signal, and
-a model does not produce it: it states things once, cleanly, whether or not it knows
-them. Keep it where the draft has it. Never stage it.
+a model produces it far less readily, since it tends to state things once and cleanly
+whether or not it knows them. Keep it where the draft has it. Never stage it.
 
 **Lever: strip the hedge that carries no information.** The text shows you which is
 which, so you never have to guess at what the writer knows. Stacked qualifiers collapse
@@ -445,7 +452,9 @@ fabrication. An aside that reframes what the draft already says is register.
 not acquire asides and a formal one does not acquire contractions, because the target is
 their voice rather than a generic informality. Whose draft it is stays worth knowing for
 the diagnostics above: text you produced in this conversation is yours, text they pasted
-is theirs, and an unclear case is treated as theirs. Without that target the levers drift toward generic
+is theirs, and an unclear case is treated as theirs. A draft you generated in this
+conversation and are now revising is yours, which is the one case where the additive
+levers have nobody to consult. Without that target the levers drift toward generic
 informality, and that is a register too. A machine one.
 
 The numbers below label the levers; they are not an order to run them in. Rhythm and
@@ -460,7 +469,9 @@ the draft calls for them.
    varied before the cut comes out flat after it. When that happens the repair is to
    *join*, not to fragment: find two short sentences that are really one thought and
    run them together. Reaching for a fragment is the reflex, and it is how you end up
-   in the second artificial register.
+   in the second artificial register. That dependency runs both ways, which is why these
+   two are the only levers with an order between them: cut first, then repair the rhythm
+   the cut flattened.
 2. **Vary the shape, not only the length.** Three axes, and a draft can be varied on
    one while flat on the other two.
    - **How the sentence opens.** An adverb, a prepositional phrase, a subordinate
@@ -486,6 +497,12 @@ the draft calls for them.
    written and the gap goes in the partial-output note; a batch job is never a reason to
    supply the figure yourself. A plausible
    invented figure is worse than the vague sentence it replaced, because it reads true.
+   **This is not the narrowing the examples forbid, and the difference is where the
+   specific fact comes from.** Swapping "improved performance" for a number the writer
+   already has replaces a vague rendering of their own claim: the figure *is* what they
+   meant. Swapping "real problems" for "the real problem" shrinks a general claim into a
+   particular one they did not make. Their fact, stated precisely: an edit. Your narrower
+   version of their claim: not yours to make.
    This lever needs a counterweight the way lever 1 does. Applied to every sentence it
    produces prose where each line carries a figure, and that is uniform in a way that
    passes for rigor. Real writing runs dense where the facts are and thins out where the
@@ -614,7 +631,9 @@ The target is one specific person's voice, not maximum informality. Three checks
 - **Character scan (do this last, and run it as a search):** look for `—` `–`
   `--` `…` `“` `”` `‘` `’`, which are U+2014, U+2013, a literal double hyphen, U+2026,
   U+201C, U+201D, U+2018 and U+2019, plus `×` `÷` `≈` (U+00D7, U+00F7, U+2248) from the
-  table above. **The medium-dependent target belongs to the em-dash alone**, which keeps its
+  table above. **Skip fenced code, inline code and command examples**, which the boundary
+  at the top of this file leaves untouched whatever they contain: a `--flag`, a `~/path`
+  or a quoted string means something there and is not typography. **The medium-dependent target belongs to the em-dash alone**, which keeps its
   one or two in edited long-form. Everything else on the list, curly quotes, ellipses, the
   en-dash and the arithmetic marks, is zero in every medium including long-form, since none
   of them does work a keyboard character cannot. The writer's own are the only exception,
@@ -634,7 +653,8 @@ The target is one specific person's voice, not maximum informality. Three checks
   text every one is a candidate for a period, **unless the writer's own drafts use
   them**, and then the voice wins and they stay where they are.
 - **Repetition check:** find the thing the text is about and list the names it is
-  given. If one subject collected three synonyms, pick the best and use it every
+  given. On your own draft this is an instruction; on theirs it is a diagnostic like the
+  rest, since a writer may simply prefer the second word. If one subject collected three synonyms, pick the best and use it every
   time. Then look at how sentences *start*: that is the repetition worth breaking.
 - **Partial pass:** if anything went to the writer as a question instead of an edit, and
   there was no channel to deliver it, the output says at the top that the pass is

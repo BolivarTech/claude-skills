@@ -215,6 +215,17 @@ evasion.
   diagnostic like the rest.
 - Sentence-length clustering had no threshold, and the guardrails did not say they run
   before everything else.
+- The character scan reached into fenced code, inline code and command examples. A
+  `--flag` or a `~/path` means something there and is not typography.
+- The bulk-decline rule blocked any volume request. It covers copy whose worth depends on
+  each piece looking like a different person's experience; forty product descriptions are
+  not that.
+- A surface check for the fragment case: a construction appearing once that breaks
+  agreement or leaves a clause unfinished is an error, one that recurs or scans cleanly is
+  a choice. The tie-break to voice stays for what neither settles.
+- The claim that a model never circles an idea was overstated, and the file holds itself to
+  saying what is true. It produces it far less readily.
+- Ownership of a draft the model generated and is now revising: it is yours.
 - The character scan overrode the writer's own semicolons. The voice rule wins.
 - The character scan called itself mechanical and left the impression that reading for the
   characters was enough. Finding every instance of a mark in a long draft is what a find
