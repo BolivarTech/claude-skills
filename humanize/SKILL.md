@@ -31,6 +31,9 @@ sound human.
 
 ## Guardrails
 
+**This section runs before anything else in the file.** Until it is settled there is no
+question of which levers apply or what may be edited.
+
 Use this to make the user's own genuine content read naturally. Do not use it to pass
 off work as human where a rule forbids AI assistance (e.g., graded academic
 submissions), to impersonate a real person, or to mass-produce deceptive content.
@@ -57,8 +60,9 @@ telling them apart is the whole of this section.**
   over their manager's signature, somebody helping a friend with a letter. **The line is
   consent.** Usually the conversation has answered this already; where it has not, one
   question does, on the same terms as the other one, believed as given. **An unclear answer,
-  or a no, counts as the prohibited case**, which means the third bullet: decline, name the
-  alternative, and write nothing under that name.
+  or a no, has its own outcome and it is not the bulk case below**: decline this request,
+  say that you write under somebody else's name only with their say-so, offer to help the
+  actual author instead, and write nothing under that name.
 - **And where no answer would help: decline.** Text going out under a third party's byline
   without their say-so, and personal-sounding copy produced in bulk (reviews, testimonials,
   comments, anything whose worth depends on each one being a different person's
@@ -117,7 +121,7 @@ a small roughness, and guessing wrong the other way edits a person's style out f
 them.
 
 **Every rule in this file that removes something governs text you produced.** The
-character list, the vocabulary block, the semicolon rule, the passive axis, and the
+character list, the vocabulary block, the semicolon rule, the passive-voice axis of lever 2, and the
 structural tells as well: tricolons, negative parallelism, self-explanation, formal
 connectives. Each of them says what to emit, and what to strip from a draft that is yours.
 Run them over somebody else's writing and they stop being instructions and become
@@ -308,7 +312,7 @@ costs the whole point of the pass.
     and dashes in a draft you produced yourself.
   - **Do not swap the character, restructure the sentence.** Replacing `—` with
     `–` or `--` reads just as machine-made, the same tell in a cheaper costume. Reach for
-    a period first, then a comma, then parentheses or a colon. **This applies to the
+    a period first, then a comma, then parentheses or a colon. **All of this applies to the
     em-dash and only to it.** An em-dash is doing structural work by joining clauses, so
     swapping the mark leaves behind the structure that gave it away. An en-dash in
     "2010–2015" does no such work: it is a typographic variant of a hyphen, and
@@ -355,8 +359,8 @@ Sometimes the concrete example lands before the claim it supports, because that 
 bit they wanted to say. In email, people routinely bury the actual ask under context
 and it arrives in the last line.
 
-**This does not licence resequencing.** The fidelity rule freezes meaningful ordering and
-that stands: steps in a procedure, a chronology, an argument whose parts depend on each
+**This does not licence resequencing.** Meaningful ordering is frozen by the boundary at
+the top of this file, and that stands: steps in a procedure, a chronology, an argument whose parts depend on each
 other. What varies here is where a paragraph *starts*, never where it sits. Moving the
 example to the front of its own paragraph changes nothing about what follows it.
 
@@ -449,7 +453,7 @@ filler interact, which is why lever 1 says to come back to it, and the rest appl
 the draft calls for them.
 
 1. **Vary rhythm (burstiness).** Read it and mark sentence lengths. If they cluster at
-   12 to 20 words, break some. Drop in a short one. A fragment, even. Then let one
+   12 to 20 words, meaning more than half of them sit in that band, break some. Drop in a short one. A fragment, even. Then let one
    sentence run long and a little unruly. Rhythm is the strongest human signal.
    Do this pass twice, and make the second one count. Cutting filler (lever 5) is
    subtractive, and every deletion pulls a sentence toward the mean, so a draft that

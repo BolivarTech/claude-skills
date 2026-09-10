@@ -197,6 +197,24 @@ evasion.
   means. Decline, name the alternative, write nothing under that name.
 - "Error" carried two unrelated senses in adjacent sections: error messages are strings,
   and the errors named further down are writing mistakes.
+- Lever 3 told the reader to replace a vague phrase with a specific fact while the
+  examples forbade narrowing a claim. The difference is where the fact comes from: a
+  number the writer already has replaces a vague rendering of their own claim, and the
+  figure is what they meant. Shrinking a general claim into a particular one is the
+  narrowing that stays out of bounds.
+- "Write this as <name>" was called impersonation outright, contradicting the consent
+  exception added the round before. The consent question comes first and the shape is
+  judged after it.
+- An unclear or refused consent answer pointed at the bulk-decline bullet, which is a
+  different case. It has its own outcome now.
+- The character scan reached into fenced code, inline code and command examples, which the
+  boundary at the top of the file leaves untouched: those characters mean something there.
+- Two rule names, "the fidelity rule" and "the passive axis", were used as if defined
+  somewhere. They point at the boundary and at lever 2.
+- The repetition check read as an instruction on somebody else's draft, where it is a
+  diagnostic like the rest.
+- Sentence-length clustering had no threshold, and the guardrails did not say they run
+  before everything else.
 - The character scan overrode the writer's own semicolons. The voice rule wins.
 - The character scan called itself mechanical and left the impression that reading for the
   characters was enough. Finding every instance of a mark in a long draft is what a find
