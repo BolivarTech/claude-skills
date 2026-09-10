@@ -61,7 +61,7 @@ loudest tells are structural: how sentences are shaped, how paragraphs enter, wh
 emphasis falls. So swapping a listed word for its plain synonym fixes almost nothing on
 its own. The sentence keeps the shape it had. When a line reads generated, rewrite the
 line: change its construction and the order its parts arrive in, not just its
-vocabulary. The sections that follow work on structure for that reason.
+vocabulary.
 
 ## The AI-tell blacklist (avoid or replace)
 
@@ -115,7 +115,7 @@ writing stuffed with *delve*. Scan for what should be there and isn't.
   exactly what the training corpus over-represents. The model produces them
   constantly; the ordinary writer almost never does.
   - **Casual first-person text** (email, Slack, DMs, cover letters, posts): use
-    **none**. "on your end — just let me know" is a giveaway. A person writes
+    **none**. "on your end — just let me know" is a tell. A person writes
     "on your end. Just let me know" or "on your end, just let me know".
   - **Edited long-form** (essay, article, docs): one or two in the whole piece at
     most, and only where nothing else does the job.
@@ -153,7 +153,7 @@ writing stuffed with *delve*. Scan for what should be there and isn't.
 Careful here, because good writing *is* well ordered and the fix is not to scramble
 it. The tell is narrower: a model arranges every unit the same optimal way, most often
 topic sentence first, then support, then a tidy landing. Do that in all eight
-paragraphs and the uniformity itself becomes the signal, the same way uniform sentence
+paragraphs and the uniformity itself becomes the tell, the same way uniform sentence
 length does.
 
 Real writing carries traces of the order the thinking happened in. A point gets made
@@ -186,19 +186,27 @@ that", "most people think". These borrow authority from a source that is never n
 which is the same decorative uncertainty wearing a citation's clothes. Name who, or
 drop the frame and make the claim in your own voice.
 
-There is a third case those two miss: doubt the writer cannot articulate. Something is
-off and they cannot name what, so they circle it, saying the same thing two or three
+A fourth form is doubt the writer cannot articulate. Something is off and they cannot
+name what, so they circle it, saying the same thing two or three
 ways without landing on any of them. That is not the elegant variation described above,
 which swaps synonyms for one noun to dodge repeating it. This is one proposition
 approached from several sides because none of the sides fits. It is a strong signal, and
 a model does not produce it: it states things once, cleanly, whether or not it knows
 them. Keep it where the draft has it. Never stage it.
 
-**Lever: if it is true, assert it.** State what you know flatly and strip the
-qualifiers off it. Where you genuinely do not know, say so in specific terms and name
-what would settle it. And if a claim is not worth that sentence, cut the claim. What
-you must not do is keep it and blur it. Confidence that varies with actual knowledge
-is both more human and more honest.
+**Lever: strip the hedge that carries no information.** The text shows you which is
+which, so you never have to guess at what the writer knows. Stacked qualifiers collapse
+to one, they do not vanish: "it's important to consider that it may potentially reduce
+X" becomes "it may reduce X", never "it reduces X". The stack was the noise. The hedge
+underneath may not be. A hedge laundered to an unnamed authority, or applied at the same
+rate as every other claim in the draft, goes. A hedge that names a reason or a source is
+carrying content and stays exactly as written. When you cannot tell which one you have,
+that is a question for the writer and not a call for the editor: flattening it changes
+the strength of a claim, which the opening of this file puts out of bounds, and
+inventing a source for it is worse. Where the writer genuinely does not know, say so in
+specific terms and name what would settle it. If a claim is not worth that sentence, cut
+the claim. What must not happen is keeping it and blurring it. Confidence that varies
+with actual knowledge is both more human and more honest.
 
 ## Humanizing levers (apply after a first honest draft)
 
@@ -225,11 +233,13 @@ target they drift toward generic informality, and that is a register too. A mach
      on the subject read uniform however much their lengths differ.
    - **Clause complexity.** Simple, compound, complex. Every opener can vary and every
      sentence still be a single clause.
-   - **Voice.** Passive is the right choice when the patient is the topic: "the build
-     was broken by that commit" and "that commit broke the build" foreground different
-     things. Every style guide says avoid the passive, so a model trained on them
-     writes almost none, and a draft with zero passive constructions is as uniform as
-     one with zero short sentences. What shows through is the rule, not the writer.
+   - **Grammatical voice.** Passive is the right choice when the patient is the topic
+     or the actor does not matter: "the migration was rolled back twice before anyone
+     filed a bug" puts the migration where the sentence is looking, and naming an actor
+     just to force the active would add a fact the writer did not have. Style guides
+     all say avoid the passive, so a model trained on them writes almost none, and a
+     draft with zero passive constructions is as uniform as one with zero short
+     sentences. What shows through there is the rule, not the writer.
 3. **Raise perplexity with specificity.** Replace generic nouns/verbs with the exact
    thing: not "improved performance" but "cut cold-start from 4.2s to 900ms". Concrete
    detail is inherently less predictable and more credible. But the specificity has to

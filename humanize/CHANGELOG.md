@@ -8,7 +8,7 @@ All notable changes to the `humanize` skill. The format follows
 
 ## [1.1.0] - 2026-09-10
 
-Six additions to the existing levers, and the removal of a detour into detector
+Additions folded into the existing levers, and the removal of a detour into detector
 evasion.
 
 ### Added
@@ -70,6 +70,13 @@ evasion.
   skill whose loudest rule is to default to zero of them.
 - A grammatical slip ("If a sentence for looks like") in a section about writing
   quality.
+- The hedging lever ordered the content change the fidelity boundary forbids. "State
+  what you know flatly and strip the qualifiers off it" is not executable by an editor
+  working on someone else's draft, who cannot know what the writer knows, so the only
+  reading left was to strip every qualifier and turn hedges into guarantees. It now
+  names a test readable in the text itself, keeps a hedge that carries a reason or a
+  source, collapses a stack to one qualifier instead of deleting it, and escalates the
+  undecidable case to the writer.
 
 ## [1.0.0] - 2026-08-28
 
