@@ -6,10 +6,15 @@ All notable changes to the `humanize` skill. The format follows
 [repository README](../README.md#versioning).
 
 
-## [1.1.0] - 2026-09-10
+## [2.0.0] - 2026-09-10
 
-Additions folded into the existing levers, and the removal of a detour into detector
-evasion.
+A major release, because the same input comes back different. Where 1.0.0 dropped a
+borrowed attribution or cut a weak claim outright, this version leaves the text alone and
+raises the question instead, so a pass over prose carrying either one now returns
+different output. The levers themselves are additions and refinements; what changed
+behaviour is the fidelity boundary, which now separates an edit from a question.
+
+Also removes a detour into detector evasion that never shipped.
 
 ### Added
 
@@ -430,4 +435,5 @@ First published version.
 - The blacklist split into four subsections, so the reasoning on optimal ordering and on
   hedging is no longer buried inside a third-level bullet.
 
+[2.0.0]: https://github.com/BolivarTech/claude-skills/releases/tag/humanize-v2.0.0
 [1.0.0]: https://github.com/BolivarTech/claude-skills/releases/tag/humanize-v1.0.0

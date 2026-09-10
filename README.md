@@ -19,7 +19,7 @@ nothing on the turns that never need it.
 
 | Skill | Version | What it does |
 |-------|---------|--------------|
-| [`humanize`](humanize/) | [1.1.0](humanize/CHANGELOG.md) | Rewrites prose so it reads as written by a person, and says why each thing it removes reads as machine-made |
+| [`humanize`](humanize/) | [2.0.0](humanize/CHANGELOG.md) | Rewrites prose so it reads as written by a person, and says why each thing it removes reads as machine-made |
 
 ---
 

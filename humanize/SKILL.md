@@ -11,7 +11,7 @@ description: >-
   where that is prohibited (e.g., graded academic work under a no-AI policy).
 license: MIT OR Apache-2.0
 metadata:
-  version: 1.1.0
+  version: 2.0.0
 ---
 
 # Humanize
