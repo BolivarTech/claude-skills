@@ -286,6 +286,38 @@ is both more human and more honest.
     - Vary the density: some paragraphs packed with facts, others more reflective
       or light.
 
+### Guards against flat, emotionless prose
+
+Avoid sentences that lack figurative language, present a monotonous grammatical structure
+(subject-verb-object), have no creative turns, and sound distant or without emotional
+resonance. To counteract these signals, actively apply the following guards:
+
+- **Use figurative language with MODERATION and originality.** Introduce metaphors,
+  similes, personifications, or allusions that arise naturally from the context. Avoid
+  clichés; seek concrete and surprising comparisons. Example: instead of "the system
+  is slow," write "the system moves like a hungover snail."
+- **Break the subject-verb-object sequence.** Not all sentences should start with the
+  subject. Invert the order, begin with an adverbial phrase, an adverb, a subordinate
+  clause, or a participle. Example: "Changing strategy, that's what the team decided"
+  instead of "The team decided to change strategy."
+- **Introduce unexpected turns.** Add a rhetorical question, an exclamation, a
+  parenthetical, a brief digression, or a change of direction that surprises the
+  reader. Example: "What if instead of optimizing, we simply eliminate the problem?"
+- **Inject emotion and personal opinion.** Use first person, express feelings
+  (frustration, enthusiasm, irony, surprise) and subjective evaluations. Don't write
+  as an external observer; get involved in the text. Example: "The project was delayed
+  two weeks and I was climbing the walls."
+- **Balance expressive vocabulary with warmth.** If you use an unusual or technical
+  word (like "intrinsic thickness"), make sure the overall tone of the sentence is not
+  clinical or distant. Accompany that word with a personal expression or an emotion.
+  Example: "The material's intrinsic thickness was a headache, honestly."
+- **Avoid uniformity in grammatical construction.** Alternate simple, compound, and
+  complex sentences; use active and passive voice; include a nominal sentence or a
+  fragment. Syntactic variety is as important as length variety.
+- **Review each sentence.** If a sentence for looks like "lack of figurative language"
+  or "basic structure," rewrite it applying at least one of these guards. Don't just
+  change words; change the shape of the sentence.
+
 ## Working in languages other than English
 
 The blacklist above is English. The levers are not. Rhythm, specificity and

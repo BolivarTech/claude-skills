@@ -2,7 +2,8 @@
 CLAUDE.md
 CLAUDE.local.md
 
-# Session and editor state
+# Agent config and session state (local to each developer)
+.claude/
 .remember/
 .vscode/
 .idea/
