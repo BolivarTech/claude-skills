@@ -291,8 +291,10 @@ because it hedges without saying why.
 
 A third form is laundered attribution: "many experts believe", "it is widely accepted
 that", "most people think". These borrow authority from a source that is never named,
-which is the same decorative uncertainty wearing a citation's clothes. Name who, or
-drop the frame and make the claim in your own voice.
+which is the same decorative uncertainty wearing a citation's clothes. Raise it: ask who
+those experts are, or whether the writer would rather make the claim in their own voice.
+Dropping the frame yourself is not the fix, because it moves the claim onto their name,
+which the table near the top puts on the question side.
 
 A fourth form is doubt the writer cannot articulate. Something is off and they cannot
 name what, so they circle it, saying the same thing two or three
@@ -331,7 +333,13 @@ does not acquire contractions. **The levers that add only run while you are draf
 Dropping in a fragment, a contraction or an aside is writing; doing it to somebody else's
 finished text is manufacturing the marks lever 8 forbids. On a draft that is theirs the
 pass removes tells and fixes errors, and anything it would have added becomes a
-suggestion instead. Without that target the levers drift toward generic
+suggestion instead.
+
+Whose draft it is is usually plain from how the work arrived: text you produced in this
+conversation is yours to shape, text they pasted in is theirs. **When it is not plain,
+ask, and treat it as theirs until you have the answer.** The costs are lopsided the same
+way they are everywhere else here. Holding a fragment back from your own draft loses a
+little rhythm; adding one to somebody else's puts words in their mouth. Without that target the levers drift toward generic
 informality, and that is a register too. A machine one.
 
 1. **Vary rhythm (burstiness).** Read it and mark sentence lengths. If they cluster at
@@ -467,15 +475,16 @@ The target is one specific person's voice, not maximum informality. Three checks
   *their* voice rather than generating slick prose and sanding it down.
 - **Self-check pass (read aloud):** Where does it sound like a brochure? Which sentence
   is filler? Where are three-in-a-row patterns? Where is every sentence the same length?
-- **Character scan (do this last, it is mechanical):** search the draft for `—` `–`
+- **Character scan (do this last, and run it as a search):** look for `—` `–`
   `--` `…` `“` `”` `‘` `’`. **The target depends on the medium, the same way the rule
-  above does: zero in casual text, and in edited long-form one or two dashes in the
-  whole piece, kept only where nothing else does the job.** Do not strip a long-form
-  piece to zero on the strength of this scan. For dashes,
-  rewrite the sentence rather than substituting another mark; for the others, just
-  type what a keyboard types. This one check catches the most recognizable tells in
-  the whole list and it takes seconds, which is why it goes last: it is the only
-  item here that needs no judgment. Look for semicolons in the same pass; in casual
+  above does: zero in casual text, and in edited long-form one or two dashes in the whole
+  piece, kept only where nothing else does the job.** Do not strip a long-form piece to
+  zero on the strength of this scan. For dashes, rewrite the sentence rather than
+  substituting another mark; for the others, just type what a keyboard types. This check
+  catches the most recognizable tells in the whole list, and it is the only step here that
+  needs no judgment at all. It is also the one you are worst at doing by eye: finding
+  every instance of a character in a long draft is what a find box or a regex is for, and
+  reading for them misses one nearly every time. **Search, do not skim.** Look for semicolons in the same pass; in casual
   text every one is a candidate for a period, **unless the writer's own drafts use
   them**, and then the voice wins and they stay where they are.
 - **Repetition check:** find the thing the text is about and list the names it is

@@ -82,6 +82,13 @@ evasion.
 
 ### Fixed
 
+- The laundered-attribution paragraph still said to drop the frame and make the claim in
+  your own voice, which is the operation the content-change table puts on the question
+  side. Building that table updated the hedging lever and the example and left this
+  paragraph behind. It now raises the frame instead of removing it.
+- Whose draft it is was assumed rather than established, right after a rule that turns on
+  the answer. Text produced in the conversation is yours to shape, text the person pasted
+  in is theirs, and an unclear case is treated as theirs until they say otherwise.
 - The register test contradicted itself in three consecutive sentences. "If all four are
   absent" and "one instance of any one clears it" were followed by "one of each is all the
   rule ever needed", which reads as requiring all four. Presence of any one clears it.
@@ -94,6 +101,9 @@ evasion.
   laundered-attribution example now demonstrates the edit-versus-question split instead of
   contradicting it.
 - The character scan overrode the writer's own semicolons. The voice rule wins.
+- The character scan called itself mechanical and left the impression that reading for the
+  characters was enough. Finding every instance of a mark in a long draft is what a find
+  box is for, and reading for them misses one nearly every time. Search, do not skim.
 - Inference and questioning read as competing instructions in the guardrails. Inference
   raises the question; it never answers it.
 
