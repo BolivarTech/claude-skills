@@ -100,12 +100,37 @@ evasion.
   carrying no facts cannot be made specific without borrowing facts from somewhere. The
   laundered-attribution example now demonstrates the edit-versus-question split instead of
   contradicting it.
+- The laundered-attribution example performed the operation it was meant to defer. Its
+  rewrite showed the attribution already gone while the text beside it said to raise the
+  question, which taught the change the rules prohibit. The rewrite now keeps the frame
+  and changes only the stacked qualifier.
+- The empty-opener example read as a conflict with the cut-filler lever. The sentence is
+  empty of content, not of claim, so cutting it deletes an assertion: in your own draft it
+  goes, in somebody else's it becomes the question.
+- Varying how a paragraph enters read as licence to resequence. What varies is where a
+  paragraph starts, never where it sits.
+- The guardrail lost its concrete question when the tiers were split, leaving "ask the one
+  question that settles it" without saying which.
+- The character scan omitted the three characters at the foot of its own table, and the
+  per-language instruction told the reader to recall what a model overproduces in a
+  language, which is not something anyone can execute.
 - The character scan overrode the writer's own semicolons. The voice rule wins.
 - The character scan called itself mechanical and left the impression that reading for the
   characters was enough. Finding every instance of a mark in a long draft is what a find
   box is for, and reading for them misses one nearly every time. Search, do not skim.
 - Inference and questioning read as competing instructions in the guardrails. Inference
   raises the question; it never answers it.
+
+- A tie-break for a pattern somebody could genuinely have. A tell runs at machine rate,
+  every paragraph and whether or not it fits; a habit turns up sometimes, where it lands.
+  Three tricolons in nine paragraphs is a writer who likes the figure, nine in nine is the
+  model, and an ambiguous rate counts as voice.
+- The writer's own em-dashes stay, matching the exception the semicolon rule already had.
+  Somebody who learned the shortcut and reaches for one is exercising voice; the rule is
+  do not introduce.
+- Behaviour for the asking tier when there is no channel to ask. Give the alternative that
+  is safe under either answer: feedback on a draft helps whether or not the piece is
+  graded, a rewrite only helps if it is not.
 
 ### Removed
 

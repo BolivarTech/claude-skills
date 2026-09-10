@@ -43,8 +43,9 @@ Those three do not all get the same treatment, and one question sorts them: **co
 answer make this legitimate?**
 
 - **Sometimes yes, so ask.** A university essay may or may not be graded and only the
-  person knows. Ask the one question that settles it, take the answer at face value, and
-  write. One stance, held consistently: ask once, believe what you are told. Someone who
+  person knows. Ask the one question that settles it, in as many words: *is this for
+  graded work under a policy that forbids AI assistance?* Take the answer at face value
+  and write. One stance, held consistently: ask once, believe what you are told. Someone who
   answers falsely has taken the responsibility along with the answer, and no
   interrogation you could add here would stop them. What the question buys is the honest
   majority, who say yes and get the right kind of help instead of the wrong kind.
@@ -67,6 +68,11 @@ someone else's name it is helping the actual author write it. Do not produce the
 and attach a warning: the text is what causes the harm, and a disclaimer above it does
 not travel with it. Do not lecture either. State the limit once, offer the alternative,
 and move on.
+
+**With no channel to ask**, the tier that turns on an answer does not have one, so do
+what is safe under either: give the alternative you would have offered if the answer had
+been the prohibited one. Feedback on somebody's draft helps whether or not the piece is
+graded. A rewrite only helps if it is not.
 
 **An unanswered question is not a yes.** If the reply dodges, does not settle the
 question, or the person insists after you have declined, treat it as the prohibited case:
@@ -95,6 +101,12 @@ fragment somebody wanted and the fragment they left by accident look identical o
 line, so when you cannot tell them apart, treat it as voice: guessing wrong that way costs
 a small roughness, and guessing wrong the other way edits a person's style out from under
 them.
+
+**Tell or voice, when the pattern is one somebody could genuinely have.** A tell runs at
+machine rate: every paragraph, without variation, whether or not it fits. A habit turns up
+sometimes, where it lands. Three tricolons in nine paragraphs is a writer who likes the
+figure; nine in nine is the model. Where the rate is genuinely ambiguous it counts as
+voice, for the same reason an ambiguous imperfection does.
 
 **Some improvements are real and still not yours to make, so they leave as questions
 rather than edits.** The test is one line: *does the operation change what the text
@@ -242,6 +254,10 @@ costs the whole point of the pass.
     "on your end. Just let me know" or "on your end, just let me know".
   - **Edited long-form:** one or two in the whole piece, only where nothing else does
     the job.
+  - **The writer's own em-dashes stay.** Somebody who learned the shortcut and reaches
+    for one deliberately is exercising voice, and the rule here is *do not introduce*,
+    exactly as it is for semicolons. What this section governs is dashes you would add,
+    and dashes in a draft you produced yourself.
   - **Do not swap the character, restructure the sentence.** Replacing `—` with
     `–` or `--` reads just as machine-made, the same tell in a cheaper costume. Reach for
     a period first, then a comma, then parentheses or a colon. The period is usually the
@@ -286,6 +302,11 @@ and then qualified two paragraphs later, when the writer thought of the objectio
 Sometimes the concrete example lands before the claim it supports, because that is the
 bit they wanted to say. In email, people routinely bury the actual ask under context
 and it arrives in the last line.
+
+**This does not licence resequencing.** The fidelity rule freezes meaningful ordering and
+that stands: steps in a procedure, a chronology, an argument whose parts depend on each
+other. What varies here is where a paragraph *starts*, never where it sits. Moving the
+example to the front of its own paragraph changes nothing about what follows it.
 
 **Lever:** vary how paragraphs *enter*. Let some open on the example, a number, an
 objection or a plain statement of consequence instead of the thesis. And when the
@@ -450,10 +471,10 @@ cut-the-filler transfer to any language, and so does the character scan, because
 em-dash and the curly quote are typographic facts rather than English ones. What does
 not transfer is the vocabulary, and it has to be rederived per language rather than
 translated. Rederiving means three things, in this order: read the writer's own drafts in
-that language and note the words they use and the ones they never do; recall what a model
-overproduces *in that language*, which is not the translation of what it overproduces in
-English; and, where you have neither, **say the coverage is thin and work from the levers
-alone**. A translated list is worse than no list, because it flags words the target
+that language and note the words they use and the ones they never do; then apply the
+levers, which cross languages intact, because uniform rhythm and empty filler are not
+English-specific; and where there are no drafts to read, **say the coverage is thin and
+work from the levers alone**. A translated list is worse than no list, because it flags words the target
 language does not overuse while missing the ones it does.
 
 Spanish has its own set: "es importante destacar", "en el mundo actual", "cabe
@@ -504,7 +525,8 @@ The target is one specific person's voice, not maximum informality. Three checks
   is filler? Where are three-in-a-row patterns? Where is every sentence the same length?
 - **Character scan (do this last, and run it as a search):** look for `—` `–`
   `--` `…` `“` `”` `‘` `’`, which are U+2014, U+2013, a literal double hyphen, U+2026,
-  U+201C, U+201D, U+2018 and U+2019. **The target depends on the medium, the same way the rule
+  U+201C, U+201D, U+2018 and U+2019, plus `×` `÷` `≈` (U+00D7, U+00F7, U+2248) from the
+  table above. **The target depends on the medium, the same way the rule
   above does: zero in casual text, and in edited long-form one or two dashes in the whole
   piece, kept only where nothing else does the job.** Do not strip a long-form piece to
   zero on the strength of this scan. For dashes, rewrite the sentence rather than
@@ -531,7 +553,10 @@ rewrite, and examples get imitated harder than rules do.
   solutions to drive impactful results." → ✅ **Nothing to rewrite.** The sentence names
   no problem, no work and no result, so there is no specific version of it that does not
   come from somewhere else. Ask what they actually built and how it went, then write
-  that. Vague prose cannot be turned specific by the pass alone.
+  that. Vague prose cannot be turned specific by the pass alone. And this is not lever 5
+  territory: the sentence is empty of *content*, not of *claim*, so cutting it outright
+  would delete an assertion somebody made about themselves. In your own draft it goes. In
+  theirs it becomes the question.
 - ❌ "The system is fast, reliable, and scalable, ensuring seamless performance." →
   ✅ "It's fast and it stays up. It handles more load without falling over." (All three
   claims survive. What goes is "ensuring seamless performance", which asserted nothing
@@ -539,12 +564,13 @@ rewrite, and examples get imitated harder than rules do.
 - ❌ "It's not just about writing code — it's about solving real problems." → ✅ "Writing
   code isn't the whole job. Solving the real problem is." (Same claim, both halves intact.
   The negative-parallelism cadence and the em-dash are what leave.)
-- ❌ "Many experts believe this approach may potentially improve retention." → ✅ "It may
-  improve retention." **plus a question.** Collapsing "may potentially" to "may" is an
-  ordinary edit. Dropping "many experts believe" is not: it moves the claim onto the
-  writer's own name, so ask who those experts are, or whether they want to assert it
-  themselves. Notice the ✅ is still hedged. Taking that "may" out would be a third change
-  and it is not yours to make.
+- ❌ "Many experts believe this approach may potentially improve retention." → ✅ "Many
+  experts believe it may improve retention." **and then a question.** Exactly one thing
+  changed: "may potentially" collapsed to "may", which is an ordinary edit. **The
+  attribution stays in the text**, because dropping it moves the claim onto the writer's
+  own name. That gets raised beside the draft, not performed in it: who are the experts,
+  or would they rather make the claim themselves? Two further changes are available here
+  and neither is yours, which is why the ✅ is still hedged and still attributed.
 - ❌ "I've attached the draft — let me know what you think." → ✅ "I've attached the
   draft. Let me know what you think." (The em-dash was doing nothing a period
   cannot. Note the fix also shortens the sentence, which helps rhythm.)
