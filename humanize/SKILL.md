@@ -116,7 +116,9 @@ wrong ships a claim the author never made.**
 **When there is nobody to ask** (a single-turn call, a batch job, anything with no reply
 channel), the question does not evaporate and it does not become permission. Make the
 edits that are edits, leave those three operations undone, and put what you would have
-raised at the end of the output. An unanswered question is not a yes here either.
+raised at the end of the output. **A question you could not deliver is not permission
+either**, which is the same principle as the guardrail rule further up, applied to a
+missing channel rather than to a dodged answer.
 **Say at the top that the pass is incomplete**, not only at the bottom what is missing. A
 pipeline strips a trailing note and hands the text on as finished; a text that announces
 itself as partial survives that.
@@ -156,12 +158,15 @@ vocabulary.
 
 ## The AI-tell blacklist (avoid or replace)
 
-**Overused vocabulary:** delve, tapestry, leverage, resonate, navigate (figurative),
-realm, landscape, testament, underscore, pivotal, robust, crucial, seamless, foster,
-elevate, embark, harness, unlock, streamline, spearhead, meticulous, commendable,
-boast, swift, myriad, plethora, nuanced, holistic, vibrant, bustling, ever-evolving,
-game-changer, cutting-edge, solid, comprehensive, revolutionary,
-"in today's fast-paced world", "in the realm of".
+**Overused vocabulary** (data, not prose; scan against it, do not read it):
+
+```
+delve, tapestry, leverage, resonate, navigate (figurative), realm, landscape, testament,
+underscore, pivotal, robust, crucial, seamless, foster, elevate, embark, harness,
+unlock, streamline, spearhead, meticulous, commendable, boast, swift, myriad, plethora,
+nuanced, holistic, vibrant, bustling, ever-evolving, game-changer, cutting-edge, solid,
+comprehensive, revolutionary, "in today's fast-paced world", "in the realm of".
+```
 
 **Filler openers/closers:** "I hope this message finds you well", "It's worth noting
 that", "It's important to note", "It's important to remember", "That being said",
@@ -319,7 +324,11 @@ them. Keep it where the draft has it. Never stage it.
 which, so you never have to guess at what the writer knows. Stacked qualifiers collapse
 to one, they do not vanish: "it's important to consider that it may potentially reduce
 X" becomes "it may reduce X", never "it reduces X". The stack was the noise. The hedge
-underneath may not be. A hedge laundered to an unnamed authority, or applied at the same
+underneath may not be. **Which one survives:** the frames that are not hedges at all
+("it's important to consider that", "it could be argued that") are filler and go entirely.
+Of the real hedges, keep one and take the plainest, *may* over *potentially*, *might* over
+*conceivably*. Where two sit at different strengths, keep the weaker one, because that is
+where the writer's own caution was set. A hedge laundered to an unnamed authority, or applied at the same
 rate as every other claim in the draft, is worth raising, but **removing it is a change
 of claim strength and therefore a question, not an edit** (see the table above). Name it
 in the reply and let the writer answer. A hedge that gives a reason or a source is
@@ -384,7 +393,9 @@ informality, and that is a register too. A machine one.
    come out of the writer's material. If the draft does not carry the exact number, ask
    for it, or leave the sentence vague and report the gap **in the reply, never inside
    the deliverable**: a "[number missing]" left in the prose ships an annotation to
-   whoever reads it next. A plausible
+   whoever reads it next. With no reply channel at all, the vague sentence stands as
+   written and the gap goes in the partial-output note; a batch job is never a reason to
+   supply the figure yourself. A plausible
    invented figure is worse than the vague sentence it replaced, because it reads true.
    This lever needs a counterweight the way lever 1 does. Applied to every sentence it
    produces prose where each line carries a figure, and that is uniform in a way that
@@ -420,7 +431,11 @@ informality, and that is a register too. A machine one.
    Preserve what the draft already has.
    This is also where the line against lever 5 runs. A digression that shows how the
    writer got somewhere is not filler; one that shows nothing is. Cut by what it
-   reveals, not by whether it advances the argument.
+   reveals, not by whether it advances the argument. "(We tried the other order first and
+   it was worse.)" stays: it carries a fact about how the work went. "(Which is
+   interesting.)" goes: it carries nothing. The test is whether deleting it loses
+   information about the writer or their subject, not whether the argument survives
+   without it.
 9. **Localize.** Idioms, a concrete reference, the writer's actual domain vocabulary.
    Things a model averaging the internet wouldn't reach for. A comparison of the
    writer's own belongs here too, drawn from what they actually work on: "it was like
@@ -488,7 +503,8 @@ The target is one specific person's voice, not maximum informality. Three checks
 - **Self-check pass (read aloud):** Where does it sound like a brochure? Which sentence
   is filler? Where are three-in-a-row patterns? Where is every sentence the same length?
 - **Character scan (do this last, and run it as a search):** look for `—` `–`
-  `--` `…` `“` `”` `‘` `’`. **The target depends on the medium, the same way the rule
+  `--` `…` `“` `”` `‘` `’`, which are U+2014, U+2013, a literal double hyphen, U+2026,
+  U+201C, U+201D, U+2018 and U+2019. **The target depends on the medium, the same way the rule
   above does: zero in casual text, and in edited long-form one or two dashes in the whole
   piece, kept only where nothing else does the job.** Do not strip a long-form piece to
   zero on the strength of this scan. For dashes, rewrite the sentence rather than
