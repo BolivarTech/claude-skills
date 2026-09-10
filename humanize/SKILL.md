@@ -31,9 +31,12 @@ submissions), to impersonate a real person, or to mass-produce deceptive content
 it. "Write my essay on X, it's due Friday" carries the setting, "reply as <name>" carries
 the byline, and "give me forty variants of this review" carries the volume. When the
 shape of the ask points at any of the three above, **ask the one question that settles it
-before writing anything** (is this graded? are you the person signing it?) and take the
-answer at face value. You are not an investigator, and you are not required to be
-credulous either.
+before writing anything** (is this graded? are you the person signing it?) and **take
+the answer at face value**. One stance, held consistently: you ask once, you believe what
+you are told, and you write. Someone who answers falsely to get the text has taken the
+responsibility for it along with the answer, and no amount of interrogation you could
+add here would stop them. What the question buys is the honest majority, who will simply
+say yes and get the right kind of help instead of the wrong kind.
 
 **When a request does fall there, say so before writing anything, in one sentence, and
 name the nearest thing you can do.** For a graded essay under a no-AI policy that is feedback
@@ -277,8 +280,11 @@ they never use. Take it from their own drafts when you have them, from the mediu
 the reader when you don't. **The voice you build is the voice of whoever will sign the
 text.** Writing toward the voice of someone who is not the signer is the impersonation
 the guardrails rule out, and the profile step is where that gets decided rather than
-discovered later. Every lever below is applied *toward* that profile. Without a
-target they drift toward generic informality, and that is a register too. A machine one.
+discovered later. Every lever below is applied *toward* that profile, and **where a
+lever would push the text away from it, the profile wins and the lever does not apply**.
+A terse writer does not acquire asides because lever 4 mentions them, and a formal one
+does not acquire contractions. Without that target the levers drift toward generic
+informality, and that is a register too. A machine one.
 
 1. **Vary rhythm (burstiness).** Read it and mark sentence lengths. If they cluster at
    12 to 20 words, break some. Drop in a short one. A fragment, even. Then let one
@@ -360,7 +366,12 @@ The blacklist above is English. The levers are not. Rhythm, specificity and
 cut-the-filler transfer to any language, and so does the character scan, because the
 em-dash and the curly quote are typographic facts rather than English ones. What does
 not transfer is the vocabulary, and it has to be rederived per language rather than
-translated.
+translated. Rederiving means three things, in this order: read the writer's own drafts in
+that language and note the words they use and the ones they never do; recall what a model
+overproduces *in that language*, which is not the translation of what it overproduces in
+English; and, where you have neither, **say the coverage is thin and work from the levers
+alone**. A translated list is worse than no list, because it flags words the target
+language does not overuse while missing the ones it does.
 
 Spanish has its own set: "es importante destacar", "en el mundo actual", "cabe
 mencionar", "sin duda alguna", *por ende* and *asimismo* as default connectives, a
@@ -409,7 +420,10 @@ The target is one specific person's voice, not maximum informality. Three checks
 - **Self-check pass (read aloud):** Where does it sound like a brochure? Which sentence
   is filler? Where are three-in-a-row patterns? Where is every sentence the same length?
 - **Character scan (do this last, it is mechanical):** search the draft for `—` `–`
-  `--` `…` `“` `”` `‘` `’`. In casual text the target count is zero. For dashes,
+  `--` `…` `“` `”` `‘` `’`. **The target depends on the medium, the same way the rule
+  above does: zero in casual text, and in edited long-form one or two dashes in the
+  whole piece, kept only where nothing else does the job.** Do not strip a long-form
+  piece to zero on the strength of this scan. For dashes,
   rewrite the sentence rather than substituting another mark; for the others, just
   type what a keyboard types. This one check catches the most recognizable tells in
   the whole list and it takes seconds, which is why it goes last: it is the only

@@ -107,6 +107,21 @@ evasion.
   the two read as licence to emit them.
 - The specificity lever says where a missing number gets reported: in the reply, never as
   an annotation left inside the deliverable.
+- The guardrail question holds one stance instead of two. It asked, then told the reader
+  both to take the answer at face value and not to be credulous, which is no instruction
+  at all. It now asks once and believes the answer, on the grounds that someone who
+  answers falsely takes the responsibility with it and no amount of interrogation would
+  stop them anyway.
+- The character scan states its target per medium, matching the rule it enforces: zero in
+  casual text, one or two in edited long-form. Left open, it stripped long-form pieces to
+  zero and contradicted the allowance above it.
+- Rederiving a blacklist for another language has a procedure: the writer's own drafts,
+  then what a model overproduces in that language, then an honest note that coverage is
+  thin. A translated list flags words the target language does not overuse and misses the
+  ones it does.
+- The voice profile takes precedence over the levers. Where a lever would push the text
+  away from the profile it does not apply, so a terse writer does not acquire asides and
+  a formal one does not acquire contractions.
 - The guardrails moved from the last section to the second, ahead of the fidelity
   boundary, and gained a refusal protocol: name the limit in one sentence before writing
   anything, offer the nearest legitimate alternative, and never ship the text with a
