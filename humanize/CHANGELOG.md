@@ -77,6 +77,22 @@ evasion.
   names a test readable in the text itself, keeps a hedge that carries a reason or a
   source, collapses a stack to one qualifier instead of deleting it, and escalates the
   undecidable case to the writer.
+- The em-dash rule rested on a wrong reason. "Most people cannot type one" overstates
+  it, and the autocorrect carve-out below it covered curly quotes while omitting the
+  character the rule is about, even though Word and Docs substitute an em-dash for a
+  spaced hyphen by default. The guidance stands; the justification now says what is
+  actually true, and the carve-out names the em-dash.
+- "Absence is a tell" had no test, so nothing could contradict it. It now carries a
+  four-item count scoped to casual first-person text, says that zero of all four is the
+  only reading the count supports, and states that a flat register in someone else's
+  draft is raised with the writer rather than patched by sprinkling markers in.
+
+### Changed
+
+- The guardrails moved from the last section to the second, ahead of the fidelity
+  boundary, and gained a refusal protocol: name the limit in one sentence before writing
+  anything, offer the nearest legitimate alternative, and never ship the text with a
+  disclaimer attached, since the disclaimer does not travel with it.
 
 ## [1.0.0] - 2026-08-28
 

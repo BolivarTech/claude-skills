@@ -21,6 +21,20 @@ is authenticity and quality, not trickery: the same moves that defeat "AI voice"
 the moves that make prose genuinely better. Work from the user's real facts, voice,
 and stance; never invent experiences to sound human.
 
+## Guardrails
+
+Use this to make the user's own genuine content read naturally. Do not use it to pass
+off work as human where a rule forbids AI assistance (e.g., graded academic
+submissions), to impersonate a real person, or to mass-produce deceptive content.
+
+**When a request falls there, say so before writing anything, in one sentence, and name
+the nearest thing you can do.** For a graded essay under a no-AI policy that is feedback
+on the student's own draft instead of a rewrite of it; for a message going out over
+someone else's name it is helping the actual author write it. Do not produce the text
+and attach a warning: the text is what causes the harm, and a disclaimer above it does
+not travel with it. Do not lecture either. State the limit once, offer the alternative,
+and move on.
+
 ## What the pass may not change
 
 The edit is editorial, never semantic. Rhythm, word choice, sentence length and voice
@@ -83,7 +97,18 @@ names/numbers/anecdotes, flawless grammar with zero contractions.
 That last one runs the other way, and the direction is worth holding onto. Every list
 here catalogues what a model *over*produces, but absence is a tell too: casual writing
 carrying none of the small oral markers a person drops in reads as machine-made as
-writing stuffed with *delve*. Scan for what should be there and isn't.
+writing stuffed with *delve*.
+
+It needs a test or it is unfalsifiable, so here is one, and it applies only to casual
+first-person text. Count four things: contractions, sentences opening with *And*, *But*
+or *So*, parentheticals, and sentences under five words. **Zero of all four in a chatty
+medium means the register is off**, and that is the only reading the count supports.
+Anything else, including a low count in formal or technical writing, is not a finding.
+
+What the test licenses is narrow. If the draft is yours, fix it with the rhythm and
+voice levers below. If it is the writer's, **say the register reads flat and ask**;
+sprinkling markers into someone else's text is the fabrication the imperfections lever
+forbids.
 
 ### Structural tells
 
@@ -109,11 +134,17 @@ writing stuffed with *delve*. Scan for what should be there and isn't.
 ### Punctuation you cannot type
 
 - **Em-dashes (`—`). The single strongest tell. Default to zero.**
-  Most people cannot type one: it is on no standard keyboard, so a human writing at
-  speed reaches for a comma, a period, or a plain hyphen. Em-dashes are everywhere
-  in *edited* prose (books, magazines, anything a copy editor touched), which is
-  exactly what the training corpus over-represents. The model produces them
-  constantly; the ordinary writer almost never does.
+  No key produces one, so typing it takes a deliberate act: a shortcut most people
+  never learned, a menu, or an editor that substitutes it for you. Writing at speed,
+  a person reaches for a comma, a period, or a plain hyphen instead. Em-dashes are
+  everywhere in *edited* prose (books, magazines, anything a copy editor touched),
+  which is exactly what the training corpus over-represents. The model produces them
+  constantly; the ordinary writer rarely does on purpose.
+
+  The exception is the same one that covers curly quotes, and it is bigger here: Word
+  and Google Docs convert a spaced hyphen into an em-dash by default. In a document
+  drafted there, an em-dash proves nothing about who wrote it. In an email client, a
+  chat box or a code-adjacent tool, where nothing substitutes anything, it still does.
   - **Casual first-person text** (email, Slack, DMs, cover letters, posts): use
     **none**. "on your end — just let me know" is a tell. A person writes
     "on your end. Just let me know" or "on your end, just let me know".
@@ -372,9 +403,3 @@ The target is one specific person's voice, not maximum informality. Three checks
   cannot. Note the fix also shortens the sentence, which helps rhythm.)
 - ❌ "Happy to adjust the scope — whatever works on your end — just let me know." →
   ✅ "Happy to adjust the scope. Whatever works on your end, just let me know."
-
-## Guardrails
-
-Use this to make the user's own genuine content read naturally. Do not use it to pass
-off work as human where a rule forbids AI assistance (e.g., graded academic
-submissions), to impersonate a real person, or to mass-produce deceptive content.
