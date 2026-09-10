@@ -128,10 +128,13 @@ carrying none of the small oral markers a person drops in reads as machine-made 
 writing stuffed with *delve*.
 
 It needs a test or it is unfalsifiable, so here is one, and it applies only to casual
-first-person text. Count four things: contractions, sentences opening with *And*, *But*
-or *So*, parentheticals, and sentences under five words. **Zero of all four in a chatty
-medium means the register is off**, and that is the only reading the count supports.
-Anything else, including a low count in formal or technical writing, is not a finding.
+first-person text. Look for four things and ask of each only whether it appears **at
+all**: a contraction, a sentence opening with *And*, *But* or *So*, a parenthetical, a
+sentence under five words. **None of the four anywhere in a chatty medium means the
+register is off.** A single instance of any one clears the test. Nothing here is tallied,
+deliberately: one of each is all the rule ever needed, and a count run twice over a long
+draft comes back with two different numbers. A thin showing in formal or technical
+writing is not a finding at all.
 
 What the test licenses is narrow. If the draft is yours, fix it with the rhythm and
 voice levers below. If it is the writer's, **say the register reads flat and ask**;
@@ -160,6 +163,17 @@ forbids.
 - Empty fluff sentences that sound polished but add zero information.
 
 ### Punctuation you cannot type
+
+Several rules below split on casual text versus edited long-form, so settle which one you
+have before applying them. **The test is whether anything stands between the typing and
+the reader.** Email, chat, DMs, a cover letter, a social post, a commit message: typed
+into a box and read as typed, so casual. An essay, an article, documentation, a README, a
+report: revised before anyone sees it, so edited long-form.
+
+**When it is genuinely unclear, treat it as casual**, because the error is not symmetric.
+A long-form piece carrying zero em-dashes reads perfectly well and loses nothing. A casual
+message carrying two reads generated. One direction costs a little polish, the other
+costs the whole point of the pass.
 
 - **Em-dashes (`—`). The single strongest tell. Default to zero.**
   No key produces one, so typing it takes a deliberate act: a shortcut most people
@@ -427,9 +441,9 @@ The target is one specific person's voice, not maximum informality. Three checks
   rewrite the sentence rather than substituting another mark; for the others, just
   type what a keyboard types. This one check catches the most recognizable tells in
   the whole list and it takes seconds, which is why it goes last: it is the only
-  item here that needs no judgment. Count semicolons in the same pass; in casual
+  item here that needs no judgment. Look for semicolons in the same pass; in casual
   text every one is a candidate for a period.
-- **Repetition check:** find the thing the text is about and count the names it is
+- **Repetition check:** find the thing the text is about and list the names it is
   given. If one subject collected three synonyms, pick the best and use it every
   time. Then look at how sentences *start*: that is the repetition worth breaking.
 - **Length:** match the medium. A cover letter or email should be shorter than the AI

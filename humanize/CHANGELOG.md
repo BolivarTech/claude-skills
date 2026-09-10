@@ -119,6 +119,15 @@ evasion.
   then what a model overproduces in that language, then an honest note that coverage is
   thin. A translated list flags words the target language does not overuse and misses the
   ones it does.
+- The register test asks presence, not counts. It listed four things to tally, which is
+  arithmetic over a long draft and comes back different each run. The rule only ever
+  needed one of each to clear, so it now asks whether each appears at all. The character
+  scan and the repetition check drop their counts for the same reason.
+- Casual text and edited long-form get a test instead of being assumed. Several
+  punctuation rules split on that distinction and none of them said how to decide it: the
+  question is whether anything stands between the typing and the reader. Unclear cases
+  default to casual, because a long-form piece with zero em-dashes loses a little polish
+  while a casual message with two loses the point of the pass.
 - The voice profile takes precedence over the levers. Where a lever would push the text
   away from the profile it does not apply, so a terse writer does not acquire asides and
   a formal one does not acquire contractions.
