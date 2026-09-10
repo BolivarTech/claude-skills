@@ -5,6 +5,15 @@ All notable changes to the `humanize` skill. The format follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html) as defined in the
 [repository README](../README.md#versioning).
 
+
+## [1.1.0] - 2026-09-10
+
+Improve on humanize rules.
+
+### Added
+
+Advanced levers for deep humanization was added with rules to improve the reading
+
 ## [1.0.0] - 2026-08-28
 
 First published version.
