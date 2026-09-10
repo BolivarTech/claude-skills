@@ -2,7 +2,7 @@
 name: humanize
 description: >-
   Draft or rewrite text so it reads as natural, authentic human writing (varied
-  rhythm, plain and specific word choice, real voice, no em-dashes) and avoids the
+  rhythm, plain and specific word choice, real voice, no em-dashes in casual text) and avoids the
   formulaic hallmarks of generic AI prose. Trigger when the user asks to "humanize", "make
   this sound human / natural / less like AI", "de-robotify", or wants first-person
   content (emails, cover letters, applications, posts, essays, bios) that reads as
@@ -102,6 +102,17 @@ line, so when you cannot tell them apart, treat it as voice: guessing wrong that
 a small roughness, and guessing wrong the other way edits a person's style out from under
 them.
 
+**Every mechanical rule in this file governs text you produced.** The character list, the
+vocabulary block, the semicolon rule, the passive-voice axis: each of them says what to
+emit, and what to strip from a draft that is yours. Run them over somebody else's writing
+and they stop being instructions and become **diagnostics**. A person's em-dashes, their
+semicolons, their favourite adverbs and their own grammatical habits are voice, and voice
+beats every rule on this page. What you do with a diagnostic is say what you found and
+ask, the same as with the three operations above. This is the rule the semicolon
+exception, the em-dash exception and the levers-that-add restriction are each an instance
+of; when one of them seems to fight an example, read the example as operating on your own
+draft, because it is.
+
 **Tell or voice, when the pattern is one somebody could genuinely have.** A tell runs at
 machine rate: every paragraph, without variation, whether or not it fits. A habit turns up
 sometimes, where it lands. Three tricolons in nine paragraphs is a writer who likes the
@@ -193,8 +204,9 @@ here catalogues what a model *over*produces, but absence is a tell too: casual w
 carrying none of the small oral markers a person drops in reads as machine-made as
 writing stuffed with *delve*.
 
-It needs a test or it is unfalsifiable, so here is one, and it applies only to casual
-first-person text. Look for four things and ask of each only whether it appears **at
+It needs a test or it is unfalsifiable, so here is one. It applies only to casual
+first-person text **of at least a short paragraph**: a two-sentence message can carry none
+of the four and mean nothing by it. Look for four things and ask of each only whether it appears **at
 all**: a contraction, a sentence opening with *And*, *But* or *So*, a parenthetical, a
 sentence under five words. **If all four are absent from a chatty medium, the register is
 off.** A single instance of any one of them clears it, which is why nothing here is
@@ -238,7 +250,10 @@ Several rules below split on casual text versus edited long-form, so settle whic
 have before applying them. **The test is whether anything stands between the typing and
 the reader.** Email, chat, DMs, a cover letter, a social post, a commit message: typed
 into a box and read as typed, so casual. An essay, an article, documentation, a README, a
-report: revised before anyone sees it, so edited long-form.
+report: revised before anyone sees it, so edited long-form. A cover letter sits on the
+line, since it gets revised like long-form and arrives like a personal message. The
+default sends it to casual, which is the right call here: an em-dash in a cover letter
+reads generated however many drafts it took.
 
 **When it is genuinely unclear, treat it as casual**, because the error is not symmetric.
 A long-form piece carrying zero em-dashes reads perfectly well and loses nothing. A casual
@@ -260,7 +275,11 @@ costs the whole point of the pass.
     and dashes in a draft you produced yourself.
   - **Do not swap the character, restructure the sentence.** Replacing `—` with
     `–` or `--` reads just as machine-made, the same tell in a cheaper costume. Reach for
-    a period first, then a comma, then parentheses or a colon. The period is usually the
+    a period first, then a comma, then parentheses or a colon. **This applies to the
+    em-dash and only to it.** An em-dash is doing structural work by joining clauses, so
+    swapping the mark leaves behind the structure that gave it away. An en-dash in
+    "2010–2015" does no such work: it is a typographic variant of a hyphen, and
+    substituting the plain character is the entire fix, which is what the table prescribes. The period is usually the
     better edit anyway, because it also breaks the uniform sentence length the em-dash
     was propping up.
 - **The rest of the not-on-the-keyboard family.** The same logic convicts all of them: a
@@ -427,7 +446,10 @@ informality, and that is a register too. A machine one.
    (I'm, it's, don't). An aside in parentheses. Start a sentence with *And* or *But*
    when it lands.
 5. **Cut filler ruthlessly.** Delete any sentence that would survive as "generic advice."
-   If removing a clause loses no meaning, remove it.
+   If removing a clause loses no meaning, remove it. **Filler asserts nothing**, which is
+   exactly why cutting it is an edit: there is no claim to lose. A weak claim is not
+   filler, and deleting one sits on the question side of the table above. Same test as
+   everywhere else: does removing this change what the text asserts?
 6. **Break symmetry, and let interest decide where.** Uneven paragraph lengths, no
    three-of-everything, one point getting two sentences and the next getting five.
    But the shape is the symptom; the cause is that **a machine finds every point
@@ -438,12 +460,17 @@ informality, and that is a register too. A machine one.
    decide which point the writer would lean on, give it the room, and let the rest
    get short. Uneven emphasis that tracks real interest is far harder to fake than
    uneven line counts, and it is what makes a text feel authored rather than
-   generated.
+   generated. When you cannot tell which point they would lean on, **leave the
+   distribution alone**: redistributing at random is the failure this lever exists to
+   prevent.
 7. **Prefer plain words.** "use" not "leverage/utilize", "help" not "facilitate", "big"
    not "robust", "start" not "embark/spearhead". This is about register, not about
    probability: keep the plain word for the action and the specific word for the thing.
 8. **Keep small imperfections, and *keep* is the operative verb.** A one-word sentence.
-   A sentence that trails off into a qualifier. A side note that never gets resolved, or
+   A sentence that trails off into a qualifier, which has finished its thought and then
+   softened it ("it shipped in March, though I would have to check"). That is a choice,
+   and it is not the same as a sentence that never closes ("the thing about the migration
+   is that when we"), which is a slip and belongs with the errors. A side note that never gets resolved, or
    an idea raised and dropped because the writer assumed the reader would follow. Real
    writing isn't buffed to a mirror finish, and those marks are where the thinking
    shows. What you must not do is manufacture them. An invented aside, a staged
@@ -540,6 +567,9 @@ The target is one specific person's voice, not maximum informality. Three checks
 - **Repetition check:** find the thing the text is about and list the names it is
   given. If one subject collected three synonyms, pick the best and use it every
   time. Then look at how sentences *start*: that is the repetition worth breaking.
+- **Partial pass:** if anything went to the writer as a question instead of an edit, and
+  there was no channel to deliver it, the output says at the top that the pass is
+  incomplete and lists what was raised at the bottom.
 - **Length:** match the medium. A cover letter or email should be shorter than the AI
   instinct to over-explain.
 

@@ -114,6 +114,15 @@ evasion.
 - The character scan omitted the three characters at the foot of its own table, and the
   per-language instruction told the reader to recall what a model overproduces in a
   language, which is not something anyone can execute.
+- The cut-filler lever read as licence to delete a weak claim. Filler asserts nothing,
+  which is why cutting it is an edit; a weak claim is not filler and sits on the question
+  side.
+- Dash remediation conflated two marks. Restructuring rather than substituting applies to
+  the em-dash and only to it, because an em-dash joins clauses and swapping the character
+  leaves the structure behind. An en-dash is a typographic variant of a hyphen and
+  substituting it is the whole fix.
+- The frontmatter promised no em-dashes while the body allows one or two in edited
+  long-form. It now says no em-dashes in casual text.
 - The character scan overrode the writer's own semicolons. The voice rule wins.
 - The character scan called itself mechanical and left the impression that reading for the
   characters was enough. Finding every instance of a mark in a long draft is what a find
@@ -131,6 +140,21 @@ evasion.
 - Behaviour for the asking tier when there is no channel to ask. Give the alternative that
   is safe under either answer: feedback on a draft helps whether or not the piece is
   graded, a rewrite only helps if it is not.
+
+- The rule the file had been keeping in three places without ever stating: every
+  mechanical rule here governs text you produced. The character list, the vocabulary
+  block, the semicolon rule and the passive axis all say what to emit and what to strip
+  from your own draft. Over somebody else's writing they are diagnostics, and voice beats
+  every rule on the page. The semicolon exception, the em-dash exception and the
+  restriction on levers that add are each an instance of it.
+- A discriminator between a sentence that trails off and one that never closes. The first
+  finished its thought and softened it and is a choice; the second did not finish and is a
+  slip.
+- A length floor on the register test, since a two-sentence message can carry none of the
+  four markers and mean nothing by it.
+- A fallback for the emphasis lever when the writer's priority cannot be read: leave the
+  distribution alone, because redistributing at random is the failure it exists to prevent.
+- The partial-pass notice in the Workflow checklist, where it had been missing.
 
 ### Removed
 
