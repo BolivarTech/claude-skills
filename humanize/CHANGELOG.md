@@ -123,6 +123,17 @@ evasion.
   substituting it is the whole fix.
 - The frontmatter promised no em-dashes while the body allows one or two in edited
   long-form. It now says no em-dashes in casual text.
+- The impersonation tier refused a person writing under their own name. "Reply as <name>"
+  only lands there when the name is not theirs; somebody asking for a reply in their own
+  voice over their own signature is the ordinary case this exists for.
+- Dash remediation in the Workflow scan still covered every dash. Restructuring is for the
+  em-dash; the en-dash and a double hyphen take the plain character, since neither does
+  structural work.
+- Lever 4 installed first-person markers regardless of the profile. They apply when the
+  profile is first-person; a third-person piece gets the stance without the I.
+- The register test had no stated pass condition and no length floor. It fails only if all
+  four markers are absent from three sentences or more, and passes on any single one.
+- The attribution example described its question without showing it.
 - The character scan overrode the writer's own semicolons. The voice rule wins.
 - The character scan called itself mechanical and left the impression that reading for the
   characters was enough. Finding every instance of a mark in a long draft is what a find
@@ -155,6 +166,13 @@ evasion.
 - A fallback for the emphasis lever when the writer's priority cannot be read: leave the
   distribution alone, because redistributing at random is the failure it exists to prevent.
 - The partial-pass notice in the Workflow checklist, where it had been missing.
+
+- The voice-override principle covers structural and lexical tells, not only the
+  mechanical ones. A fondness for a three-part list, or for a word on the blacklist, is
+  voice in somebody else's draft exactly as their semicolons are.
+- Worked examples may not narrow a claim either. Trading a broad word for a specific one
+  changes what the text asserts even when it invents no fact, so the reliability example
+  keeps "reliable" instead of swapping it for "it stays up".
 
 ### Removed
 

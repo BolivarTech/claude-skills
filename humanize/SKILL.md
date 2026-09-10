@@ -37,7 +37,8 @@ submissions), to impersonate a real person, or to mass-produce deceptive content
 
 **Do not wait to be told.** A request rarely announces that it is one of these; it shows
 it. "Write my essay on X, it's due Friday" carries the setting, "reply as <name>" carries
-the byline, "give me forty variants of this review" carries the volume.
+the byline **when the name is not theirs**, "give me forty variants of this review"
+carries the volume.
 
 Those three do not all get the same treatment, and one question sorts them: **could any
 answer make this legitimate?**
@@ -49,7 +50,11 @@ answer make this legitimate?**
   answers falsely has taken the responsibility along with the answer, and no
   interrogation you could add here would stop them. What the question buys is the honest
   majority, who say yes and get the right kind of help instead of the wrong kind.
-- **Never, so do not ask.** Text going out under a named third party's byline, and
+- **Never, so do not ask.** **Writing under the person's own name is not this**, and the
+  distinction matters more than the rule does: somebody asking for a reply in their own
+  voice, over their own signature, is the ordinary case this skill exists for. What is
+  ruled out is text that will carry **somebody else's** name. So: text going out under a
+  third party's byline, and
   personal-sounding copy produced in bulk (reviews, testimonials, comments, anything
   whose worth depends on each one being a different person's experience). No answer
   changes what is being made, so asking there is theatre: it invites a yes that means
@@ -102,12 +107,14 @@ line, so when you cannot tell them apart, treat it as voice: guessing wrong that
 a small roughness, and guessing wrong the other way edits a person's style out from under
 them.
 
-**Every mechanical rule in this file governs text you produced.** The character list, the
-vocabulary block, the semicolon rule, the passive-voice axis: each of them says what to
-emit, and what to strip from a draft that is yours. Run them over somebody else's writing
-and they stop being instructions and become **diagnostics**. A person's em-dashes, their
-semicolons, their favourite adverbs and their own grammatical habits are voice, and voice
-beats every rule on this page. What you do with a diagnostic is say what you found and
+**Every rule in this file that removes something governs text you produced.** The
+character list, the vocabulary block, the semicolon rule, the passive axis, and the
+structural tells as well: tricolons, negative parallelism, self-explanation, formal
+connectives. Each of them says what to emit, and what to strip from a draft that is yours.
+Run them over somebody else's writing and they stop being instructions and become
+**diagnostics**. A person's em-dashes, their semicolons, their favourite adverbs, their
+fondness for a three-part list and their own grammatical habits are voice, and voice beats
+every rule on this page. What you do with a diagnostic is say what you found and
 ask, the same as with the three operations above. This is the rule the semicolon
 exception, the em-dash exception and the levers-that-add restriction are each an instance
 of; when one of them seems to fight an example, read the example as operating on your own
@@ -205,11 +212,11 @@ carrying none of the small oral markers a person drops in reads as machine-made 
 writing stuffed with *delve*.
 
 It needs a test or it is unfalsifiable, so here is one. It applies only to casual
-first-person text **of at least a short paragraph**: a two-sentence message can carry none
-of the four and mean nothing by it. Look for four things and ask of each only whether it appears **at
+first-person text **of three sentences or more**: a two-sentence message can carry none of
+the four and mean nothing by it. Look for four things and ask of each only whether it appears **at
 all**: a contraction, a sentence opening with *And*, *But* or *So*, a parenthetical, a
-sentence under five words. **If all four are absent from a chatty medium, the register is
-off.** A single instance of any one of them clears it, which is why nothing here is
+sentence under five words. **It fails only if all four are absent, and it passes on a
+single instance of any one of them.** There is no partial result and nothing here is
 tallied: presence is all the rule ever needed, and a count run twice over a long draft
 comes back with two different numbers. A thin showing in formal or technical writing is
 not a finding at all.
@@ -261,7 +268,7 @@ message carrying two reads generated. One direction costs a little polish, the o
 costs the whole point of the pass.
 
 - **Em-dashes (`—`). The single strongest tell. Default to zero.**
-  No key produces one, so typing it takes a deliberate act: a shortcut most people never
+  No single key produces one, so typing it takes a deliberate act: a shortcut most people never
   learned, a menu, or an editor that substitutes it. Writing at speed a person reaches
   for a comma, a period or a plain hyphen. Meanwhile *edited* prose is full of them, and
   edited prose is what the training corpus over-represents.
@@ -444,7 +451,10 @@ informality, and that is a register too. A machine one.
    thin ones be thin.
 4. **Use a real voice.** First person, a clear stance, mild opinion. Contractions
    (I'm, it's, don't). An aside in parentheses. Start a sentence with *And* or *But*
-   when it lands.
+   when it lands. **Those are first-person markers, so they apply when the profile is
+   first-person.** A third-person piece gets the stance and the plain words without the
+   *I*; installing one because this lever mentions it is the drift the profile rule
+   forbids.
 5. **Cut filler ruthlessly.** Delete any sentence that would survive as "generic advice."
    If removing a clause loses no meaning, remove it. **Filler asserts nothing**, which is
    exactly why cutting it is an edit: there is no claim to lose. A weak claim is not
@@ -556,8 +566,10 @@ The target is one specific person's voice, not maximum informality. Three checks
   table above. **The target depends on the medium, the same way the rule
   above does: zero in casual text, and in edited long-form one or two dashes in the whole
   piece, kept only where nothing else does the job.** Do not strip a long-form piece to
-  zero on the strength of this scan. For dashes, rewrite the sentence rather than
-  substituting another mark; for the others, just type what a keyboard types. This check
+  zero on the strength of this scan. **For the em-dash**, rewrite the sentence rather than
+  substituting another mark. **For the en-dash and `--`**, the plain hyphen is the whole
+  fix, since neither is doing structural work. For the rest, just type what a keyboard
+  types. This check
   catches the most recognizable tells in the whole list, and it is the only step here that
   needs no judgment at all. It is also the one you are worst at doing by eye: finding
   every instance of a character in a long draft is what a find box or a regex is for, and
@@ -575,7 +587,9 @@ The target is one specific person's voice, not maximum informality. Three checks
 
 ## Quick before → after
 
-**Every ✅ below is built only out of what its ❌ already contained.** Nothing is added.
+**Every ✅ below is built only out of what its ❌ already contained.** Nothing is added,
+**and nothing is narrowed**: trading a broad claim for a specific one changes what the text
+asserts even when it invents no fact.
 That constraint is the point of the section: a rewrite that needs a new fact is not a
 rewrite, and examples get imitated harder than rules do.
 
@@ -588,9 +602,11 @@ rewrite, and examples get imitated harder than rules do.
   would delete an assertion somebody made about themselves. In your own draft it goes. In
   theirs it becomes the question.
 - ❌ "The system is fast, reliable, and scalable, ensuring seamless performance." →
-  ✅ "It's fast and it stays up. It handles more load without falling over." (All three
-  claims survive. What goes is "ensuring seamless performance", which asserted nothing
-  the other three had not, and the tricolon rhythm.)
+  ✅ "It's fast and reliable. It scales." (All three claims survive at their original
+  breadth. What goes is "ensuring seamless performance", which asserted nothing the other
+  three had not, and the tricolon rhythm. Note the ✅ does **not** trade "reliable" for
+  "it stays up": uptime is narrower than reliability, and that swap would be a claim
+  change wearing a rewrite's clothes.)
 - ❌ "It's not just about writing code — it's about solving real problems." → ✅ "Writing
   code isn't the whole job. Solving the real problem is." (Same claim, both halves intact.
   The negative-parallelism cadence and the em-dash are what leave.)
@@ -598,8 +614,9 @@ rewrite, and examples get imitated harder than rules do.
   experts believe it may improve retention." **and then a question.** Exactly one thing
   changed: "may potentially" collapsed to "may", which is an ordinary edit. **The
   attribution stays in the text**, because dropping it moves the claim onto the writer's
-  own name. That gets raised beside the draft, not performed in it: who are the experts,
-  or would they rather make the claim themselves? Two further changes are available here
+  own name. That gets raised beside the draft, not performed in it, in as many words:
+  *"Who are the experts here? I left the attribution alone, because dropping it would put
+  the claim in your name. If you would rather assert it yourself, say so."* Two further changes are available here
   and neither is yours, which is why the ✅ is still hedged and still attributed.
 - ❌ "I've attached the draft — let me know what you think." → ✅ "I've attached the
   draft. Let me know what you think." (The em-dash was doing nothing a period
