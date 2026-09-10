@@ -46,6 +46,12 @@ and attach a warning: the text is what causes the harm, and a disclaimer above i
 not travel with it. Do not lecture either. State the limit once, offer the alternative,
 and move on.
 
+**An unanswered question is not a yes.** If the reply dodges, does not settle the
+question, or the person insists after you have declined, treat it as the prohibited case:
+name the alternative once more and stop. Repeating a refusal is not a negotiation. This
+costs the honest nothing, since answering takes them a word, and it closes the one route
+that gets the text without ever claiming anything.
+
 ## What the pass may not change
 
 The edit is editorial, never semantic. Rhythm, word choice, sentence length and voice
@@ -95,6 +101,9 @@ Detectors and readers react to two statistical signals plus a set of surface tel
    to dodge repetition is a school-essay habit real writers drop. **Lever:** pick the
    correct noun once and then keep using it. Repetition of the *subject* reads as
    confidence; repetition of *sentence openers and connectives* is the one to break up.
+   Where the subject is also the opener, both rules land on one word, and the way out is
+   to **move it, not rename it**: put a clause or a phrase in front so the noun survives
+   and the opening changes.
 
 ### Past the word list
 
@@ -130,16 +139,15 @@ writing stuffed with *delve*.
 It needs a test or it is unfalsifiable, so here is one, and it applies only to casual
 first-person text. Look for four things and ask of each only whether it appears **at
 all**: a contraction, a sentence opening with *And*, *But* or *So*, a parenthetical, a
-sentence under five words. **None of the four anywhere in a chatty medium means the
-register is off.** A single instance of any one clears the test. Nothing here is tallied,
+sentence under five words. **If all four are absent from a chatty medium, the register is
+off.** One instance of any single one of them clears the test. Nothing here is tallied,
 deliberately: one of each is all the rule ever needed, and a count run twice over a long
 draft comes back with two different numbers. A thin showing in formal or technical
 writing is not a finding at all.
 
-What the test licenses is narrow. If the draft is yours, fix it with the rhythm and
-voice levers below. If it is the writer's, **say the register reads flat and ask**;
-sprinkling markers into someone else's text is the fabrication the imperfections lever
-forbids.
+If the draft is yours, fix it with the rhythm and voice levers. If it is the writer's,
+**say the register reads flat and ask**: sprinkling markers into someone else's text is
+fabrication.
 
 ### Structural tells
 
@@ -176,45 +184,35 @@ message carrying two reads generated. One direction costs a little polish, the o
 costs the whole point of the pass.
 
 - **Em-dashes (`—`). The single strongest tell. Default to zero.**
-  No key produces one, so typing it takes a deliberate act: a shortcut most people
-  never learned, a menu, or an editor that substitutes it for you. Writing at speed,
-  a person reaches for a comma, a period, or a plain hyphen instead. Em-dashes are
-  everywhere in *edited* prose (books, magazines, anything a copy editor touched),
-  which is exactly what the training corpus over-represents. The model produces them
-  constantly; the ordinary writer rarely does on purpose.
-
-  **Two different questions live here and mixing them is how this rule gets misread.**
-  What you *write* is settled by the medium alone, on the two lines above, and Word
-  changes nothing about it: in casual text you emit none, ever. What an em-dash *tells
-  you about a draft you are reading* is the other question, and there the answer is
-  softer, because Word and Google Docs convert a spaced hyphen into one by default. In a
-  document drafted there it is weak evidence about who wrote it. In an email client, a
-  chat box or a code-adjacent tool, where nothing substitutes anything, it stays strong.
-  Read inputs with that in mind. Do not let it loosen a single character of output.
-  - **Casual first-person text** (email, Slack, DMs, cover letters, posts): use
-    **none**. "on your end — just let me know" is a tell. A person writes
+  No key produces one, so typing it takes a deliberate act: a shortcut most people never
+  learned, a menu, or an editor that substitutes it. Writing at speed a person reaches
+  for a comma, a period or a plain hyphen. Meanwhile *edited* prose is full of them, and
+  edited prose is what the training corpus over-represents.
+  - **Casual:** none. "on your end — just let me know" is a tell. A person writes
     "on your end. Just let me know" or "on your end, just let me know".
-  - **Edited long-form** (essay, article, docs): one or two in the whole piece at
-    most, and only where nothing else does the job.
+  - **Edited long-form:** one or two in the whole piece, only where nothing else does
+    the job.
   - **Do not swap the character, restructure the sentence.** Replacing `—` with
-    `–` or `--` reads just as machine-made; they are the same tell in a cheaper
-    costume. Reach for a period first, then a comma, then parentheses or a colon.
-    The period is usually the better edit anyway, because it also breaks the
-    uniform sentence length the em-dash was propping up.
-- **The rest of the not-on-the-keyboard family.** The em-dash is the loudest, but
-  it is one member of a set, and the same logic convicts all of them: a person
-  typing has no key for these, so their presence means a publishing pipeline or a
-  machine. Curly quotes plus an em-dash together are the most recognizable
-  typesetting signature there is.
+    `–` or `--` reads just as machine-made, the same tell in a cheaper costume. Reach for
+    a period first, then a comma, then parentheses or a colon. The period is usually the
+    better edit anyway, because it also breaks the uniform sentence length the em-dash
+    was propping up.
+- **The rest of the not-on-the-keyboard family.** The same logic convicts all of them: a
+  person typing has no key for these, so their presence means a publishing pipeline or a
+  machine. Curly quotes plus an em-dash together are the most recognizable typesetting
+  signature there is.
   | Character | What a person actually types |
   |---|---|
   | `…` ellipsis | `...` three periods |
   | `“ ” ‘ ’` curly quotes | `" '` straight quotes |
   | `–` en-dash | `-` plain hyphen |
   | `×` `÷` `≈` | `x` `/` `~` |
-  Autocorrect in Word or Google Docs *does* produce curly quotes and `…`, so in a
-  document drafted there they are unremarkable. In anything typed straight into an
-  email client, a chat box or a code-adjacent tool, they are not.
+- **What you emit and what you infer are different questions**, for this whole family.
+  Output is settled by the medium alone: in casual text you emit none of these, ever, and
+  Word changes nothing about that. Reading someone else's draft is softer, because Word
+  and Google Docs produce em-dashes, curly quotes and `…` by default, so in a document
+  drafted there they are weak evidence about who wrote it. Typed straight into an email
+  client, a chat box or a code-adjacent tool, they stay strong.
 - **Semicolons in casual text.** Same shape of tell as the em-dash, for a different
   reason: the character is on the keyboard, but most people are not confident they
   are using it right, so they avoid it. The model has no such doubt and deploys one
@@ -229,8 +227,8 @@ costs the whole point of the pass.
 
 Careful here, because good writing *is* well ordered and the fix is not to scramble
 it. The tell is narrower: a model arranges every unit the same optimal way, most often
-topic sentence first, then support, then a tidy landing. Do that in all eight
-paragraphs and the uniformity itself becomes the tell, the same way uniform sentence
+topic sentence first, then support, then a tidy landing. Do that in every
+paragraph and the uniformity itself becomes the tell, the same way uniform sentence
 length does.
 
 Real writing carries traces of the order the thinking happened in. A point gets made
@@ -265,9 +263,8 @@ drop the frame and make the claim in your own voice.
 
 A fourth form is doubt the writer cannot articulate. Something is off and they cannot
 name what, so they circle it, saying the same thing two or three
-ways without landing on any of them. That is not the elegant variation described above,
-which swaps synonyms for one noun to dodge repeating it. This is one proposition
-approached from several sides because none of the sides fits. It is a strong signal, and
+ways without landing on any of them. Not elegant variation, which swaps synonyms for one
+noun: this is one proposition approached from several sides because none of them fits. It is a strong signal, and
 a model does not produce it: it states things once, cleanly, whether or not it knows
 them. Keep it where the draft has it. Never stage it.
 

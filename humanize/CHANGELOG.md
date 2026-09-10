@@ -54,6 +54,10 @@ evasion.
 
 ### Removed
 
+- Twelve lines of restatement. The punctuation block named the two media and their
+  examples a second time inside the em-dash bullet, and told the Word autocorrect story
+  twice, once for dashes and once for quotes. The autocorrect note is now one bullet
+  covering the whole family, which is also where it belonged.
 - The detector-evasion material, including the advice to tune a draft against GPTZero or
   Originality.ai. The stated goal is prose that reads well to a person; optimizing
   against a classifier pulls toward the overcorrected register the skill already warns
@@ -128,6 +132,11 @@ evasion.
   question is whether anything stands between the typing and the reader. Unclear cases
   default to casual, because a long-form piece with zero em-dashes loses a little polish
   while a casual message with two loses the point of the pass.
+- An unanswered question is not a yes. The guardrail asked one question and handled only
+  a clear answer; a reply that dodges, that settles nothing, or a person who insists after
+  being declined now lands on the prohibited branch rather than on the model's improvisation.
+- Where the subject noun is also the sentence opener, both repetition rules land on one
+  word. The fix is to move the subject, not rename it.
 - The voice profile takes precedence over the levers. Where a lever would push the text
   away from the profile it does not apply, so a terse writer does not acquire asides and
   a formal one does not acquire contractions.
