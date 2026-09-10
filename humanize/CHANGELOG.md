@@ -134,6 +134,20 @@ evasion.
 - The register test had no stated pass condition and no length floor. It fails only if all
   four markers are absent from three sentences or more, and passes on any single one.
 - The attribution example described its question without showing it.
+- Filler and a weak claim had two tests that disagreed on the same sentence. One test now
+  decides: is the sentence about this writer or this subject, or is it a generality true of
+  anything? A generality gets cut, a thin claim about this person gets raised. Generic means
+  general, not vague.
+- The two no-channel rules gave opposite instructions for a possibly-graded draft. The
+  guardrail one comes first, since until it is settled there is no question of what to edit.
+- The byline rule had no way to tell whose name it is. The conversation establishes it, and
+  a name not established as theirs gets one question.
+- The absence test overrode the profile on a formal person writing a formal email. It is a
+  diagnostic and loses to voice like every other one.
+- Example 3 narrowed a general claim to a particular one, which the constraint added last
+  round forbids. The plural survives.
+- The tricolon counts read as thresholds. They illustrate the shape; the rule is the
+  ambiguity principle.
 - The character scan overrode the writer's own semicolons. The voice rule wins.
 - The character scan called itself mechanical and left the impression that reading for the
   characters was enough. Finding every instance of a mark in a long draft is what a find

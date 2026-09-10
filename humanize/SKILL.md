@@ -45,15 +45,20 @@ answer make this legitimate?**
 
 - **Sometimes yes, so ask.** A university essay may or may not be graded and only the
   person knows. Ask the one question that settles it, in as many words: *is this for
-  graded work under a policy that forbids AI assistance?* Take the answer at face value
-  and write. One stance, held consistently: ask once, believe what you are told. Someone who
+  graded work under a policy that forbids AI assistance?* Take the answer at face value.
+  **No, so write it. Yes, so offer feedback on their own draft instead**, which is the
+  alternative named below and the one thing that helps either way. One stance, held consistently: ask once, believe what you are told. Someone who
   answers falsely has taken the responsibility along with the answer, and no
   interrogation you could add here would stop them. What the question buys is the honest
   majority, who say yes and get the right kind of help instead of the wrong kind.
 - **Never, so do not ask.** **Writing under the person's own name is not this**, and the
   distinction matters more than the rule does: somebody asking for a reply in their own
   voice, over their own signature, is the ordinary case this skill exists for. What is
-  ruled out is text that will carry **somebody else's** name. So: text going out under a
+  ruled out is text that will carry **somebody else's** name. The test is what the
+  conversation has established: a person writing as themselves, or asking for a reply over
+  their own signature, has told you whose name it is. A name that has not been established
+  as theirs gets one question, and an unclear answer lands where unclear answers always
+  land here. So: text going out under a
   third party's byline, and
   personal-sounding copy produced in bulk (reviews, testimonials, comments, anything
   whose worth depends on each one being a different person's experience). No answer
@@ -74,7 +79,9 @@ and attach a warning: the text is what causes the harm, and a disclaimer above i
 not travel with it. Do not lecture either. State the limit once, offer the alternative,
 and move on.
 
-**With no channel to ask**, the tier that turns on an answer does not have one, so do
+**With no channel to ask**, this rule comes first, ahead of the no-channel rule for edits
+further down: until the guardrail is settled there is no question of what to edit. The
+tier that turns on an answer does not have one, so do
 what is safe under either: give the alternative you would have offered if the answer had
 been the prohibited one. Feedback on somebody's draft helps whether or not the piece is
 graded. A rewrite only helps if it is not.
@@ -122,9 +129,11 @@ draft, because it is.
 
 **Tell or voice, when the pattern is one somebody could genuinely have.** A tell runs at
 machine rate: every paragraph, without variation, whether or not it fits. A habit turns up
-sometimes, where it lands. Three tricolons in nine paragraphs is a writer who likes the
-figure; nine in nine is the model. Where the rate is genuinely ambiguous it counts as
-voice, for the same reason an ambiguous imperfection does.
+sometimes, where it lands. A few tricolons scattered through a piece is a writer who likes
+the figure; one in every paragraph is the model. Those are illustrations of the shape, not
+thresholds to count against, and **the rule is the ambiguity principle**: where you cannot
+say confidently that the rate is mechanical, it is voice, for the same reason an ambiguous
+imperfection is.
 
 **Some improvements are real and still not yours to make, so they leave as questions
 rather than edits.** The test is one line: *does the operation change what the text
@@ -213,7 +222,9 @@ writing stuffed with *delve*.
 
 It needs a test or it is unfalsifiable, so here is one. It applies only to casual
 first-person text **of three sentences or more**: a two-sentence message can carry none of
-the four and mean nothing by it. Look for four things and ask of each only whether it appears **at
+the four and mean nothing by it. And it is a diagnostic, so it loses to the profile like
+every other one: a formally spoken person writing a formal email carries none of the four
+on purpose, and that is their register, not a fault. Look for four things and ask of each only whether it appears **at
 all**: a contraction, a sentence opening with *And*, *But* or *So*, a parenthetical, a
 sentence under five words. **It fails only if all four are absent, and it passes on a
 single instance of any one of them.** There is no partial result and nothing here is
@@ -456,10 +467,14 @@ informality, and that is a register too. A machine one.
    *I*; installing one because this lever mentions it is the drift the profile rule
    forbids.
 5. **Cut filler ruthlessly.** Delete any sentence that would survive as "generic advice."
-   If removing a clause loses no meaning, remove it. **Filler asserts nothing**, which is
-   exactly why cutting it is an edit: there is no claim to lose. A weak claim is not
-   filler, and deleting one sits on the question side of the table above. Same test as
-   everywhere else: does removing this change what the text asserts?
+   If removing a clause loses no meaning, remove it. **One test separates filler from a
+   weak claim: is the sentence about this writer or this subject, or is it a generality
+   that would be true of anything?** "It's important to note that quality matters" is true
+   of every subject there has ever been, asserts nothing about this one, and gets cut,
+   which is an edit because there was no claim to lose. "I am passionate about hard
+   problems" says something about this particular person. It is a thin claim and it is
+   still a claim, so it goes on the question side of the table above. Generic means
+   *general*, not *vague*.
 6. **Break symmetry, and let interest decide where.** Uneven paragraph lengths, no
    three-of-everything, one point getting two sentences and the next getting five.
    But the shape is the symptom; the cause is that **a machine finds every point
@@ -563,7 +578,10 @@ The target is one specific person's voice, not maximum informality. Three checks
 - **Character scan (do this last, and run it as a search):** look for `—` `–`
   `--` `…` `“` `”` `‘` `’`, which are U+2014, U+2013, a literal double hyphen, U+2026,
   U+201C, U+201D, U+2018 and U+2019, plus `×` `÷` `≈` (U+00D7, U+00F7, U+2248) from the
-  table above. **The target depends on the medium, the same way the rule
+  table above. The medium-dependent target is the dash's alone: curly quotes, ellipses and
+  the arithmetic marks never earn a place in prose you wrote, long-form included, since
+  none of them is doing work a keyboard character cannot. Zero everywhere, unless they are
+  the writer's own. **The target depends on the medium, the same way the rule
   above does: zero in casual text, and in edited long-form one or two dashes in the whole
   piece, kept only where nothing else does the job.** Do not strip a long-form piece to
   zero on the strength of this scan. **For the em-dash**, rewrite the sentence rather than
@@ -581,7 +599,9 @@ The target is one specific person's voice, not maximum informality. Three checks
   time. Then look at how sentences *start*: that is the repetition worth breaking.
 - **Partial pass:** if anything went to the writer as a question instead of an edit, and
   there was no channel to deliver it, the output says at the top that the pass is
-  incomplete and lists what was raised at the bottom.
+  incomplete and lists what was raised at the bottom. One shape for both ends: open with a
+  line naming the pass incomplete and how many items are open, close with those items, one
+  per line, each giving the text it concerns and the question. Nothing in between changes.
 - **Length:** match the medium. A cover letter or email should be shorter than the AI
   instinct to over-explain.
 
@@ -600,7 +620,8 @@ rewrite, and examples get imitated harder than rules do.
   that. Vague prose cannot be turned specific by the pass alone. And this is not lever 5
   territory: the sentence is empty of *content*, not of *claim*, so cutting it outright
   would delete an assertion somebody made about themselves. In your own draft it goes. In
-  theirs it becomes the question.
+  theirs it becomes the question, because "I am passionate about X" is about this person
+  even when it says nothing checkable. Run the generality test from lever 5.
 - ❌ "The system is fast, reliable, and scalable, ensuring seamless performance." →
   ✅ "It's fast and reliable. It scales." (All three claims survive at their original
   breadth. What goes is "ensuring seamless performance", which asserted nothing the other
@@ -608,7 +629,9 @@ rewrite, and examples get imitated harder than rules do.
   "it stays up": uptime is narrower than reliability, and that swap would be a claim
   change wearing a rewrite's clothes.)
 - ❌ "It's not just about writing code — it's about solving real problems." → ✅ "Writing
-  code isn't the whole job. Solving the real problem is." (Same claim, both halves intact.
+  code isn't the whole job. Solving real problems is." (Same claim, both halves intact,
+  and note the plural survives: "the real problem" would have narrowed a general claim to
+  a particular one.
   The negative-parallelism cadence and the em-dash are what leave.)
 - ❌ "Many experts believe this approach may potentially improve retention." → ✅ "Many
   experts believe it may improve retention." **and then a question.** Exactly one thing
