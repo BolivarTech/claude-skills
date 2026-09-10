@@ -42,6 +42,13 @@ blocks, function signatures and error messages come out untouched. That boundary
 makes the skill safe to run over a README or a changelog rather than only over a cover
 letter.
 
+**Some improvements arrive as questions.** Three operations read like edits and are not:
+deleting a weak claim, dropping a borrowed attribution so the claim lands in your name,
+and stripping a hedge until a qualified statement reads flat. Each changes what the text
+asserts or who asserts it, so version 2.0.0 raises them beside the draft and leaves the
+words alone. That is the change that made it a major release. Flagging costs a sentence;
+guessing wrong ships a claim you never made.
+
 **Tells with the reasoning attached.** Take the em-dash. It is not banned because some
 list says so. It is banned because it appears on no standard keyboard, so a person
 writing at speed reaches for a comma or a period, while the training corpus is thick with
@@ -161,12 +168,24 @@ one just wins. And uninstalling is deleting the directory.
 │   ├── SKILL.md          the skill
 │   ├── CHANGELOG.md      what changed, per version
 │   └── humanize.zip      the same directory, zipped for upload to Claude
+├── scripts/
+│   ├── validate_skills.py  release gate, run before every tag
+│   └── apply_edits.py      batch editor with a preflight
 ├── LICENSE               MIT
 ├── LICENSE-APACHE        Apache-2.0
 └── README.md
 ```
 
 One directory per skill, named after the skill. Nothing skill-specific sits at the root.
+
+`scripts/validate_skills.py` checks what a reader cannot: that the source, the installed
+copy under `~/.claude/skills/` and the zip are byte-identical, that the frontmatter carries
+only the six keys the Claude uploader accepts, that the archive holds the skill folder at
+its root, and that the version in the frontmatter matches the README table and the
+changelog. It reports `PASS`, `FAIL`, `CANNOT_TEST` or `OUT_OF_SCOPE` per check, because a
+check that could not run is not a check that passed. Whether the description actually
+fires the skill stays `OUT_OF_SCOPE`: that one needs a live session and no script can fake
+one.
 
 ---
 
@@ -188,6 +207,9 @@ name the words a user would actually type when they want it. The body below the
 frontmatter holds the instructions and loads only once the skill has fired, which is why
 it can afford to be long.
 
+Then run `python scripts/validate_skills.py`. It picks up any `<name>/SKILL.md` in the
+repository without being told about it, and an exit code of zero is what a release needs.
+
 ---
 
 ## Requirements
@@ -203,7 +225,7 @@ it can afford to be long.
 ## Versioning
 
 Skills here version independently, so a release names the skill it belongs to. The tag
-for the one in this repository is `humanize-v1.0.0`, and each tag has a
+for the one in this repository is `humanize-v2.0.0`, and each tag has a
 [GitHub release](https://github.com/BolivarTech/claude-skills/releases) carrying the
 notes and the zip for that version.
 
@@ -220,7 +242,7 @@ frontmatter, or just ask Claude which version of the skill it is running:
 
 ```yaml
 metadata:
-  version: 1.0.0
+  version: 2.0.0
 ```
 
 The version travels inside the file, so a copy you uploaded to Claude Desktop months ago
