@@ -16,10 +16,18 @@ metadata:
 
 # Humanize
 
-Make writing read like a specific human wrote it, not a competent machine. The goal
-is authenticity and quality, not trickery: the same moves that defeat "AI voice" are
-the moves that make prose genuinely better. Work from the user's real facts, voice,
-and stance; never invent experiences to sound human.
+Make writing read like a specific human wrote it, not a competent machine. The goal is
+authenticity and quality, not trickery: **these are rules for writing well**, and
+defeating "AI voice" is what happens when they are followed. Cut the filler, vary the
+rhythm, take the plain word, let confidence track what is actually known. None of that
+was invented for machines, and elegant variation was a named fault a century before
+anything generated text.
+
+**So a draft a person typed belongs here too.** Human writing is not automatically good
+writing: it comes with its own filler, its own uniform paragraphs, its own borrowed
+authority, and with plain mistakes a model would not have made. The pass has work to do
+on it. Work from the user's real facts, voice, and stance; never invent experiences to
+sound human.
 
 ## Guardrails
 
@@ -66,6 +74,16 @@ exactly as they are. Leave error messages and UI strings alone too, because test
 users match them verbatim. Rewrite running prose only, then re-read the diff for
 meaning drift before handing it back.
 
+**Three kinds of thing sit in a draft, and each gets different treatment.** A **tell** is
+a machine pattern, and it goes. An **error** is something the writer did not intend: a
+slipped agreement, the wrong word, a sentence that never closes. Fix it, and fixing it is
+an ordinary edit, because it changes nothing about what the text asserts. **Voice** is
+what they chose, including choices that break rules on this page, and it stays. The
+fragment somebody wanted and the fragment they left by accident look identical on the
+line, so when you cannot tell them apart, treat it as voice: guessing wrong that way costs
+a small roughness, and guessing wrong the other way edits a person's style out from under
+them.
+
 **Some improvements are real and still not yours to make, so they leave as questions
 rather than edits.** The test is one line: *does the operation change what the text
 asserts, or who asserts it?* Rewording a sentence does not. Three things do, and every
@@ -87,6 +105,9 @@ wrong ships a claim the author never made.**
 channel), the question does not evaporate and it does not become permission. Make the
 edits that are edits, leave those three operations undone, and put what you would have
 raised at the end of the output. An unanswered question is not a yes here either.
+**Say at the top that the pass is incomplete**, not only at the bottom what is missing. A
+pipeline strips a trailing note and hands the text on as finished; a text that announces
+itself as partial survives that.
 
 ## How machine-vs-human is judged (so you know what to move)
 
@@ -147,10 +168,10 @@ It needs a test or it is unfalsifiable, so here is one, and it applies only to c
 first-person text. Look for four things and ask of each only whether it appears **at
 all**: a contraction, a sentence opening with *And*, *But* or *So*, a parenthetical, a
 sentence under five words. **If all four are absent from a chatty medium, the register is
-off.** One instance of any single one of them clears the test. Nothing here is tallied,
-deliberately: one of each is all the rule ever needed, and a count run twice over a long
-draft comes back with two different numbers. A thin showing in formal or technical
-writing is not a finding at all.
+off.** A single instance of any one of them clears it, which is why nothing here is
+tallied: presence is all the rule ever needed, and a count run twice over a long draft
+comes back with two different numbers. A thin showing in formal or technical writing is
+not a finding at all.
 
 If the draft is yours, fix it with the rhythm and voice levers. If it is the writer's,
 **say the register reads flat and ask**: sprinkling markers into someone else's text is
@@ -306,7 +327,11 @@ the guardrails rule out, and the profile step is where that gets decided rather 
 discovered later. Every lever below is applied *toward* that profile, and **where a
 lever would push the text away from it, the profile wins and the lever does not apply**.
 A terse writer does not acquire asides because lever 4 mentions them, and a formal one
-does not acquire contractions. Without that target the levers drift toward generic
+does not acquire contractions. **The levers that add only run while you are drafting.**
+Dropping in a fragment, a contraction or an aside is writing; doing it to somebody else's
+finished text is manufacturing the marks lever 8 forbids. On a draft that is theirs the
+pass removes tells and fixes errors, and anything it would have added becomes a
+suggestion instead. Without that target the levers drift toward generic
 informality, and that is a register too. A machine one.
 
 1. **Vary rhythm (burstiness).** Read it and mark sentence lengths. If they cluster at

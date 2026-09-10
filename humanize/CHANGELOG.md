@@ -60,8 +60,31 @@ evasion.
   to show the tell is discussing the mark, not emitting it. Left unstated, it drew the same
   false finding from every reviewer who read the file.
 
+- Errors, voice and tells as three separate things. A tell goes, an error gets fixed, and
+  voice stays even where it breaks a rule on the page. The document had no instruction for
+  a plain mistake at all, and its only mention of grammar listed flawless grammar as a
+  tell, so a draft with a slipped agreement got nothing. Where an intended fragment and an
+  accidental one cannot be told apart, it counts as voice: that error costs a small
+  roughness, the other edits a person's style out from under them.
+- The rule that the levers which *add* only run while you are drafting. Dropping in a
+  fragment or a contraction is writing; doing it to somebody else's finished text is
+  manufacturing the marks the imperfections lever forbids. The reconciliation existed in
+  three places and had never been stated once.
+- A batch output says at the top that the pass is incomplete, not only at the bottom what
+  is missing. A pipeline strips a trailing note and hands the text on as final.
+
+### Changed
+
+- The opening states the thesis instead of implying it: these are rules for writing well,
+  and defeating AI voice is what happens when they are followed. A draft a person typed
+  belongs here too, because human writing is not automatically good writing. Elegant
+  variation was a named fault a century before anything generated text.
+
 ### Fixed
 
+- The register test contradicted itself in three consecutive sentences. "If all four are
+  absent" and "one instance of any one clears it" were followed by "one of each is all the
+  rule ever needed", which reads as requiring all four. Presence of any one clears it.
 - The before-and-after examples taught what the rules forbid. Their rewrites invented a
   build pipeline, three weeks, six months of production, four retention points and a
   cohort, none of which appeared in the text being rewritten, and one of them swapped the
