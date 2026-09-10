@@ -226,6 +226,21 @@ evasion.
 - The claim that a model never circles an idea was overstated, and the file holds itself to
   saying what is true. It produces it far less readily.
 - Ownership of a draft the model generated and is now revising: it is yours.
+- The no-channel rule failed closed on every single-turn request. It fires only where
+  something in the request actually raised the guardrail question; an ordinary ask under
+  the writer's own name never enters that tier, so the pass runs and returns edited text.
+- The hedging lever said the text always shows which hedge you have and, a few lines later,
+  what to do when you cannot tell.
+- Declining bulk work now names an alternative: help them write one piece properly, or
+  write the volume in a voice claiming to be nobody in particular.
+- The consent question was described as never deciding whether to proceed. A refusal or an
+  unclear answer decides it, and decides against.
+- The length rule had no target. End no longer than the draft started, since nothing in the
+  pass adds material and growth means something was invented.
+- The character scan assumed a search tool. Without one, walk the draft line by line: it is
+  the one pass that needs no judgment and so survives being done slowly.
+- A note that this file is not the draft. It quotes these characters to name them, and
+  every reviewer who read it counted the citations as violations.
 - The character scan overrode the writer's own semicolons. The voice rule wins.
 - The character scan called itself mechanical and left the impression that reading for the
   characters was enough. Finding every instance of a mark in a long draft is what a find

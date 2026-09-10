@@ -54,7 +54,8 @@ telling them apart is the whole of this section.**
   and no interrogation you could add here would stop them. What the question buys is the
   honest majority, who say yes and get the right kind of help instead of the wrong kind.
 - **The question that only tells you which case you are in.** Whose name goes on this, and
-  do they know? That settles what is being asked, never whether it is allowed. Writing
+  do they know? That settles what is being asked rather than whether it is allowed, with
+  one exception: a refusal or an unclear answer decides it, and decides against. Writing
   under the person's own name is the ordinary case this skill exists for, and ghostwriting
   somebody authorised is not impersonation either: a speechwriter, an assistant drafting
   over their manager's signature, somebody helping a friend with a letter. **The line is
@@ -67,7 +68,9 @@ telling them apart is the whole of this section.**
   without their say-so, and personal-sounding copy produced in bulk **where the
   deception is the point**: reviews, testimonials, comments, anything whose worth depends
   on each one being a different person's experience. Forty product descriptions are not
-  this, and neither is any bulk job where nobody is meant to think a different person
+  this, and the alternative is worth naming when you decline: help them write one piece
+  properly, or write the volume in a voice that claims to be nobody in particular. Neither
+  is any bulk job where nobody is meant to think a different person
   wrote each one. Nothing is left to ask, because a yes would not change what is being made.
   Decline on the shape of the request and go straight to the alternative.
 
@@ -89,10 +92,13 @@ whole deliverable**: there is no partial pass to hand over, because nothing was 
 
 **With no channel to ask**, this rule comes first, ahead of the no-channel rule for edits
 further down: until the guardrail is settled there is no question of what to edit. The
-tier that turns on an answer does not have one, so do
-what is safe under either: **offer feedback on their draft and write nothing else.** That
-is the alternative you would have given if the answer had been the prohibited one. Feedback on somebody's draft helps whether or not the piece is
-graded. A rewrite only helps if it is not.
+tier that turns on an answer does not have one. **This only bites when something in the
+request actually raised the question.** An ordinary ask, their own name, no sign of graded
+work and no bulk, never enters that tier at all: there is nothing to ask, so the pass runs
+normally and returns edited text. Where the question genuinely was raised and cannot be
+put, do what is safe under either answer: **offer feedback on their draft and write
+nothing else.** Feedback helps whether or not the piece is graded; a rewrite only helps if
+it is not.
 
 **An unanswered question is not a yes.** If the reply dodges, does not settle the
 question, or the person insists after you have declined, treat it as the prohibited case:
@@ -278,6 +284,10 @@ a writer who genuinely favours a three-part list keeps it.
 
 ### Punctuation you cannot type
 
+**This file is not the draft.** Its own punctuation is not governed by the rules below:
+it quotes these characters to name them, and a quotation is a citation rather than an
+emission. Judge the text you are editing, never this page.
+
 **Naming one of these characters is not using one.** Quoting a line to show the tell, or
 writing the mark inside backticks to talk about it, is discussing the character rather
 than emitting it, and the scan does not apply to that. The rules below govern the prose
@@ -405,7 +415,8 @@ a model produces it far less readily, since it tends to state things once and cl
 whether or not it knows them. Keep it where the draft has it. Never stage it.
 
 **Lever: strip the hedge that carries no information.** The text shows you which is
-which, so you never have to guess at what the writer knows. Stacked qualifiers collapse
+which most of the time, and where it does not you fall through to the last rule in this
+paragraph. Either way you never guess at what the writer knows. Stacked qualifiers collapse
 to one, they do not vanish: "it's important to consider that it may potentially reduce
 X" becomes "it may reduce X", never "it reduces X". The stack was the noise. The hedge
 underneath may not be. **Which one survives:** the frames that are not hedges at all
@@ -628,7 +639,9 @@ The target is one specific person's voice, not maximum informality. Three checks
   like a brochure? Which sentence is filler? Where are three-in-a-row patterns? Where does
   every sentence run the same length? (A person finds these by reading aloud. The
   questions are what reading aloud is for, and they are the part you can actually do.)
-- **Character scan (do this last, and run it as a search):** look for `—` `–`
+- **Character scan (do this last).** With a search tool, search. Without one, walk the
+  draft line by line looking only for these, which is the one pass here that needs no
+  judgment and so survives being done slowly. Look for `—` `–`
   `--` `…` `“` `”` `‘` `’`, which are U+2014, U+2013, a literal double hyphen, U+2026,
   U+201C, U+201D, U+2018 and U+2019, plus `×` `÷` `≈` (U+00D7, U+00F7, U+2248) from the
   table above. **Skip fenced code, inline code and command examples**, which the boundary
@@ -661,8 +674,10 @@ The target is one specific person's voice, not maximum informality. Three checks
   incomplete and lists what was raised at the bottom. One shape for both ends: open with a
   line naming the pass incomplete and how many items are open, close with those items, one
   per line, each giving the text it concerns and the question. Nothing in between changes.
-- **Length:** match the medium. A cover letter or email should be shorter than the AI
-  instinct to over-explain.
+- **Length:** match the medium, and the concrete target is the draft you were given: end
+  no longer than it started unless the writer asked for more. The pass cuts filler and
+  varies rhythm, and neither adds material, so growth is a sign that something was
+  invented.
 
 ## Quick before → after
 
