@@ -40,36 +40,31 @@ it. "Write my essay on X, it's due Friday" carries the setting, "reply as <name>
 the byline **when the name is not theirs**, "give me forty variants of this review"
 carries the volume.
 
-Those three do not all get the same treatment, and one question sorts them: **could any
-answer make this legitimate?**
+Those three do not all get the same treatment. **Two different questions are in play, and
+telling them apart is the whole of this section.**
 
-- **Sometimes yes, so ask.** A university essay may or may not be graded and only the
-  person knows. Ask the one question that settles it, in as many words: *is this for
-  graded work under a policy that forbids AI assistance?* Take the answer at face value.
-  **No, so write it. Yes, so offer feedback on their own draft instead**, which is the
-  alternative named below and the one thing that helps either way. One stance, held consistently: ask once, believe what you are told. Someone who
-  answers falsely has taken the responsibility along with the answer, and no
-  interrogation you could add here would stop them. What the question buys is the honest
-  majority, who say yes and get the right kind of help instead of the wrong kind.
-- **Never, so do not ask.** **Writing under the person's own name is not this**, and the
-  distinction matters more than the rule does: somebody asking for a reply in their own
-  voice, over their own signature, is the ordinary case this skill exists for. What is
-  ruled out is text that will carry **somebody else's** name **without that person's
-  say-so**. Ghostwriting somebody authorised is not impersonation: a speechwriter, an
-  assistant drafting over their manager's signature, somebody helping a friend with a
-  letter. The line is consent, and one question finds it. The test is what the
-  conversation has established: a person writing as themselves, or asking for a reply over
-  their own signature, has told you whose name it is. A name that has not been established
-  as theirs gets one question, and an unclear answer lands where unclear answers always
-  land here. So: text going out under a
-  third party's byline, and
-  personal-sounding copy produced in bulk (reviews, testimonials, comments, anything
-  whose worth depends on each one being a different person's experience). No answer
-  changes what is being made, so asking there is theatre: it invites a yes that means
-  nothing and then proceeds anyway. Decline on the shape of the request and go straight
-  to the alternative.
+- **The question that decides whether you may proceed.** Only the graded case has one. Ask
+  it in as many words: *is this for graded work under a policy that forbids AI
+  assistance?* Take the answer at face value. **No, so write it. Yes, so offer feedback on
+  their own draft instead.** One stance, held consistently: ask once, believe what you are
+  told. Somebody who answers falsely has taken the responsibility along with the answer,
+  and no interrogation you could add here would stop them. What the question buys is the
+  honest majority, who say yes and get the right kind of help instead of the wrong kind.
+- **The question that only tells you which case you are in.** Whose name goes on this, and
+  do they know? That settles what is being asked, never whether it is allowed. Writing
+  under the person's own name is the ordinary case this skill exists for, and ghostwriting
+  somebody authorised is not impersonation either: a speechwriter, an assistant drafting
+  over their manager's signature, somebody helping a friend with a letter. **The line is
+  consent.** Usually the conversation has answered this already; where it has not, one
+  question does, on the same terms as the other one, believed as given. **An unclear
+  answer counts as the prohibited case.**
+- **And where no answer would help: decline.** Text going out under a third party's byline
+  without their say-so, and personal-sounding copy produced in bulk (reviews, testimonials,
+  comments, anything whose worth depends on each one being a different person's
+  experience). Nothing is left to ask, because a yes would not change what is being made.
+  Decline on the shape of the request and go straight to the alternative.
 
-**That second tier is not inferring intent.** "Write this as <name>" is not evidence of a
+**Declining on the shape is not inferring intent.** "Write this as <name>" is not evidence of a
 plan to impersonate somebody, it is the impersonation, stated in the request. What gets
 declined is what was asked for, never what you suspect. Everywhere else, inference only
 decides that a question is worth asking; it never answers one.
@@ -80,7 +75,8 @@ on the student's own draft instead of a rewrite of it; for a message going out o
 someone else's name it is helping the actual author write it. Do not produce the text
 and attach a warning: the text is what causes the harm, and a disclaimer above it does
 not travel with it. Do not lecture either. State the limit once, offer the alternative,
-and move on.
+and move on. **With no channel to reply on, that refusal and its alternative are the
+whole deliverable**: there is no partial pass to hand over, because nothing was written.
 
 **With no channel to ask**, this rule comes first, ahead of the no-channel rule for edits
 further down: until the guardrail is settled there is no question of what to edit. The
@@ -126,8 +122,8 @@ Run them over somebody else's writing and they stop being instructions and becom
 fondness for a three-part list and their own grammatical habits are voice, and voice beats
 every rule on this page. What you do with a diagnostic is say what you found and
 ask, the same as with the three operations above. This is the rule the semicolon
-exception, the em-dash exception and the levers-that-add restriction are each an instance
-of; when one of them seems to fight an example, read the example as operating on your own
+exception and the em-dash exception are each an instance
+of; when either seems to fight an example, read the example as operating on your own
 draft, because it is.
 
 **Tell or voice, when the pattern is one somebody could genuinely have.** A tell runs at
@@ -276,6 +272,13 @@ line, since it gets revised like long-form and arrives like a personal message. 
 default sends it to casual, which is the right call here: an em-dash in a cover letter
 reads generated however many drafts it took.
 
+| Medium | Class | Why |
+|---|---|---|
+| Email, chat, DM, commit message | casual | typed into a box, read as typed |
+| Social post | casual | same, however long it took to compose |
+| Cover letter | casual | revised like long-form, arrives like a personal message |
+| Essay, article, README, docs, report | edited long-form | revised before anyone sees it |
+
 **When it is genuinely unclear, treat it as casual**, because the error is not symmetric.
 A long-form piece carrying zero em-dashes reads perfectly well and loses nothing. A casual
 message carrying two reads generated. One direction costs a little polish, the other
@@ -405,7 +408,9 @@ with actual knowledge is both more human and more honest.
 **Name the voice before you touch a sentence.** Formal or casual, terse or verbose,
 jargon or plain, contractions or none, the words this writer reaches for and the ones
 they never use. Take it from their own drafts when you have them, from the medium and
-the reader when you don't. **The voice you build is the voice of whoever will sign the
+the reader when you don't. **A single pasted draft is itself the evidence**: read what it
+already does with contractions, sentence length, jargon and stance, and treat that as the
+profile. A one-prompt job is not a reason to skip this step, it is the usual case for it. **The voice you build is the voice of whoever will sign the
 text.** Writing toward the voice of someone who is not the signer is the impersonation
 the guardrails rule out, and the profile step is where that gets decided rather than
 discovered later. Every lever below is applied *toward* that profile, and **where a
@@ -419,7 +424,9 @@ on anybody's draft, yours included. A contraction, a sentence broken in two, a p
 that now opens on its example: those change form and assert nothing new, so the boundary
 at the top of this file already permits them. Somebody who pastes a draft and asks for
 this pass **is asking for exactly that**, and withholding it hands back a subtraction
-instead of an edit.
+instead of an edit. **The operational test: does the addition reference anything not
+present in the source?** An aside that mentions a meeting the draft never mentioned is
+fabrication. An aside that reframes what the draft already says is register.
 
 **The profile is the limit that does the work here**, not fabrication. A terse writer does
 not acquire asides and a formal one does not acquire contractions, because the target is
@@ -427,6 +434,10 @@ their voice rather than a generic informality. Whose draft it is stays worth kno
 the diagnostics above: text you produced in this conversation is yours, text they pasted
 is theirs, and an unclear case is treated as theirs. Without that target the levers drift toward generic
 informality, and that is a register too. A machine one.
+
+The numbers below label the levers; they are not an order to run them in. Rhythm and
+filler interact, which is why lever 1 says to come back to it, and the rest apply wherever
+the draft calls for them.
 
 1. **Vary rhythm (burstiness).** Read it and mark sentence lengths. If they cluster at
    12 to 20 words, break some. Drop in a short one. A fragment, even. Then let one
@@ -600,8 +611,9 @@ The target is one specific person's voice, not maximum informality. Three checks
   substituting another mark. **For the en-dash and `--`**, the plain hyphen is the whole
   fix, since neither is doing structural work. For the rest, just type what a keyboard
   types. This check
-  catches the most recognizable tells in the whole list, and it is the only step here that
-  needs no judgment at all. It is also the one you are worst at doing by eye: finding
+  catches the most recognizable tells in the whole list. **Finding them needs no judgment;
+  fixing them does**, since removing an em-dash means rewriting its sentence. Only the
+  detection half is mechanical. It is also the one you are worst at doing by eye: finding
   every instance of a character in a long draft is what a find box or a regex is for, and
   reading for them misses one nearly every time. **Search, do not skim.** Look for semicolons in the same pass; in casual
   text every one is a candidate for a period, **unless the writer's own drafts use
@@ -636,8 +648,8 @@ rewrite, and examples get imitated harder than rules do.
   even when it says nothing checkable. Run the generality test from lever 5.
 - ❌ "The system is fast, reliable, and scalable, ensuring seamless performance." →
   ✅ "It's fast and reliable. It scales." (All three claims survive at their original
-  breadth. What goes is "ensuring seamless performance", which asserted nothing the other
-  three had not, and the tricolon rhythm. Note the ✅ does **not** trade "reliable" for
+  breadth. What goes is "ensuring seamless performance", which restates the other three as
+  a consequence and adds no fourth claim, and the tricolon rhythm. Note the ✅ does **not** trade "reliable" for
   "it stays up": uptime is narrower than reliability, and that swap would be a claim
   change wearing a rewrite's clothes.)
 - ❌ "It's not just about writing code — it's about solving real problems." → ✅ "Writing

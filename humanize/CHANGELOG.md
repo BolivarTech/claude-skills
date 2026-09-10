@@ -164,6 +164,23 @@ evasion.
   four questions that reading aloud is for.
 - Language coverage is stated rather than implied: Spanish is the only one worked out, and
   everything else gets the levers, the scan, and the writer's own drafts.
+- The guardrail tier headed "do not ask" contained two instructions to ask, left there by
+  the byline test and the ghostwriting exception landing in the wrong bullet. The section
+  now splits on what a question does rather than on whether to ask one: one question
+  decides whether you may proceed, another only tells you which case you are in, and where
+  no answer would help there is nothing to ask. An unclear answer counts as prohibited,
+  said outright instead of by reference.
+- An operational test for fabrication against register, which had been a distinction
+  without a procedure: does the addition reference anything not present in the source? An
+  aside mentioning a meeting the draft never mentioned is fabrication; one that reframes
+  what the draft already says is register.
+- The voice profile is built from a single pasted draft when that is all there is. The
+  draft is the evidence.
+- A decision table for the media that kept coming up as ambiguous.
+- The character scan claimed to need no judgment. Finding the characters needs none;
+  fixing them means rewriting a sentence.
+- A dangling reference to the levers-that-add restriction, which the previous commit
+  removed, and a positional pointer to "that second tier" that stopped being second.
 - The character scan overrode the writer's own semicolons. The voice rule wins.
 - The character scan called itself mechanical and left the impression that reading for the
   characters was enough. Finding every instance of a mark in a long draft is what a find
