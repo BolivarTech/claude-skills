@@ -181,6 +181,22 @@ evasion.
   fixing them means rewriting a sentence.
 - A dangling reference to the levers-that-add restriction, which the previous commit
   removed, and a positional pointer to "that second tier" that stopped being second.
+- "Zero everywhere" in the character scan swept up the em-dash, which keeps its one or two
+  in edited long-form. The medium-dependent target belongs to that mark alone; everything
+  else on the list is zero in every medium.
+- The scalability example strengthened the claim it was meant to preserve. "Scalable" says
+  a thing can scale and "it scales" says it does, so the rewrite keeps the original word.
+- A double hyphen went with the en-dash, which takes a plain substitution. It stands in for
+  an em-dash and gets the em-dash treatment: rewrite the sentence.
+- The structural tells read as unconditional imperatives. They are imperatives on your own
+  draft and diagnostics on somebody else's, where a writer who genuinely favours a
+  three-part list keeps it.
+- The register diagnostic had no behaviour when there is no channel to ask on: leave the
+  register alone and say so in the partial-pass note.
+- The consent branch said an unclear answer counts as prohibited without naming what that
+  means. Decline, name the alternative, write nothing under that name.
+- "Error" carried two unrelated senses in adjacent sections: error messages are strings,
+  and the errors named further down are writing mistakes.
 - The character scan overrode the writer's own semicolons. The voice rule wins.
 - The character scan called itself mechanical and left the impression that reading for the
   characters was enough. Finding every instance of a mark in a long draft is what a find

@@ -56,8 +56,9 @@ telling them apart is the whole of this section.**
   somebody authorised is not impersonation either: a speechwriter, an assistant drafting
   over their manager's signature, somebody helping a friend with a letter. **The line is
   consent.** Usually the conversation has answered this already; where it has not, one
-  question does, on the same terms as the other one, believed as given. **An unclear
-  answer counts as the prohibited case.**
+  question does, on the same terms as the other one, believed as given. **An unclear answer,
+  or a no, counts as the prohibited case**, which means the third bullet: decline, name the
+  alternative, and write nothing under that name.
 - **And where no answer would help: decline.** Text going out under a third party's byline
   without their say-so, and personal-sounding copy produced in bulk (reviews, testimonials,
   comments, anything whose worth depends on each one being a different person's
@@ -100,7 +101,9 @@ guarantee are different statements, so turning one into the other is a content c
 wearing an edit's costume. Leave code and code blocks, signatures and identifiers,
 structured docstring fields, reference tables and command examples with their output
 exactly as they are. Leave error messages and UI strings alone too, because tests and
-users match them verbatim. Rewrite running prose only, then re-read the diff for
+users match them verbatim. (Those are error *messages*, a kind of string. The *errors*
+named further down are writing mistakes, and the two have nothing to do with each other.)
+Rewrite running prose only, then re-read the diff for
 meaning drift before handing it back.
 
 **Three kinds of thing sit in a draft, and each gets different treatment.** A **tell** is
@@ -233,9 +236,15 @@ not a finding at all.
 
 If the draft is yours, fix it with the rhythm and voice levers. If it is the writer's,
 **say the register reads flat and ask**: sprinkling markers into someone else's text is
-fabrication.
+fabrication. With no channel to ask on, leave the register as it is and say so in the
+partial-pass note. A flat register is a diagnosis, not a defect you are licensed to treat
+unasked.
 
 ### Structural tells
+
+These are written as imperatives because that is how they read on your own draft. On
+somebody else's they are diagnostics like everything else mechanical here, and voice wins:
+a writer who genuinely favours a three-part list keeps it.
 
 - Formal transitions in casual text: *furthermore, moreover, additionally,
   consequently, thus, hence.* Cut them or use plain ones (so, and, but, still). Often
@@ -601,15 +610,17 @@ The target is one specific person's voice, not maximum informality. Three checks
 - **Character scan (do this last, and run it as a search):** look for `—` `–`
   `--` `…` `“` `”` `‘` `’`, which are U+2014, U+2013, a literal double hyphen, U+2026,
   U+201C, U+201D, U+2018 and U+2019, plus `×` `÷` `≈` (U+00D7, U+00F7, U+2248) from the
-  table above. The medium-dependent target is the dash's alone: curly quotes, ellipses and
-  the arithmetic marks never earn a place in prose you wrote, long-form included, since
-  none of them is doing work a keyboard character cannot. Zero everywhere, unless they are
-  the writer's own. **The target depends on the medium, the same way the rule
+  table above. **The medium-dependent target belongs to the em-dash alone**, which keeps its
+  one or two in edited long-form. Everything else on the list, curly quotes, ellipses, the
+  en-dash and the arithmetic marks, is zero in every medium including long-form, since none
+  of them does work a keyboard character cannot. The writer's own are the only exception,
+  as always. **The target depends on the medium, the same way the rule
   above does: zero in casual text, and in edited long-form one or two dashes in the whole
   piece, kept only where nothing else does the job.** Do not strip a long-form piece to
   zero on the strength of this scan. **For the em-dash**, rewrite the sentence rather than
-  substituting another mark. **For the en-dash and `--`**, the plain hyphen is the whole
-  fix, since neither is doing structural work. For the rest, just type what a keyboard
+  substituting another mark. **For the en-dash**, the plain hyphen is the whole fix, since it does no structural work.
+  **`--` is two hyphens standing in for an em-dash**, so it gets the em-dash treatment:
+  rewrite the sentence rather than swapping in another mark. For the rest, just type what a keyboard
   types. This check
   catches the most recognizable tells in the whole list. **Finding them needs no judgment;
   fixing them does**, since removing an em-dash means rewriting its sentence. Only the
@@ -647,9 +658,11 @@ rewrite, and examples get imitated harder than rules do.
   theirs it becomes the question, because "I am passionate about X" is about this person
   even when it says nothing checkable. Run the generality test from lever 5.
 - ❌ "The system is fast, reliable, and scalable, ensuring seamless performance." →
-  ✅ "It's fast and reliable. It scales." (All three claims survive at their original
-  breadth. What goes is "ensuring seamless performance", which restates the other three as
-  a consequence and adds no fourth claim, and the tricolon rhythm. Note the ✅ does **not** trade "reliable" for
+  ✅ "It's fast and reliable. And scalable." (All three claims survive at their original
+  breadth and in their original words. "It scales" would have been wrong: *scalable* says
+  it **can** scale, "it scales" says it **does**, and that is a strengthening. What goes is
+  "ensuring seamless performance", which restates the other three as a consequence and adds
+  no fourth claim, and the tricolon rhythm. Note the ✅ does **not** trade "reliable" for
   "it stays up": uptime is narrower than reliability, and that swap would be a claim
   change wearing a rewrite's clothes.)
 - ❌ "It's not just about writing code — it's about solving real problems." → ✅ "Writing
