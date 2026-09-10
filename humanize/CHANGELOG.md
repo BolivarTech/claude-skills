@@ -241,6 +241,21 @@ evasion.
   the one pass that needs no judgment and so survives being done slowly.
 - A note that this file is not the draft. It quotes these characters to name them, and
   every reviewer who read it counted the citations as violations.
+- A third case of ownership, and it is the most common one the skill sees. Text you
+  generated here is yours and text the person wrote is theirs, but text a machine wrote
+  that they brought to be fixed is nobody's voice. Asking for the machine voice to come out
+  is disowning it, so there is no voice to protect and no profile to read off it: doing so
+  targets the very register the request was to remove. The mechanical rules stay
+  instructions over that text rather than becoming diagnostics, and the worked examples say
+  they operate on it.
+- A fallback when profile signals are weak: take the medium's ordinary register and say so.
+- The scan's skip list is the boundary's leave-alone list rather than a shorter paraphrase
+  of it.
+- The length target admits the case where a fact of the writer's went in where a vague
+  phrase had been, which is longer and right.
+- A double hyphen left the group of marks targeted at zero everywhere; it stands in for an
+  em-dash and follows that rule.
+- "Emit none of these" carries its exception instead of meeting it two sections later.
 - The character scan overrode the writer's own semicolons. The voice rule wins.
 - The character scan called itself mechanical and left the impression that reading for the
   characters was enough. Finding every instance of a mark in a long draft is what a find

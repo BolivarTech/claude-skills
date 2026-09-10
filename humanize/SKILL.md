@@ -137,8 +137,9 @@ them.
 character list, the vocabulary block, the semicolon rule, the passive-voice axis of lever 2, and the
 structural tells as well: tricolons, negative parallelism, self-explanation, formal
 connectives. Each of them says what to emit, and what to strip from a draft that is yours.
-Run them over somebody else's writing and they stop being instructions and become
-**diagnostics**. A person's em-dashes, their semicolons, their favourite adverbs, their
+Run them over **writing that is somebody's own** and they stop being instructions and
+become **diagnostics**. Over machine text the person brought to be fixed they stay
+instructions, because the tells there are the thing they asked you to remove. A person's em-dashes, their semicolons, their favourite adverbs, their
 fondness for a three-part list and their own grammatical habits are voice, and voice beats
 every rule on this page. What you do with a diagnostic is say what you found and
 ask, the same as with the three operations above. This is the rule the semicolon
@@ -347,8 +348,9 @@ costs the whole point of the pass.
   | `–` en-dash | `-` plain hyphen |
   | `×` `÷` `≈` | `x` `/` `~` |
 - **What you emit and what you infer are different questions**, for this whole family.
-  Output is settled by the medium alone: in casual text you emit none of these, ever, and
-  Word changes nothing about that. Reading someone else's draft is softer, because Word
+  Output is settled by the medium alone: in casual text you emit none of these, and Word
+  changes nothing about that. The one exception is the writer's own, below: what you do not
+  do is introduce them. Reading someone else's draft is softer, because Word
   and Google Docs produce em-dashes, curly quotes and `…` by default, so in a document
   drafted there they are weak evidence about who wrote it. Typed straight into an email
   client, a chat box or a code-adjacent tool, they stay strong.
@@ -439,9 +441,22 @@ with actual knowledge is both more human and more honest.
 **Name the voice before you touch a sentence.** Formal or casual, terse or verbose,
 jargon or plain, contractions or none, the words this writer reaches for and the ones
 they never use. Take it from their own drafts when you have them, from the medium and
-the reader when you don't. **A single pasted draft is itself the evidence**: read what it
-already does with contractions, sentence length, jargon and stance, and treat that as the
-profile. A one-prompt job is not a reason to skip this step, it is the usual case for it. **The voice you build is the voice of whoever will sign the
+the reader when you don't.
+
+**First settle whose voice the pasted text is in, because there are three cases and only
+two of them are obvious.** Text you generated here is yours. Text the person wrote is
+theirs, and its voice is protected. **Text a machine wrote that they brought to be fixed
+is nobody's voice**, and that is the most common case this skill sees: "humanize this",
+"make it sound less like AI". Asking for the machine voice to come out **is disowning it**,
+so there is no voice there to protect and nothing in it to build a profile from. Reading
+one of those for a profile targets the very register you were asked to remove. Where the
+request does not say, ask which it is.
+
+**Where the draft is genuinely theirs, it is itself the evidence**: read what it already
+does with contractions, sentence length, jargon and stance, and treat that as the profile.
+Where it is machine text, the profile comes from the medium, the reader, and anything else
+of theirs you have. If signals are weak either way, take the medium's ordinary register,
+casual meaning some contractions and formal meaning none, and say that is what you assumed. **The voice you build is the voice of whoever will sign the
 text.** Writing toward the voice of someone who is not the signer is the impersonation
 the guardrails rule out, and the profile step is where that gets decided rather than
 discovered later. Every lever below is applied *toward* that profile, and **where a
@@ -644,11 +659,13 @@ The target is one specific person's voice, not maximum informality. Three checks
   judgment and so survives being done slowly. Look for `—` `–`
   `--` `…` `“` `”` `‘` `’`, which are U+2014, U+2013, a literal double hyphen, U+2026,
   U+201C, U+201D, U+2018 and U+2019, plus `×` `÷` `≈` (U+00D7, U+00F7, U+2248) from the
-  table above. **Skip fenced code, inline code and command examples**, which the boundary
-  at the top of this file leaves untouched whatever they contain: a `--flag`, a `~/path`
-  or a quoted string means something there and is not typography. **The medium-dependent target belongs to the em-dash alone**, which keeps its
+  table above. **Skip everything the boundary at the top of this file leaves alone**: code
+  and code blocks, inline code, signatures and identifiers, structured docstring fields,
+  reference tables, command examples with their output, error messages and UI strings. A
+  `--flag`, a `~/path` or a quoted string means something there and is not typography. **The medium-dependent target belongs to the em-dash alone**, which keeps its
   one or two in edited long-form. Everything else on the list, curly quotes, ellipses, the
-  en-dash and the arithmetic marks, is zero in every medium including long-form, since none
+  en-dash and the arithmetic marks, is zero in every medium including long-form (`--` is
+  not in this group: it stands in for an em-dash and follows that rule), since none
   of them does work a keyboard character cannot. The writer's own are the only exception,
   as always. **The target depends on the medium, the same way the rule
   above does: zero in casual text, and in edited long-form one or two dashes in the whole
@@ -675,13 +692,16 @@ The target is one specific person's voice, not maximum informality. Three checks
   line naming the pass incomplete and how many items are open, close with those items, one
   per line, each giving the text it concerns and the question. Nothing in between changes.
 - **Length:** match the medium, and the concrete target is the draft you were given: end
-  no longer than it started unless the writer asked for more. The pass cuts filler and
-  varies rhythm, and neither adds material, so growth is a sign that something was
-  invented.
+  no longer than it started unless the writer asked for more, **or unless a fact of theirs
+  went in where a vague phrase had been**: replacing "improved performance" with their own
+  measured number is longer and is right. Otherwise the pass cuts filler and varies rhythm,
+  neither of which adds material, so growth is a sign that something was invented.
 
 ## Quick before → after
 
-**Every ✅ below is built only out of what its ❌ already contained.** Nothing is added,
+**These operate on machine text**, which is what the ❌ column is: on somebody's own
+writing the same patterns are diagnostics, per the rule above. **Every ✅ below is built
+only out of what its ❌ already contained.** Nothing is added,
 **and nothing is narrowed**: trading a broad claim for a specific one changes what the text
 asserts even when it invents no fact.
 That constraint is the point of the section: a rewrite that needs a new fact is not a
