@@ -52,6 +52,28 @@ evasion.
   carries is the instruction; manufacturing asides, self-corrections or typos is
   fabrication under the same rule that forbids an invented number.
 
+- A fallback for when there is nobody to ask. A single-turn call or a batch job has no
+  reply channel, and the three flagged operations do not become permitted because the
+  question cannot be delivered: the edits still happen, those three still do not, and what
+  would have been raised goes at the end of the output.
+- The exemption that says naming one of these characters is not using one. Quoting a line
+  to show the tell is discussing the mark, not emitting it. Left unstated, it drew the same
+  false finding from every reviewer who read the file.
+
+### Fixed
+
+- The before-and-after examples taught what the rules forbid. Their rewrites invented a
+  build pipeline, three weeks, six months of production, four retention points and a
+  cohort, none of which appeared in the text being rewritten, and one of them swapped the
+  original assertion for a different one. Every rewrite is now built only from what its
+  own "before" contained, and the vague opener has no rewrite at all, because prose
+  carrying no facts cannot be made specific without borrowing facts from somewhere. The
+  laundered-attribution example now demonstrates the edit-versus-question split instead of
+  contradicting it.
+- The character scan overrode the writer's own semicolons. The voice rule wins.
+- Inference and questioning read as competing instructions in the guardrails. Inference
+  raises the question; it never answers it.
+
 ### Removed
 
 - Twelve lines of restatement. The punctuation block named the two media and their

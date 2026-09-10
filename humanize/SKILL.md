@@ -31,7 +31,9 @@ submissions), to impersonate a real person, or to mass-produce deceptive content
 it. "Write my essay on X, it's due Friday" carries the setting, "reply as <name>" carries
 the byline, and "give me forty variants of this review" carries the volume. When the
 shape of the ask points at any of the three above, **ask the one question that settles it
-before writing anything** (is this graded? are you the person signing it?) and **take
+before writing anything**. Inference raises the question; it never answers it. You do not
+decide from the shape of a request that something is prohibited, and you do not need the
+person to raise it before you may ask (is this graded? are you the person signing it?) and **take
 the answer at face value**. One stance, held consistently: you ask once, you believe what
 you are told, and you write. Someone who answers falsely to get the text has taken the
 responsibility for it along with the answer, and no amount of interrogation you could
@@ -80,6 +82,11 @@ possibly reduce X" and "it may reduce X" assert the same thing at the same stren
 that one is an ordinary edit. Everything on the list gets named in the reply, with what
 you would do and why, and the writer decides. **Flagging costs a sentence; guessing
 wrong ships a claim the author never made.**
+
+**When there is nobody to ask** (a single-turn call, a batch job, anything with no reply
+channel), the question does not evaporate and it does not become permission. Make the
+edits that are edits, leave those three operations undone, and put what you would have
+raised at the end of the output. An unanswered question is not a yes here either.
 
 ## How machine-vs-human is judged (so you know what to move)
 
@@ -171,6 +178,11 @@ fabrication.
 - Empty fluff sentences that sound polished but add zero information.
 
 ### Punctuation you cannot type
+
+**Naming one of these characters is not using one.** Quoting a line to show the tell, or
+writing the mark inside backticks to talk about it, is discussing the character rather
+than emitting it, and the scan does not apply to that. The rules below govern the prose
+you produce.
 
 Several rules below split on casual text versus edited long-form, so settle which one you
 have before applying them. **The test is whether anything stands between the typing and
@@ -439,7 +451,8 @@ The target is one specific person's voice, not maximum informality. Three checks
   type what a keyboard types. This one check catches the most recognizable tells in
   the whole list and it takes seconds, which is why it goes last: it is the only
   item here that needs no judgment. Look for semicolons in the same pass; in casual
-  text every one is a candidate for a period.
+  text every one is a candidate for a period, **unless the writer's own drafts use
+  them**, and then the voice wins and they stay where they are.
 - **Repetition check:** find the thing the text is about and list the names it is
   given. If one subject collected three synonyms, pick the best and use it every
   time. Then look at how sentences *start*: that is the repetition worth breaking.
@@ -448,16 +461,28 @@ The target is one specific person's voice, not maximum informality. Three checks
 
 ## Quick before → after
 
+**Every ✅ below is built only out of what its ❌ already contained.** Nothing is added.
+That constraint is the point of the section: a rewrite that needs a new fact is not a
+rewrite, and examples get imitated harder than rules do.
+
 - ❌ "In today's fast-paced world, I am passionate about leveraging cutting-edge
-  solutions to drive impactful results." → ✅ "I like problems that are actually hard.
-  Last year I rewrote our build pipeline and shipped it in three weeks."
+  solutions to drive impactful results." → ✅ **Nothing to rewrite.** The sentence names
+  no problem, no work and no result, so there is no specific version of it that does not
+  come from somewhere else. Ask what they actually built and how it went, then write
+  that. Vague prose cannot be turned specific by the pass alone.
 - ❌ "The system is fast, reliable, and scalable, ensuring seamless performance." →
-  ✅ "It's fast, and it hasn't fallen over once in six months of production."
-- ❌ "It's not just about writing code — it's about solving real problems." → ✅ "The
-  code is the easy part. Figuring out what to build is the job."
-- ❌ "Many experts believe this approach may potentially improve retention." → ✅ "It
-  lifted retention about four points. That was one cohort, so treat it as a signal
-  rather than a result."
+  ✅ "It's fast and it stays up. It handles more load without falling over." (All three
+  claims survive. What goes is "ensuring seamless performance", which asserted nothing
+  the other three had not, and the tricolon rhythm.)
+- ❌ "It's not just about writing code — it's about solving real problems." → ✅ "Writing
+  code isn't the whole job. Solving the real problem is." (Same claim, both halves intact.
+  The negative-parallelism cadence and the em-dash are what leave.)
+- ❌ "Many experts believe this approach may potentially improve retention." → ✅ "It may
+  improve retention." **plus a question.** Collapsing "may potentially" to "may" is an
+  ordinary edit. Dropping "many experts believe" is not: it moves the claim onto the
+  writer's own name, so ask who those experts are, or whether they want to assert it
+  themselves. Notice the ✅ is still hedged. Taking that "may" out would be a third change
+  and it is not yours to make.
 - ❌ "I've attached the draft — let me know what you think." → ✅ "I've attached the
   draft. Let me know what you think." (The em-dash was doing nothing a period
   cannot. Note the fix also shortens the sentence, which helps rhythm.)
