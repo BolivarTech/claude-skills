@@ -54,7 +54,10 @@ answer make this legitimate?**
 - **Never, so do not ask.** **Writing under the person's own name is not this**, and the
   distinction matters more than the rule does: somebody asking for a reply in their own
   voice, over their own signature, is the ordinary case this skill exists for. What is
-  ruled out is text that will carry **somebody else's** name. The test is what the
+  ruled out is text that will carry **somebody else's** name **without that person's
+  say-so**. Ghostwriting somebody authorised is not impersonation: a speechwriter, an
+  assistant drafting over their manager's signature, somebody helping a friend with a
+  letter. The line is consent, and one question finds it. The test is what the
   conversation has established: a person writing as themselves, or asking for a reply over
   their own signature, has told you whose name it is. A name that has not been established
   as theirs gets one question, and an unclear answer lands where unclear answers always
@@ -408,17 +411,21 @@ the guardrails rule out, and the profile step is where that gets decided rather 
 discovered later. Every lever below is applied *toward* that profile, and **where a
 lever would push the text away from it, the profile wins and the lever does not apply**.
 A terse writer does not acquire asides because lever 4 mentions them, and a formal one
-does not acquire contractions. **The levers that add only run while you are drafting.**
-Dropping in a fragment, a contraction or an aside is writing; doing it to somebody else's
-finished text is manufacturing the marks lever 8 forbids. On a draft that is theirs the
-pass removes tells and fixes errors, and anything it would have added becomes a
-suggestion instead.
+does not acquire contractions. **What you may not manufacture is a mark of authorship, not a change of register.** Keep
+those apart, because collapsing them costs the pass its reason to exist. An invented
+aside, a staged self-correction, a typo placed on purpose, an opinion the writer does not
+hold: those fabricate evidence that a particular person wrote this, and they are forbidden
+on anybody's draft, yours included. A contraction, a sentence broken in two, a paragraph
+that now opens on its example: those change form and assert nothing new, so the boundary
+at the top of this file already permits them. Somebody who pastes a draft and asks for
+this pass **is asking for exactly that**, and withholding it hands back a subtraction
+instead of an edit.
 
-Whose draft it is is usually plain from how the work arrived: text you produced in this
-conversation is yours to shape, text they pasted in is theirs. **When it is not plain,
-ask, and treat it as theirs until you have the answer.** The costs are lopsided the same
-way they are everywhere else here. Holding a fragment back from your own draft loses a
-little rhythm; adding one to somebody else's puts words in their mouth. Without that target the levers drift toward generic
+**The profile is the limit that does the work here**, not fabrication. A terse writer does
+not acquire asides and a formal one does not acquire contractions, because the target is
+their voice rather than a generic informality. Whose draft it is stays worth knowing for
+the diagnostics above: text you produced in this conversation is yours, text they pasted
+is theirs, and an unclear case is treated as theirs. Without that target the levers drift toward generic
 informality, and that is a register too. A machine one.
 
 1. **Vary rhythm (burstiness).** Read it and mark sentence lengths. If they cluster at
@@ -527,7 +534,10 @@ that language and note the words they use and the ones they never do; then apply
 levers, which cross languages intact, because uniform rhythm and empty filler are not
 English-specific; and where there are no drafts to read, **say the coverage is thin and
 work from the levers alone**. A translated list is worse than no list, because it flags words the target
-language does not overuse while missing the ones it does.
+language does not overuse while missing the ones it does. **Spanish below is the only
+language worked out here.** Everything else gets the levers, the character scan and
+whatever the writer's own drafts show, which is a real pass and a thinner one. Saying so
+beats implying a coverage that does not exist.
 
 Spanish has its own set: "es importante destacar", "en el mundo actual", "cabe
 mencionar", "sin duda alguna", *por ende* and *asimismo* as default connectives, a
@@ -573,8 +583,10 @@ The target is one specific person's voice, not maximum informality. Three checks
 
 - **Human-first is best:** get the user's raw facts/voice, draft plainly, then polish
   *their* voice rather than generating slick prose and sanding it down.
-- **Self-check pass (read aloud):** Where does it sound like a brochure? Which sentence
-  is filler? Where are three-in-a-row patterns? Where is every sentence the same length?
+- **Self-check pass:** go back over the draft asking four questions. Where does it sound
+  like a brochure? Which sentence is filler? Where are three-in-a-row patterns? Where does
+  every sentence run the same length? (A person finds these by reading aloud. The
+  questions are what reading aloud is for, and they are the part you can actually do.)
 - **Character scan (do this last, and run it as a search):** look for `—` `–`
   `--` `…` `“` `”` `‘` `’`, which are U+2014, U+2013, a literal double hyphen, U+2026,
   U+201C, U+201D, U+2018 and U+2019, plus `×` `÷` `≈` (U+00D7, U+00F7, U+2248) from the

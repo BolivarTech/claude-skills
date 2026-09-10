@@ -148,6 +148,22 @@ evasion.
   round forbids. The plural survives.
 - The tricolon counts read as thresholds. They illustrate the shape; the rule is the
   ambiguity principle.
+- The rule that additive levers run only while drafting was too broad and got narrowed.
+  It had collapsed two different things under one word: fabricating a mark of authorship
+  (an invented aside, a staged self-correction, a typo on purpose, an opinion the writer
+  does not hold) and changing register (a contraction, a sentence broken in two). The
+  first invents content and stays forbidden everywhere. The second asserts nothing new,
+  which the fidelity boundary at the top of the file has always permitted, and it is what
+  somebody pasting a draft is asking for. As written the rule left the pass purely
+  subtractive in its most common case. The profile, not fabrication, is the limit that
+  belongs here.
+- Ghostwriting with consent is not impersonation. A speechwriter, an assistant drafting
+  over a manager's signature, somebody helping a friend with a letter: the byline tier is
+  about a name used without that person's say-so.
+- The self-check said to read the draft aloud, which a model cannot do. It now asks the
+  four questions that reading aloud is for.
+- Language coverage is stated rather than implied: Spanish is the only one worked out, and
+  everything else gets the levers, the scan, and the writer's own drafts.
 - The character scan overrode the writer's own semicolons. The voice rule wins.
 - The character scan called itself mechanical and left the impression that reading for the
   characters was enough. Finding every instance of a mark in a long draft is what a find
