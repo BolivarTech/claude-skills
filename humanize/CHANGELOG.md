@@ -187,6 +187,13 @@ evasion.
   question is whether anything stands between the typing and the reader. Unclear cases
   default to casual, because a long-form piece with zero em-dashes loses a little polish
   while a casual message with two loses the point of the pass.
+- Two tiers in the guardrails instead of one. The three prohibitions were all handled by
+  asking, and for two of them no answer makes the request legitimate: text going out under
+  a named third party's byline, and personal-sounding copy produced in bulk, are the
+  prohibited thing as stated, so a question there invites a meaningless yes and proceeds.
+  Those are declined on the shape of the request. Asking is kept for the case where the
+  answer genuinely decides, which is the graded one. Declining on shape is not inferring
+  intent: "write this as <name>" is not evidence of a plan, it is the request.
 - An unanswered question is not a yes. The guardrail asked one question and handled only
   a clear answer; a reply that dodges, that settles nothing, or a person who insists after
   being declined now lands on the prohibited branch rather than on the model's improvisation.
