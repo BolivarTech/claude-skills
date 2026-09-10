@@ -54,12 +54,14 @@ Detectors and readers react to two statistical signals plus a set of surface tel
    correct noun once and then keep using it. Repetition of the *subject* reads as
    confidence; repetition of *sentence openers and connectives* is the one to break up.
 
-### Beyond surface tells: deep structural signals
+### Past the word list
 
-Modern detectors don't just look at word lists; they analyze **coherence patterns**,
-**attention distribution**, and **syntactic regularity**. A text can be free of
-blacklisted words and still be flagged because its *deep structure* is too uniform.
-The following sections address these deeper signals.
+A draft can be clean of every word below and still read machine-made, because the
+loudest tells are structural: how sentences are shaped, how paragraphs enter, where the
+emphasis falls. So swapping a listed word for its plain synonym fixes almost nothing on
+its own. The sentence keeps the shape it had. When a line reads generated, rewrite the
+line: change its construction and the order its parts arrive in, not just its
+vocabulary. The sections that follow work on structure for that reason.
 
 ## The AI-tell blacklist (avoid or replace)
 
@@ -78,10 +80,17 @@ that", "It's important to note", "It's important to remember", "That being said"
 **Voice tells:** relentlessly neutral/polite tone, no opinion, no concrete detail, no
 names/numbers/anecdotes, flawless grammar with zero contractions.
 
+That last one runs the other way, and the direction is worth holding onto. Every list
+here catalogues what a model *over*produces, but absence is a tell too: casual writing
+carrying none of the small oral markers a person drops in reads as machine-made as
+writing stuffed with *delve*. Scan for what should be there and isn't.
+
 ### Structural tells
 
 - Formal transitions in casual text: *furthermore, moreover, additionally,
-  consequently, thus, hence.* Cut them or use plain ones (so, and, but, still).
+  consequently, thus, hence.* Cut them or use plain ones (so, and, but, still). Often
+  the better edit is to drop the connective and set the two sentences side by side.
+  The reader supplies the link, and the seam stops sounding assembled.
 - **Rule-of-three / tricolons** on repeat: "fast, reliable, and scalable"; three
   parallel clauses. Break the pattern: use one item, or two, or an uneven list.
 - **Negative parallelism:** "It's not just X — it's Y", "This isn't about X; it's about
@@ -177,6 +186,14 @@ that", "most people think". These borrow authority from a source that is never n
 which is the same decorative uncertainty wearing a citation's clothes. Name who, or
 drop the frame and make the claim in your own voice.
 
+There is a third case those two miss: doubt the writer cannot articulate. Something is
+off and they cannot name what, so they circle it, saying the same thing two or three
+ways without landing on any of them. That is not the elegant variation described above,
+which swaps synonyms for one noun to dodge repeating it. This is one proposition
+approached from several sides because none of the sides fits. It is a strong signal, and
+a model does not produce it: it states things once, cleanly, whether or not it knows
+them. Keep it where the draft has it. Never stage it.
+
 **Lever: if it is true, assert it.** State what you know flatly and strip the
 qualifiers off it. Where you genuinely do not know, say so in specific terms and name
 what would settle it. And if a claim is not worth that sentence, cut the claim. What
@@ -185,27 +202,51 @@ is both more human and more honest.
 
 ## Humanizing levers (apply after a first honest draft)
 
+**Name the voice before you touch a sentence.** Formal or casual, terse or verbose,
+jargon or plain, contractions or none, the words this writer reaches for and the ones
+they never use. Take it from their own drafts when you have them, from the medium and
+the reader when you don't. Every lever below is applied *toward* that profile. Without a
+target they drift toward generic informality, and that is a register too. A machine one.
+
 1. **Vary rhythm (burstiness).** Read it and mark sentence lengths. If they cluster at
    12 to 20 words, break some. Drop in a short one. A fragment, even. Then let one
    sentence run long and a little unruly. Rhythm is the strongest human signal.
-   Do this pass twice, and make the second one count. Cutting filler (lever 4) is
+   Do this pass twice, and make the second one count. Cutting filler (lever 5) is
    subtractive, and every deletion pulls a sentence toward the mean, so a draft that
    varied before the cut comes out flat after it. When that happens the repair is to
    *join*, not to fragment: find two short sentences that are really one thought and
    run them together. Reaching for a fragment is the reflex, and it is how you end up
    in the second artificial register.
-2. **Raise perplexity with specificity.** Replace generic nouns/verbs with the exact
+2. **Vary the shape, not only the length.** Three axes, and a draft can be varied on
+   one while flat on the other two.
+   - **How the sentence opens.** An adverb, a prepositional phrase, a subordinate
+     clause ahead of the subject; once in a while a fronted phrase for emphasis
+     ("Changing strategy, that's what they decided"). Fifteen sentences that all start
+     on the subject read uniform however much their lengths differ.
+   - **Clause complexity.** Simple, compound, complex. Every opener can vary and every
+     sentence still be a single clause.
+   - **Voice.** Passive is the right choice when the patient is the topic: "the build
+     was broken by that commit" and "that commit broke the build" foreground different
+     things. Every style guide says avoid the passive, so a model trained on them
+     writes almost none, and a draft with zero passive constructions is as uniform as
+     one with zero short sentences. What shows through is the rule, not the writer.
+3. **Raise perplexity with specificity.** Replace generic nouns/verbs with the exact
    thing: not "improved performance" but "cut cold-start from 4.2s to 900ms". Concrete
    detail is inherently less predictable and more credible. But the specificity has to
    come out of the writer's material. If the draft does not carry the exact number,
    ask for it or leave the sentence vague and say the number is missing. A plausible
    invented figure is worse than the vague sentence it replaced, because it reads true.
-3. **Use a real voice.** First person, a clear stance, mild opinion. Contractions
+   This lever needs a counterweight the way lever 1 does. Applied to every sentence it
+   produces prose where each line carries a figure, and that is uniform in a way that
+   passes for rigor. Real writing runs dense where the facts are and thins out where the
+   writer is working something through. Vary the density between paragraphs, and let the
+   thin ones be thin.
+4. **Use a real voice.** First person, a clear stance, mild opinion. Contractions
    (I'm, it's, don't). An aside in parentheses. Start a sentence with *And* or *But*
    when it lands.
-4. **Cut filler ruthlessly.** Delete any sentence that would survive as "generic advice."
+5. **Cut filler ruthlessly.** Delete any sentence that would survive as "generic advice."
    If removing a clause loses no meaning, remove it.
-5. **Break symmetry, and let interest decide where.** Uneven paragraph lengths, no
+6. **Break symmetry, and let interest decide where.** Uneven paragraph lengths, no
    three-of-everything, one point getting two sentences and the next getting five.
    But the shape is the symptom; the cause is that **a machine finds every point
    equally interesting and a person does not.** AI gives each item the same depth
@@ -216,107 +257,26 @@ is both more human and more honest.
    get short. Uneven emphasis that tracks real interest is far harder to fake than
    uneven line counts, and it is what makes a text feel authored rather than
    generated.
-6. **Prefer plain words.** "use" not "leverage/utilize", "help" not "facilitate", "big"
+7. **Prefer plain words.** "use" not "leverage/utilize", "help" not "facilitate", "big"
    not "robust", "start" not "embark/spearhead". This is about register, not about
    probability: keep the plain word for the action and the specific word for the thing.
-7. **Keep small imperfections.** A one-word sentence. A sentence that trails into a
-   qualifier. Real writing isn't buffed to a mirror finish.
-8. **Localize.** Idioms, a concrete reference, the writer's actual domain vocabulary.
-   Things a model averaging the internet wouldn't reach for.
-
-### Advanced levers for deep humanization
-
-9. **Break deep structural coherence.** Humans don't always follow a linear path.
-   - **Introduce controlled digressions:** a side note that doesn't get resolved, a
-     parenthetical that adds nothing to the argument but reveals a thought process.
-   - **Vary the order of information:** start with an example, a question, an
-     objection, or a consequence instead of the thesis. Let some paragraphs open
-     with the supporting detail and then state the point.
-   - **Leave some ideas underdeveloped:** mention something and move on without
-     explaining it fully, as if the writer assumes the reader will follow or lost
-     interest.
-   - **Use implicit transitions:** instead of "therefore" or "however", just
-     juxtapose ideas and let the reader infer the connection. A simple "So anyway,"
-     or "That reminds me" can work in casual text.
-10. **Increase syntactic perplexity.** Don't just vary sentence length; vary the
-    *shape* of sentences.
-    - Mix active and passive voice unexpectedly.
-    - Use nominalizations sparingly but in places where a verb would be expected.
-    - Start sentences with adverbs, prepositional phrases, or subordinate clauses.
-    - Occasionally invert the normal subject-verb-object order for emphasis.
-    - Use a fragment as a complete sentence, but not too often.
-11. **Simulate uneven attention and human priorities.**
-    - Identify the one point the writer would actually care about and give it
-      disproportionate space, even if it's not the "main" point logically.
-    - Include unsolicited opinions: "Honestly, I never liked that approach."
-    - Use rhetorical questions directed at the reader or oneself: "You know what I
-      mean?" or "Why did I think that would work?"
-    - Repeat an idea in different words for emphasis or to show uncertainty: "It's
-      not that it's wrong, it's just... I don't know, it feels off."
-12. **Incorporate subtle imperfections.**
-    - Allow one or two minor typos in long informal texts (e.g., "recieve" instead
-      of "receive") but only if the register permits.
-    - Use anacoluthons: start a sentence with one construction and finish with
-      another. "What I'm trying to say is, well, you know how it is."
-    - Insert conversational fillers in casual writing: "pues", "bueno", "o sea",
-      "I mean", "you know".
-    - Include self-corrections: "I think it was Tuesday—no, wait, Wednesday."
-13. **Adapt to a specific authorial voice.**
-    - Create a consistent profile: formal or informal, verbose or terse, uses
-      jargon or not, has favorite words or phrases.
-    - Apply that profile uniformly across the text. A single document should sound
-      like one person, not a patchwork.
-    - Avoid the "neutral voice": humans rarely write without some emotional or
-      evaluative stance. Add adjectives, exclamations, or expressions of surprise,
-      agreement, or frustration where appropriate.
-14. **Defeat embedding-based detectors.**
-    - Paraphrase at the sentence level, not just word substitution. Change the
-      syntactic structure and the order of constituents.
-    - Mix registers: a formal word in a casual sentence, or a colloquialism in a
-      formal paragraph, to push the embedding away from typical LLM output.
-    - Use original figurative language: metaphors, similes, personifications that
-      are not clichés. Avoid "the tapestry of life" but try "the project felt like
-      trying to nail jelly to a wall".
-    - Include very specific, verifiable details (numbers, dates, names) that anchor
-      the text to reality and are unlikely to be generated by a model without
-      hallucination.
-15. **Manage information density.**
-    - Don't over-explain. Humans omit details they consider obvious or irrelevant.
-    - Include pauses and filler: "Anyway, where was I?" or "So, long story short".
-    - Vary the density: some paragraphs packed with facts, others more reflective
-      or light.
-
-### Guards against flat, emotionless prose
-
-Avoid sentences that lack figurative language, present a monotonous grammatical structure
-(subject-verb-object), have no creative turns, and sound distant or without emotional
-resonance. To counteract these signals, actively apply the following guards:
-
-- **Use figurative language with MODERATION and originality.** Introduce metaphors,
-  similes, personifications, or allusions that arise naturally from the context. Avoid
-  clichés; seek concrete and surprising comparisons. Example: instead of "the system
-  is slow," write "the system moves like a hungover snail."
-- **Break the subject-verb-object sequence.** Not all sentences should start with the
-  subject. Invert the order, begin with an adverbial phrase, an adverb, a subordinate
-  clause, or a participle. Example: "Changing strategy, that's what the team decided"
-  instead of "The team decided to change strategy."
-- **Introduce unexpected turns.** Add a rhetorical question, an exclamation, a
-  parenthetical, a brief digression, or a change of direction that surprises the
-  reader. Example: "What if instead of optimizing, we simply eliminate the problem?"
-- **Inject emotion and personal opinion.** Use first person, express feelings
-  (frustration, enthusiasm, irony, surprise) and subjective evaluations. Don't write
-  as an external observer; get involved in the text. Example: "The project was delayed
-  two weeks and I was climbing the walls."
-- **Balance expressive vocabulary with warmth.** If you use an unusual or technical
-  word (like "intrinsic thickness"), make sure the overall tone of the sentence is not
-  clinical or distant. Accompany that word with a personal expression or an emotion.
-  Example: "The material's intrinsic thickness was a headache, honestly."
-- **Avoid uniformity in grammatical construction.** Alternate simple, compound, and
-  complex sentences; use active and passive voice; include a nominal sentence or a
-  fragment. Syntactic variety is as important as length variety.
-- **Review each sentence.** If a sentence for looks like "lack of figurative language"
-  or "basic structure," rewrite it applying at least one of these guards. Don't just
-  change words; change the shape of the sentence.
+8. **Keep small imperfections, and *keep* is the operative verb.** A one-word sentence.
+   A sentence that trails off into a qualifier. A side note that never gets resolved, or
+   an idea raised and dropped because the writer assumed the reader would follow. Real
+   writing isn't buffed to a mirror finish, and those marks are where the thinking
+   shows. What you must not do is manufacture them. An invented aside, a staged
+   self-correction, a typo added on purpose: all fabrication, the same rule as an
+   invented number, and a reader who catches one reads sloppy rather than human.
+   Preserve what the draft already has.
+   This is also where the line against lever 5 runs. A digression that shows how the
+   writer got somewhere is not filler; one that shows nothing is. Cut by what it
+   reveals, not by whether it advances the argument.
+9. **Localize.** Idioms, a concrete reference, the writer's actual domain vocabulary.
+   Things a model averaging the internet wouldn't reach for. A comparison of the
+   writer's own belongs here too, drawn from what they actually work on: "it was like
+   nailing jelly to a wall" does the job that an exact number does elsewhere. Same
+   constraint as the number, though. An invented figure of speech is the same cheat as
+   an invented statistic, and one comparison that lands beats four that decorate.
 
 ## Working in languages other than English
 
@@ -331,6 +291,11 @@ mencionar", "sin duda alguna", *por ende* and *asimismo* as default connectives,
 gerund closing every other sentence ("logrando así...", "permitiendo..."), and naming
 the subject with a fresh synonym each time, a habit Spanish schooling rewards even
 harder than English schooling does.
+
+Spanish also shows the absence side more plainly than English does. A model writing
+casual Spanish produces almost no oral markers, so a WhatsApp message or an informal
+email with zero *bueno*, *o sea*, *pues* reads translated even when every word in it is
+correct. There the tell is that they are missing, not that they are there.
 
 Two checks English does not need. Register in Spanish rides on tú/usted and on verb
 person, so a draft that drifts between them reads stranger than anything on the list
@@ -348,9 +313,12 @@ informal AI is still AI**, and a reader clocks it just as fast.
 
 The target is one specific person's voice, not maximum informality. Three checks:
 
-- **Register has to hold.** A single document gets one voice. Humanizing edits applied
-  unevenly produce drift, a chatty opening bolted onto a formal middle, which reads
-  stranger than the uniform version you started with.
+- **Register has to hold, and it holds at the level of the document.** A single document
+  gets one voice. Humanizing edits applied unevenly produce drift, a chatty opening
+  bolted onto a formal middle, which reads stranger than the uniform version you started
+  with. One word out of register inside a sentence is a different thing, and often a
+  good one: it is a person reaching for the word they actually think in. What to avoid
+  is drift across paragraphs and sections, not the single odd word.
 - **Match the person and the medium.** Some people write formally and it is authentic.
   A lawyer's client letter should not acquire sentence fragments. Ask what *this*
   writer sounds like, not what "human" sounds like in the abstract.
@@ -376,11 +344,6 @@ The target is one specific person's voice, not maximum informality. Three checks
   time. Then look at how sentences *start*: that is the repetition worth breaking.
 - **Length:** match the medium. A cover letter or email should be shorter than the AI
   instinct to over-explain.
-- **Test with detectors (optional but recommended):** If the user is concerned about
-  AI detection, run the text through one or more detectors (e.g., GPTZero,
-  Originality.ai) and see what they flag. Adjust based on the feedback. This is an
-  iterative process: humanize, test, refine. But don't over-optimize for a specific
-  detector; aim for general naturalness.
 
 ## Quick before → after
 
