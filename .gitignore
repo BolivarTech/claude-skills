@@ -16,3 +16,9 @@ desktop.ini
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Resilio Sync
+.sync
+
+# Backup
+Vault
