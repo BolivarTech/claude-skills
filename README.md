@@ -18,7 +18,7 @@ the body stays outside the context window, so its length adds no cost to those t
 
 | Skill | Version | What it does |
 |-------|---------|--------------|
-| [`humanize`](humanize/) | [3.0.0](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
+| [`humanize`](humanize/) | [4.0.0](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
 
 ---
 
@@ -31,9 +31,10 @@ preserving the writer's voice. It does not draft from notes or add new content.
 filler, repetition, and vocabulary. It returns a draft unchanged only after a
 complete review finds no justified improvements.
 
-**Edit in context.** Familiar words, parallel constructions, and punctuation are
-signals to inspect, not automatic defects. Appropriate typography, formal
-language, and useful technical vocabulary stay.
+**Fix what it finds.** Formulaic vocabulary, "not just X but Y" constructions,
+em dashes, curly quotes, and ellipses get corrected when they turn up in editable
+prose. Numeric ranges, dialogue dashes, protected technical material, and direct
+quotations are left as they are.
 
 **Preserve meaning and its force.** Facts, attribution, uncertainty, emphasis,
 direct quotations, and protected technical material remain intact. A vague claim
@@ -41,8 +42,8 @@ is not disposable filler, and removing a phrase such as "sin duda alguna" can
 change the writer's certainty even when the underlying information stays.
 
 **Keep the edit concise.** Rhythm changes use existing material. The result stays
-the same length or shorter, with minimal growth allowed only to avoid ambiguity
-or preserve meaning. Optional improvements do not generate approval questions;
+the same length or shorter, with minimal growth allowed only to avoid ambiguity,
+preserve meaning, or state a supplied fact precisely. Optional improvements do not generate approval questions;
 the default deliverable is the edited text without an explanation of each change.
 
 For example:
@@ -206,7 +207,7 @@ the repository automatically. A release requires an exit code of zero.
 ## Versioning
 
 Skills here version independently, so a release names the skill it belongs to. The tag
-for the current version is `humanize-v3.0.0`. Creating a tag and publishing a
+for the current version is `humanize-v4.0.0`. Creating a tag and publishing a
 [GitHub release](https://github.com/BolivarTech/claude-skills/releases) are separate
 steps from updating the source and ZIP in this repository.
 
@@ -223,7 +224,7 @@ Claude which version it is running:
 
 ```yaml
 metadata:
-  version: 3.0.0
+  version: 4.0.0
 ```
 
 The file retains its version even after months in Claude Desktop. Compare it with the

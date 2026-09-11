@@ -6,6 +6,74 @@ All notable changes to the `humanize` skill. The format follows
 [repository README](../README.md#versioning).
 
 
+## [4.0.0] - 2026-09-11
+
+This release starts again from 2.0.0. Version 3.0.0 turned the editorial checks
+into contextual signals and stopped normalizing typography by default, so a draft
+with em dashes, curly quotes, or formal transitions came back largely as it went
+in. That was a different skill under the same name. 4.0.0 restores the 2.0.0
+rules, keeps the parts of 3.0.0 that added something without undoing them, and
+keeps the narrower scope: editing an existing draft, not composing one. A major
+bump because the same input produces different output than under 3.0.0.
+
+### Changed
+
+- Scope is editing only. The description now reads "Rewrite existing prose" and
+  says outright that the skill is not for composing from notes or from scratch.
+  A paragraph under the title says the same to the model. Carried from 3.0.0.
+- The editorial review is mandatory and complete: every draft is checked for
+  meaning, voice, structure, rhythm, filler, repetition, and vocabulary before
+  anything is returned, and a draft comes back unchanged only when that review
+  finds nothing to justify an edit. Carried from 3.0.0.
+- Rhythm keeps the 12-to-20-word check from 2.0.0 and adds the 3.0.0 constraint
+  on how to fix it: cut, reorder, join, or split what is there; never add an
+  explanation, example, or transition just to vary length.
+- Length: preserve or reduce. The old "unless expansion was requested" exception
+  is gone, since expansion is no longer in scope. A minimal increase is still
+  allowed to avoid ambiguity, preserve meaning, or state a supplied fact
+  precisely, and unrequested summaries, restatements, and explanations are
+  named as the thing not to add.
+- The deliverable is the edited text. The assessment happens internally and is
+  not narrated decision by decision unless the user asks for an analysis.
+  Carried from 3.0.0.
+- Replacing a formal transition must retain the logical relationship it carried.
+- Tightened the wording throughout. Every rule, example, and exception of the
+  full draft is still here; the file is shorter, not thinner.
+
+### Added
+
+- Direct quotations are preserved verbatim, punctuation included, unless the
+  user explicitly asks to edit them. A general request to humanize the text
+  around a quote does not authorize touching the quote. Carried from 3.0.0.
+- A dash that opens or closes dialogue, as in Spanish, is left alone by the
+  character scan. 2.0.0 already exempted numeric ranges; dialogue punctuation
+  was the other legitimate use the scan would have eaten.
+- A numbered workflow at the end: identify the voice, freeze protected material
+  and flag anything that could alter a claim, edit in a fixed order (structure,
+  language, rhythm, repetition, characters), then compare source and result.
+  Earlier versions implied the order through section layout; now it is stated.
+- The pass is named for what it is: editorial, not semantic. Rhythm, syntax,
+  word choice, sentence length, paragraph entry, and presentation may change;
+  what the text asserts and who asserts it may not.
+- Two lines against a common misreading: the skill edits the writing and does
+  not manufacture a persona, and human writing can still be stiff, repetitive,
+  vague, or overworked. A draft is not exempt because a person wrote it.
+- One register across the whole document, not only preservation of the one
+  found.
+- Rhythm may not be varied by manufacturing fragments, parentheticals, or
+  unusual syntax.
+- A criterion for when to replace a word from the formulaic list: imprecision,
+  redundancy, or register mismatch.
+
+### Removed, relative to 3.0.0
+
+- The "signals, not defects" model. Constructions, formulaic vocabulary, and
+  typography are back to being corrected when found, as in 2.0.0, not only when
+  they clash with voice or medium.
+- Conditional handling of em dashes, en dashes, curly quotes, and ellipses.
+  The systematic scan and its replacements are back.
+- Drafting from notes was already removed in 3.0.0 and stays removed.
+
 ## [3.0.0] - 2026-09-10
 
 This major release limits humanize to rewriting existing prose and replaces

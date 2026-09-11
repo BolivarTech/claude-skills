@@ -8,141 +8,133 @@ description: >-
   Use for editing an existing draft, not composing from notes or from scratch.
 license: MIT OR Apache-2.0
 metadata:
-  version: 3.0.0
+  version: 4.0.0
 ---
 
 # Humanize
 
-Work from the writer's facts, vocabulary, stance, and certainty, regardless of
-who drafted the text. Improve structure before substituting words.
-
-This skill edits existing prose. Do not expand notes into a draft or compose
-new content as part of this pass. Treat any requested content expansion as a
-separate task outside this editorial pass.
+Edit existing prose. Do not expand notes into a draft or compose new content;
+treat any requested expansion as a separate task. Work from the writer's facts,
+vocabulary, stance, and certainty, regardless of who drafted the text. Edit the
+writing; do not manufacture a persona. Human writing can still be stiff,
+repetitive, vague, or overworked. Improve structure before substituting words.
 
 ## Meaning and voice
 
-Rewrite running prose only. Unless the user's request authorizes content changes,
-preserve:
-
-- facts, names, numbers, dates, versions, paths, flags, commands, and meaningful
-  order, including chronology and argument dependencies;
-- the breadth and strength of claims, attribution, uncertainty, and its reasons;
-- code blocks, inline code, signatures, identifiers, structured docstring fields,
-  reference tables, command examples and output, error messages, and UI strings;
-- mathematical, scientific, and technical symbols such as `×`, `÷`, and `≈`.
-
-Preserve direct quotations verbatim, including their internal punctuation,
-unless the user explicitly requests editing them. A general request to humanize
-the surrounding text does not authorize rewriting quotations.
+The pass is editorial, not semantic: change rhythm, syntax, word choice, sentence
+length, paragraph entry, and presentation, never what the text asserts or who
+asserts it. Rewrite running prose only. Unless the user authorizes content
+changes, preserve facts, names, numbers, dates, versions, paths, flags, commands,
+and meaningful order, including chronology and argument dependencies; the breadth
+and strength of claims, attribution, uncertainty, and its reasons; code blocks,
+inline code, signatures, identifiers, structured docstring fields, reference
+tables, command examples and output, error messages, UI strings, and technical
+symbols such as `×`, `÷`, and `≈`. Preserve direct quotations verbatim,
+punctuation included, unless the user explicitly asks to edit them; a request to
+humanize the surrounding text does not cover the quote.
 
 Infer audience, medium, formality, verbosity, grammatical person, contractions,
-and regional or domain vocabulary from the request and source. Preserve the
-existing register when no preference is given. This profile governs the edits:
+and regional or domain vocabulary from the request and source. Keep one register
+across the document and preserve the existing one when no preference is given:
 formal writing need not become chatty, and useful technical terms stay.
 
 Never invent opinions, anecdotes, comparisons, reactions, habits, or specific
-facts. Use concrete details from the supplied material; otherwise keep the
-wording general. Preserve informative asides and useful irregularities, but
-correct mistakes. Do not add typos, false starts, fragments, or awkwardness to
-simulate a person.
+facts; use details from the supplied material or keep the wording general.
+Preserve informative asides and useful irregularities, but correct mistakes. Do
+not add typos, false starts, fragments, or awkwardness to simulate a person.
 
 Do not delete a weak claim as filler, transfer an attributed claim to the writer,
 or strengthen a hedge. Collapse redundant qualifiers only at the same certainty:
 "may potentially possibly reduce X" can become "may reduce X", never "reduces X".
-If the effect of a qualifier is unclear, preserve it and continue.
-
-Ask only when missing information prevents completing the request and cannot be
-handled by preserving the source or using existing context. Optional improvements
-do not require questions or approval and do not make an edit incomplete.
+If a qualifier's effect is unclear, preserve it. Ask only when missing
+information prevents completion and cannot be handled by preserving the source or
+using existing context; optional improvements need no approval and do not make an
+edit incomplete.
 
 ## Editorial checks
 
-Always review the entire text for meaning, voice, structure, rhythm, filler,
-repetition, and vocabulary. Do not skip this review based on a first impression
-of naturalness. Apply changes that fit the voice and address concrete problems;
-return the original unchanged only when the full review finds no justified
-improvements. Do not maximize variation or force every sentence into a new shape.
+Review the entire text for meaning, voice, structure, rhythm, filler, repetition,
+and vocabulary; a first impression of naturalness does not excuse the review.
+Apply changes that fit the voice and address a problem in the draft, and return
+the original only when the full review finds no justified improvement. Do not
+maximize variation or force every sentence into a new shape.
 
-Treat the patterns below as review signals, not automatic defects. Change them
-when they create mechanical repetition, hinder reading, or clash with the voice
-or medium. Their presence alone does not justify an edit; preserve their function
-and meaning.
-
-- **Rhythm:** Correct monotonous or awkward rhythm by cutting, reordering, joining,
-  or splitting existing sentences. Do not add explanations, examples, or
-  transitions merely to vary sentence length. Passive voice is appropriate when
-  the affected thing is the topic or the actor is unknown or irrelevant. After removing filler, join
-  short sentences that form one thought if the rhythm has become flat.
+- **Rhythm:** Vary openings, clause complexity, and sentence length. If more than
+  half the sentences cluster around 12 to 20 words, shorten some and let others
+  develop. Do so by cutting, reordering, joining, or splitting existing
+  sentences; do not add explanations, examples, or transitions to vary length,
+  nor manufacture fragments, parentheticals, or unusual syntax. Passive voice is
+  appropriate when the affected thing is the topic or the actor is unknown or
+  irrelevant. After removing filler, join short sentences that form one thought
+  if the rhythm has gone flat.
 - **Paragraphs:** Address repeated topic/support/conclusion structures, identical
-  paragraph lengths, excessive headings, and mechanical three-part lists. Use
-  an existing example, consequence, number, or objection as an opening where it
-  helps. Keep the writer's distribution of emphasis unless the source supports
-  a change; do not make every sentence equally dense with facts.
-- **Filler:** Remove empty framing ("It's worth noting"), unneeded stage directions
-  ("Let me break this down"), redundant closers, and decorative asides only when
-  removal changes neither information nor claim strength. A familiar phrase is
-  not automatically empty: preserve it when it conveys certainty, emphasis, or
-  the writer's stance. "I care about quality" is a personal claim, even if vague.
-- **Constructions:** Rework "It's not just X; it's Y", "This isn't about X; it's
-  about Y", and "Not only X, but also Y" when repetitive or forced; keep them
-  when they express a useful relationship naturally. Preserve both halves when
-  rewriting. Break mechanical tricolons without dropping claims. Replace formal
-  transitions such as *furthermore*, *moreover*, and *consequently* when they clash
-  with a casual register; retain the logical relationship.
-- **Vocabulary:** Prefer plain verbs and exact nouns, such as *use* over *utilize*.
-  Scan for formulaic language such as *delve*, *tapestry*, *leverage*, *seamless*,
-  *foster*, *elevate*, *unlock*, *holistic*, *game-changer*, *cutting-edge*, and
-  "in today's fast-paced world". Replace wording for imprecision, redundancy, or
-  register mismatch, never solely because it appears here. A structural rewrite
-  may help more than a synonym.
+  paragraph lengths, excessive headings, and mechanical three-part lists. Open
+  with an existing example, consequence, number, or objection where it helps.
+  Keep the writer's distribution of emphasis unless the source supports a change.
+- **Filler:** Remove empty framing ("It's worth noting"), stage directions ("Let
+  me break this down"), redundant closers, and decorative asides only when
+  removal changes neither information nor claim strength. A familiar phrase may
+  carry certainty, emphasis, or stance: "I care about quality" is a personal
+  claim, even if vague.
+- **Constructions:** Rewrite "It's not just X; it's Y", "This isn't about X; it's
+  about Y", and "Not only X, but also Y", preserving both halves. Break repeated
+  tricolons without dropping claims. In casual prose, replace formal transitions
+  such as *furthermore*, *moreover*, and *consequently* with plain connectives or
+  omit them, retaining the logical relationship either way.
+- **Vocabulary:** Prefer plain verbs and exact nouns, such as *use* over
+  *utilize*. Scan for *delve*, *tapestry*, *leverage*, *seamless*, *foster*,
+  *elevate*, *unlock*, *holistic*, *game-changer*, *cutting-edge*, and "in
+  today's fast-paced world". These are contextual signals, not a substitution
+  table: replace wording for imprecision, redundancy, or register mismatch, and
+  prefer a structural rewrite to a synonym where it helps more.
 - **Repetition:** Keep the correct subject noun rather than rotating through
-  "system", "platform", "solution", and "tool". Address monotonous openings and
+  "system", "platform", "solution", and "tool". Fix monotonous openings and
   connectives by changing sentence construction, not the subject's name.
 
 ## Character handling
 
-Scan editable prose last for `—`, `–`, `--`, `…`, `“`, `”`, `‘`, and `’`.
-Use search or a regular expression when available; correct matches contextually.
-
-- Correct excessive or unsuitable dashes, quotation marks, and ellipses when they
-  disrupt reading or do not fit the medium. Preserve appropriate uses, including
-  range notation, dialogue punctuation, and meaningful pauses.
-- Normalize these characters systematically only when the user's preference or
-  destination format requires it; otherwise preserve suitable typography.
-- Leave typography inside protected material unchanged.
+Scan editable prose last for `—`, `–`, `--`, `…`, `“`, `”`, `‘`, and `’`, with a
+search or regular expression when available, and correct matches contextually.
+Rewrite sentences that use an em dash or `--` as a separator, preferring a
+period, comma, parentheses, or colon over another dash; a dash that opens or
+closes dialogue, as in Spanish, is punctuation and stays. Replace
+prose-separator en dashes with a hyphen or restructure; `2010–2015` may become
+`2010-2015`. Replace curly quotes with straight quotes and `…` with `...` in
+ordinary prose. Leave typography inside protected material unchanged.
 
 ## Other languages
 
-Use the same structural and semantic criteria, but do not translate the English
-word list mechanically. Derive local patterns from native drafts when available;
-otherwise avoid claims of complete language coverage.
+Apply the same structural and semantic criteria, but do not translate the
+English word list mechanically; derive local patterns from native drafts when
+available and otherwise avoid claiming complete coverage.
 
 For Spanish, inspect potentially empty framing ("es importante destacar", "cabe
-mencionar", "en el mundo actual"), automatic *por ende* or *asimismo*,
-repeated closing gerunds ("logrando así", "permitiendo"), shifts between *tú* and
-*usted* or verb persons, and English sentence patterns in translations. Oral
-markers such as *bueno*, *o sea*, and *pues* must fit an existing informal voice,
-region, and context; never insert them as a quota.
+mencionar", "en el mundo actual"), automatic *por ende* or *asimismo*, repeated
+closing gerunds ("logrando así", "permitiendo"), shifts between *tú* and *usted*
+or verb persons, and English sentence patterns in translations. Oral markers
+such as *bueno*, *o sea*, and *pues* must fit an existing informal voice, region,
+and context; never insert them as a quota. "Sin duda alguna" can express
+certainty: removing it from "Sin duda alguna, esta es la mejor opción" weakens
+the writer's stated confidence even though the core claim remains. Preserve it
+unless the context shows its force is redundant and fully retained.
 
-"Sin duda alguna" can express certainty: removing it from "Sin duda alguna, esta
-es la mejor opción" weakens the writer's stated confidence even though the core
-claim remains. Preserve it unless the context establishes that its force is
-redundant and fully retained by the remaining wording.
+## Workflow and delivery
 
-## Final pass and delivery
+1. Identify voice, audience, medium, and register.
+2. Freeze protected material and flag any change that could alter claims,
+   attribution, certainty, or meaningful order.
+3. Edit structure, language, rhythm, repetition, and characters, in that order.
+4. Compare source and result for meaning and register drift, invented material,
+   repetition, rhythm after deletions, and unnecessary growth.
 
-Compare the result with the source for meaning and register drift, invented
-material, repetition, and rhythm after deletions. Stop when the relevant problems
-are addressed; constant contractions, asides, or fragments create another
-artificial register.
-
-Preserve or reduce the source's length during this editorial pass. Allow
-only a minimal increase needed to avoid ambiguity or preserve meaning; do not
-add unrequested summaries, restatements, or explanations. Do not append unsolicited
-questions, lists of missing details, or incomplete-pass labels for optional edits.
-Perform the editorial assessment internally and return the edited text without
-explaining individual decisions unless the user requests an analysis.
+Stop when the relevant problems are addressed; constant contractions, asides, or
+fragments create another artificial register. Preserve or reduce length,
+allowing only the minimal increase needed to avoid ambiguity, preserve meaning,
+or state a supplied fact precisely; add no unrequested summaries, restatements,
+or explanations. Do not append unsolicited questions, lists of missing details,
+or incomplete-pass labels for optional edits. Assess internally and return the
+edited text without explaining individual decisions unless the user asks for an
+analysis.
 
 ## Examples of semantic boundaries
 
