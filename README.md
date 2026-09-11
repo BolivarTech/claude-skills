@@ -146,8 +146,8 @@ To uninstall a skill, delete its directory.
 │   ├── CHANGELOG.md      what changed, per version
 │   └── humanize.zip      contains humanize/SKILL.md for upload to Claude
 ├── scripts/
-│   ├── validate_skills.py  release gate, run before every tag
-│   └── apply_edits.py      batch editor with a preflight
+│   ├── validate_skills.py       release gate, run before every tag
+│   └── test_validate_skills.py  validator regression tests
 ├── LICENSE               MIT
 ├── LICENSE-APACHE        Apache-2.0
 └── README.md
@@ -155,14 +155,19 @@ To uninstall a skill, delete its directory.
 
 One directory per skill, named after the skill. Nothing skill-specific sits at the root.
 
-`scripts/validate_skills.py` checks that the source, installed copy under
-`~/.claude/skills/`, and ZIP are byte-identical. It also checks the six allowed
-frontmatter keys, the archive's root folder, and version agreement between the
-frontmatter, README table, and changelog.
+`scripts/validate_skills.py` checks that the source and ZIP are byte-identical.
+It also checks the six allowed frontmatter keys, non-empty names and descriptions,
+the archive's root folder, and version agreement between the frontmatter, README
+table, and changelog. Run `python scripts/validate_skills.py --check-installed`
+to also compare personal copies under `~/.claude/skills/` with the source.
 
 Each check reports `PASS`, `FAIL`, `CANNOT_TEST` or `OUT_OF_SCOPE`, distinguishing
 unavailable checks from successful ones. Whether the description triggers the
 skill remains `OUT_OF_SCOPE`; that requires a live session.
+
+Run validator regression tests with `python -m unittest discover -s scripts`.
+The maintenance scripts require Python and PyYAML; the skill itself has no runtime
+dependencies.
 
 ---
 

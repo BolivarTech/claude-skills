@@ -26,6 +26,7 @@ Usage::
 
     python scripts/validate_skills.py            # every skill in the repo
     python scripts/validate_skills.py humanize   # one skill
+    python scripts/validate_skills.py --check-installed  # also check local copies
 """
 
 from __future__ import annotations
@@ -162,13 +163,15 @@ class SkillValidator:
     the declared list, and cannot vanish without the reconciliation catching it.
     """
 
-    def __init__(self, package: SkillPackage) -> None:
+    def __init__(self, package: SkillPackage, *, check_installed: bool = False) -> None:
         """Bind the validator to a skill.
 
         Args:
             package: The skill to check.
+            check_installed: Also compare the personal installation with the source.
         """
         self.pkg = package
+        self.include_installed = check_installed
 
     def scenarios(self) -> list[str]:
         """Return the declared scenario names, in execution order."""
@@ -205,6 +208,10 @@ class SkillValidator:
             problems.append(f"unexpected {unexpected} -- breaks the Desktop upload")
         if missing:
             problems.append(f"missing {missing}")
+        for key in sorted(REQUIRED_FRONTMATTER_KEYS & keys):
+            value = self.pkg.frontmatter[key]
+            if not isinstance(value, str) or not value.strip():
+                problems.append(f"{key} must be a non-empty string")
         if self.pkg.frontmatter.get("name") != self.pkg.name:
             problems.append(
                 f"name is {self.pkg.frontmatter.get('name')!r}, "
@@ -229,6 +236,11 @@ class SkillValidator:
 
     def check_installed_copy(self) -> Result:
         """The copy Claude executes is byte-identical to the source."""
+        if not self.include_installed:
+            return self._result(
+                "installed-copy", Outcome.OUT_OF_SCOPE,
+                "use --check-installed to compare the personal installation",
+            )
         if not self.pkg.installed.exists():
             return self._result(
                 "installed-copy",
@@ -292,7 +304,12 @@ class SkillValidator:
             return self._result(
                 "readme-version", Outcome.FAIL, "no row for this skill in the table"
             )
-        if not any(version in row for row in rows):
+        version_cells = [row.split("|")[2].strip() for row in rows if len(row.split("|")) >= 4]
+        def version_label(cell: str) -> str:
+            link = re.fullmatch(r"\[([^\]]+)\]\([^\n]+\)", cell)
+            return link.group(1) if link else cell
+
+        if len(rows) != 1 or len(version_cells) != 1 or version_label(version_cells[0]) != version:
             return self._result(
                 "readme-version",
                 Outcome.FAIL,
@@ -412,12 +429,16 @@ def main(argv: list[str] | None = None) -> int:
     """
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("skill", nargs="?", help="check only this skill")
+    parser.add_argument(
+        "--check-installed", action="store_true",
+        help="also compare personal copies under ~/.claude/skills with the source",
+    )
     args = parser.parse_args(argv)
 
     repo_root = Path(__file__).resolve().parent.parent
     try:
         packages = [SkillPackage(d, repo_root) for d in discover(repo_root, args.skill)]
-        validators = [SkillValidator(pkg) for pkg in packages]
+        validators = [SkillValidator(pkg, check_installed=args.check_installed) for pkg in packages]
         declared = [(v.pkg.name, s) for v in validators for s in v.scenarios()]
         print(f"declared {len(declared)} scenarios over {len(packages)} skill(s)\n")
         results = [result for v in validators for result in v.run()]
