@@ -1,19 +1,24 @@
 ---
 name: humanize
 description: >-
-  Draft or rewrite prose with a natural, consistent voice, varied rhythm, plain
+  Rewrite existing prose with a natural, consistent voice, varied rhythm, plain
   language, and fewer formulaic AI patterns. Use when the user asks to humanize,
   de-robotify, make text sound natural or less like AI, or improve first-person
   writing such as emails, applications, posts, essays, cover letters, and bios.
+  Use for editing an existing draft, not composing from notes or from scratch.
 license: MIT OR Apache-2.0
 metadata:
-  version: 2.0.0
+  version: 3.0.0
 ---
 
 # Humanize
 
 Work from the writer's facts, vocabulary, stance, and certainty, regardless of
 who drafted the text. Improve structure before substituting words.
+
+This skill edits existing prose. Do not expand notes into a draft or compose
+new content as part of this pass. Treat any requested content expansion as a
+separate task outside this editorial pass.
 
 ## Meaning and voice
 
@@ -26,6 +31,10 @@ preserve:
 - code blocks, inline code, signatures, identifiers, structured docstring fields,
   reference tables, command examples and output, error messages, and UI strings;
 - mathematical, scientific, and technical symbols such as `×`, `÷`, and `≈`.
+
+Preserve direct quotations verbatim, including their internal punctuation,
+unless the user explicitly requests editing them. A general request to humanize
+the surrounding text does not authorize rewriting quotations.
 
 Infer audience, medium, formality, verbosity, grammatical person, contractions,
 and regional or domain vocabulary from the request and source. Preserve the
@@ -49,13 +58,21 @@ do not require questions or approval and do not make an edit incomplete.
 
 ## Editorial checks
 
-Apply changes that fit the voice and address a problem in the draft. Do not
-maximize variation or force every sentence into a new shape.
+Always review the entire text for meaning, voice, structure, rhythm, filler,
+repetition, and vocabulary. Do not skip this review based on a first impression
+of naturalness. Apply changes that fit the voice and address concrete problems;
+return the original unchanged only when the full review finds no justified
+improvements. Do not maximize variation or force every sentence into a new shape.
 
-- **Rhythm:** Vary openings, clause complexity, and sentence length. If more than
-  half the sentences cluster around 12 to 20 words, shorten some and let others
-  develop where useful. Passive voice is appropriate when the affected thing is
-  the topic or the actor is unknown or irrelevant. After removing filler, join
+Treat the patterns below as review signals, not automatic defects. Change them
+when they create mechanical repetition, hinder reading, or clash with the voice
+or medium. Their presence alone does not justify an edit; preserve their function
+and meaning.
+
+- **Rhythm:** Correct monotonous or awkward rhythm by cutting, reordering, joining,
+  or splitting existing sentences. Do not add explanations, examples, or
+  transitions merely to vary sentence length. Passive voice is appropriate when
+  the affected thing is the topic or the actor is unknown or irrelevant. After removing filler, join
   short sentences that form one thought if the rhythm has become flat.
 - **Paragraphs:** Address repeated topic/support/conclusion structures, identical
   paragraph lengths, excessive headings, and mechanical three-part lists. Use
@@ -67,16 +84,18 @@ maximize variation or force every sentence into a new shape.
   removal changes neither information nor claim strength. A familiar phrase is
   not automatically empty: preserve it when it conveys certainty, emphasis, or
   the writer's stance. "I care about quality" is a personal claim, even if vague.
-- **Constructions:** Rewrite "It's not just X; it's Y", "This isn't about X; it's
-  about Y", and "Not only X, but also Y", preserving both halves. Break repeated
-  tricolons without dropping claims. In casual prose, replace formal transitions
-  such as *furthermore*, *moreover*, and *consequently* with plain connectives or
-  omit them when the relationship remains clear.
+- **Constructions:** Rework "It's not just X; it's Y", "This isn't about X; it's
+  about Y", and "Not only X, but also Y" when repetitive or forced; keep them
+  when they express a useful relationship naturally. Preserve both halves when
+  rewriting. Break mechanical tricolons without dropping claims. Replace formal
+  transitions such as *furthermore*, *moreover*, and *consequently* when they clash
+  with a casual register; retain the logical relationship.
 - **Vocabulary:** Prefer plain verbs and exact nouns, such as *use* over *utilize*.
   Scan for formulaic language such as *delve*, *tapestry*, *leverage*, *seamless*,
   *foster*, *elevate*, *unlock*, *holistic*, *game-changer*, *cutting-edge*, and
-  "in today's fast-paced world". These are contextual signals, not a substitution
-  table; a structural rewrite may help more than a synonym.
+  "in today's fast-paced world". Replace wording for imprecision, redundancy, or
+  register mismatch, never solely because it appears here. A structural rewrite
+  may help more than a synonym.
 - **Repetition:** Keep the correct subject noun rather than rotating through
   "system", "platform", "solution", and "tool". Address monotonous openings and
   connectives by changing sentence construction, not the subject's name.
@@ -86,11 +105,11 @@ maximize variation or force every sentence into a new shape.
 Scan editable prose last for `—`, `–`, `--`, `…`, `“`, `”`, `‘`, and `’`.
 Use search or a regular expression when available; correct matches contextually.
 
-- Rewrite sentences containing em dashes or `--` used as an em dash. Prefer a
-  period, comma, parentheses, or colon rather than another dash.
-- Replace prose-separator en dashes with a plain hyphen or restructure. Numeric
-  ranges such as `2010–2015` may become `2010-2015`.
-- Replace curly quotes with straight quotes and `…` with `...` in ordinary prose.
+- Correct excessive or unsuitable dashes, quotation marks, and ellipses when they
+  disrupt reading or do not fit the medium. Preserve appropriate uses, including
+  range notation, dialogue punctuation, and meaningful pauses.
+- Normalize these characters systematically only when the user's preference or
+  destination format requires it; otherwise preserve suitable typography.
 - Leave typography inside protected material unchanged.
 
 ## Other languages
@@ -118,9 +137,12 @@ material, repetition, and rhythm after deletions. Stop when the relevant problem
 are addressed; constant contractions, asides, or fragments create another
 artificial register.
 
-Return a text no longer than the source unless expansion was requested or a
-supplied fact needs more words for precise expression. Do not append unsolicited
+Preserve or reduce the source's length during this editorial pass. Allow
+only a minimal increase needed to avoid ambiguity or preserve meaning; do not
+add unrequested summaries, restatements, or explanations. Do not append unsolicited
 questions, lists of missing details, or incomplete-pass labels for optional edits.
+Perform the editorial assessment internally and return the edited text without
+explaining individual decisions unless the user requests an analysis.
 
 ## Examples of semantic boundaries
 

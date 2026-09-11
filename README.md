@@ -5,13 +5,12 @@
 [![Skills](https://img.shields.io/badge/skills-1-blue.svg)](#skills)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
-Skills for Claude, one directory each. Claude Desktop and claude.ai install them from a
-zip. Claude Code reads them straight off disk.
+Each directory contains a Claude skill. Claude Desktop and claude.ai install skills
+from a ZIP; Claude Code reads them directly from disk.
 
-A skill is a markdown file that Claude reads when the work calls for it. It holds the
-instructions you would otherwise retype every session, and it stays out of the context
-window until something in the conversation matches its description. A long skill costs
-nothing on the turns that never need it.
+A skill is a Markdown file containing instructions you would otherwise repeat each
+session. Claude loads it when the conversation matches its description. Until then,
+the body stays outside the context window, so its length adds no cost to those turns.
 
 ---
 
@@ -19,61 +18,41 @@ nothing on the turns that never need it.
 
 | Skill | Version | What it does |
 |-------|---------|--------------|
-| [`humanize`](humanize/) | [2.0.0](humanize/CHANGELOG.md) | Rewrites prose so it reads as written by a person, and says why each thing it removes reads as machine-made |
+| [`humanize`](humanize/) | [3.0.0](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
 
 ---
 
 ## humanize
 
-Generated prose has a signature, and little of it is subtle once you know where to look.
-Some of it is vocabulary: delve, leverage, robust, seamless. Some of it is punctuation
-nobody can actually type, the em-dash above all, which sits on no standard keyboard and
-turns up constantly anyway. The rest is structure. Sentences that all land between twelve
-and twenty words, paragraphs that all open on the thesis and close on a tidy landing.
-And claims hedged at one steady rate, whether the writer knows the answer cold or is
-guessing.
+Humanize edits existing drafts to improve naturalness, clarity, and rhythm while
+preserving the writer's voice. It does not draft from notes or add new content.
 
-The skill names each tell and, more usefully, says why it is one.
+**Review every draft.** The skill checks meaning, voice, structure, rhythm,
+filler, repetition, and vocabulary. It returns a draft unchanged only after a
+complete review finds no justified improvements.
 
-**A fidelity boundary.** The pass is editorial, never semantic. Rhythm, word choice and
-voice are fair game. A number, a date, a version, a flag or a path is not, and neither is
-the strength of a claim, because a hedge and a guarantee say different things. Code
-blocks, function signatures and error messages come out untouched. That boundary is what
-makes the skill safe to run over a README or a changelog rather than only over a cover
-letter.
+**Edit in context.** Familiar words, parallel constructions, and punctuation are
+signals to inspect, not automatic defects. Appropriate typography, formal
+language, and useful technical vocabulary stay.
 
-**Some improvements arrive as questions.** Three operations read like edits and are not:
-deleting a weak claim, dropping a borrowed attribution so the claim lands in your name,
-and stripping a hedge until a qualified statement reads flat. Each changes what the text
-asserts or who asserts it, so version 2.0.0 raises them beside the draft and leaves the
-words alone. That is the change that made it a major release. Flagging costs a sentence;
-guessing wrong ships a claim you never made.
+**Preserve meaning and its force.** Facts, attribution, uncertainty, emphasis,
+direct quotations, and protected technical material remain intact. A vague claim
+is not disposable filler, and removing a phrase such as "sin duda alguna" can
+change the writer's certainty even when the underlying information stays.
 
-**Tells with the reasoning attached.** Take the em-dash. It is not banned because some
-list says so. It is banned because it appears on no standard keyboard, so a person
-writing at speed reaches for a comma or a period, while the training corpus is thick with
-copy-edited prose where an editor put them everywhere. Once you know that, you also know
-the repair: rewrite the sentence. Swapping in an en-dash reads just as machine-made, and
-it is the same tell in a cheaper costume.
+**Keep the edit concise.** Rhythm changes use existing material. The result stays
+the same length or shorter, with minimal growth allowed only to avoid ambiguity
+or preserve meaning. Optional improvements do not generate approval questions;
+the default deliverable is the edited text without an explanation of each change.
 
-**A stopping rule.** Push the levers to their limit and you get a second artificial
-register, with a fragment in every paragraph and a contraction forced into every clause.
-Aggressively informal AI is still AI. The skill says where to stop and how to tell you
-have gone past it.
+For example:
 
-A real example, from the pass that produced part of this file:
-
-> **Before.** In today's fast-paced world, understanding a large codebase is a
-> significant challenge. Graphify is a comprehensive, robust solution that seamlessly
-> transforms any repository into a queryable knowledge graph.
+> **Before.** Many experts believe this approach may potentially improve retention.
 >
-> **After.** Graphify turns a repository into a queryable knowledge graph you can ask
-> questions of.
+> **After.** Many experts believe this approach may improve retention.
 
-The blacklist is English. The levers are not, and a separate section covers what changes
-in another language, with the Spanish tells worked out: *es importante destacar*, *cabe
-mencionar*, the gerund that closes every other sentence, and the drift between tú and
-usted that no English checklist would ever catch.
+The attribution and uncertainty remain. The skill also includes Spanish guidance
+for filler, repeated connectives, register shifts, and translated sentence patterns.
 
 **Trigger it** with `/humanize` in Claude Code, by naming it in Claude Desktop, or by
 just asking for text that sounds less like a machine wrote it.
@@ -82,16 +61,16 @@ just asking for text that sounds less like a machine wrote it.
 
 ## Installation
 
-Every skill directory ships a `.zip` next to its `SKILL.md`. The archive holds the skill
-folder at its root, which is the layout the Claude uploader expects, so it installs
-without unpacking anything by hand.
+Each skill directory includes a `.zip` beside its `SKILL.md`. The archive contains
+the skill folder at its root, as the Claude uploader expects. Upload it without
+unpacking it.
 
 ### Claude Desktop and claude.ai
 
-**1. Turn on code execution.** Skills will not run without it, and the Skills section
-stays out of reach until it is on. On Free, Pro and Max it lives under **Settings >
-Capabilities > Code execution and file creation**. On Team and Enterprise an owner has to
-enable it in organization settings, along with Skills itself.
+**1. Turn on code execution.** It is required to access the Skills section and run
+skills. On Free, Pro and Max, use **Settings >
+Capabilities > Code execution and file creation**. On Team and Enterprise, an owner
+must enable both code execution and Skills in organization settings.
 
 **2. Download the package.** Grab
 [`humanize/humanize.zip`](https://github.com/BolivarTech/claude-skills/raw/main/humanize/humanize.zip)
@@ -110,8 +89,7 @@ private to your own account.
 
 ### Claude Code CLI
 
-A skill is a directory on disk, so installing one is copying a folder. Where you put it
-decides who gets it:
+To install a skill, copy its folder to the location for your intended scope:
 
 | Scope | Path | Available in |
 |-------|------|--------------|
@@ -125,8 +103,7 @@ git clone https://github.com/BolivarTech/claude-skills.git
 cp -r claude-skills/humanize ~/.claude/skills/
 ```
 
-Or unpack the zip, which lands in the same place because the archive already carries the
-folder:
+Or unpack the ZIP into the same location; it already contains the skill folder:
 
 ```bash
 unzip humanize.zip -d ~/.claude/skills/
@@ -138,8 +115,8 @@ On Windows without a `unzip` binary, PowerShell does it:
 Expand-Archive humanize.zip -DestinationPath "$env:USERPROFILE\.claude\skills"
 ```
 
-**Project install.** Put it under the repository instead and commit it, and everyone who
-clones gets the skill:
+**Project install.** Copy the folder into the repository and commit it so everyone
+who clones the project gets the skill:
 
 ```bash
 mkdir -p .claude/skills
@@ -147,16 +124,16 @@ cp -r /path/to/claude-skills/humanize .claude/skills/
 git add .claude/skills/humanize
 ```
 
-**Check it landed.** Run `/skills` for the list. Then invoke it with `/humanize`, or say
-what you want and let Claude match your request against the skill's description.
+**Check the installation.** Run `/skills` to list available skills. Invoke this one
+with `/humanize`, or let Claude match your request to its description.
 
-Claude Code watches those directories, so a skill dropped into a `~/.claude/skills/` that
-already existed shows up in the session you are in, no restart. The one case that needs a
-restart is creating that top-level folder for the first time, because Claude Code was not
-watching a directory that did not exist.
+Claude Code watches these directories. Adding a skill to an existing
+`~/.claude/skills/` makes it available in the current session without a restart.
+Restart when creating that top-level folder for the first time: Claude Code was
+not watching it before it existed.
 
-A personal skill and a project skill with the same name are not an error, the personal
-one just wins. And uninstalling is deleting the directory.
+Personal and project skills can share a name; the personal one takes precedence.
+To uninstall a skill, delete its directory.
 
 ---
 
@@ -167,7 +144,7 @@ one just wins. And uninstalling is deleting the directory.
 ├── humanize/
 │   ├── SKILL.md          the skill
 │   ├── CHANGELOG.md      what changed, per version
-│   └── humanize.zip      the same directory, zipped for upload to Claude
+│   └── humanize.zip      contains humanize/SKILL.md for upload to Claude
 ├── scripts/
 │   ├── validate_skills.py  release gate, run before every tag
 │   └── apply_edits.py      batch editor with a preflight
@@ -178,14 +155,14 @@ one just wins. And uninstalling is deleting the directory.
 
 One directory per skill, named after the skill. Nothing skill-specific sits at the root.
 
-`scripts/validate_skills.py` checks what a reader cannot: that the source, the installed
-copy under `~/.claude/skills/` and the zip are byte-identical, that the frontmatter carries
-only the six keys the Claude uploader accepts, that the archive holds the skill folder at
-its root, and that the version in the frontmatter matches the README table and the
-changelog. It reports `PASS`, `FAIL`, `CANNOT_TEST` or `OUT_OF_SCOPE` per check, because a
-check that could not run is not a check that passed. Whether the description actually
-fires the skill stays `OUT_OF_SCOPE`: that one needs a live session and no script can fake
-one.
+`scripts/validate_skills.py` checks that the source, installed copy under
+`~/.claude/skills/`, and ZIP are byte-identical. It also checks the six allowed
+frontmatter keys, the archive's root folder, and version agreement between the
+frontmatter, README table, and changelog.
+
+Each check reports `PASS`, `FAIL`, `CANNOT_TEST` or `OUT_OF_SCOPE`, distinguishing
+unavailable checks from successful ones. Whether the description triggers the
+skill remains `OUT_OF_SCOPE`; that requires a live session.
 
 ---
 
@@ -201,14 +178,13 @@ description: >-
 ---
 ```
 
-The description is the only part Claude reads on every turn, so it decides whether the
-skill ever fires. Write it as a trigger, not as a summary: say what the skill does and
-name the words a user would actually type when they want it. The body below the
-frontmatter holds the instructions and loads only once the skill has fired, which is why
-it can afford to be long.
+Claude reads the description on every turn to decide whether to load the skill.
+Describe what it does and the words users would use to request it. The instructions
+below the frontmatter load only when the skill is selected, so a longer body does
+not add context to unrelated turns.
 
-Then run `python scripts/validate_skills.py`. It picks up any `<name>/SKILL.md` in the
-repository without being told about it, and an exit code of zero is what a release needs.
+Run `python scripts/validate_skills.py`. It discovers every `<name>/SKILL.md` in
+the repository automatically. A release requires an exit code of zero.
 
 ---
 
@@ -225,9 +201,9 @@ repository without being told about it, and an exit code of zero is what a relea
 ## Versioning
 
 Skills here version independently, so a release names the skill it belongs to. The tag
-for the one in this repository is `humanize-v2.0.0`, and each tag has a
-[GitHub release](https://github.com/BolivarTech/claude-skills/releases) carrying the
-notes and the zip for that version.
+for the current version is `humanize-v3.0.0`. Creating a tag and publishing a
+[GitHub release](https://github.com/BolivarTech/claude-skills/releases) are separate
+steps from updating the source and ZIP in this repository.
 
 Semantic versioning, read for a document rather than for code:
 
@@ -237,21 +213,20 @@ Semantic versioning, read for a document rather than for code:
 | MINOR | New rules or sections, with everything that worked before still working |
 | PATCH | Typos, wording, clarification. Behavior is unchanged |
 
-**To see what you have installed**, open the `SKILL.md` and read the version out of its
-frontmatter, or just ask Claude which version of the skill it is running:
+**To check your installed version**, read the frontmatter in `SKILL.md` or ask
+Claude which version it is running:
 
 ```yaml
 metadata:
-  version: 2.0.0
+  version: 3.0.0
 ```
 
-The version travels inside the file, so a copy you uploaded to Claude Desktop months ago
-still says what it is. Compare it against the
+The file retains its version even after months in Claude Desktop. Compare it with the
 [releases page](https://github.com/BolivarTech/claude-skills/releases). Watch the
 repository if you would rather be told than have to look.
 
-Nothing updates itself. An installed skill is a copy, so a new version means uploading
-the new zip or copying the folder again.
+Installed skills do not update automatically. Upload the new ZIP or copy the
+folder again to update.
 
 ---
 

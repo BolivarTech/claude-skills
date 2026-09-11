@@ -6,6 +6,37 @@ All notable changes to the `humanize` skill. The format follows
 [repository README](../README.md#versioning).
 
 
+## [3.0.0] - 2026-09-10
+
+This major release limits humanize to rewriting existing prose and replaces
+mandatory stylistic substitutions with contextual editing. The same draft may
+now keep natural constructions and typography that previous versions changed.
+
+### Changed
+
+- Consolidated repeated instructions into a shorter editorial workflow.
+- Required a complete review before returning a draft unchanged; edits must
+  address concrete problems rather than satisfy stylistic quotas.
+- Made vocabulary, constructions, and punctuation checks conditional on voice,
+  medium, readability, and repetition.
+- Removed the sentence-length quota. Rhythm changes use existing material without
+  adding explanations, examples, or transitions merely for variation.
+- Required preserving or reducing length, allowing only minimal growth needed
+  to avoid ambiguity or preserve meaning. Content expansion is a separate task.
+- Replaced optional approval questions and incomplete-pass labels with preserving
+  the source and completing the edit. Questions are reserved for essential gaps.
+- Made the default deliverable the edited text without unsolicited commentary.
+
+### Added
+
+- Explicit protection for direct quotations and their internal punctuation.
+- Guidance distinguishing factual content from certainty, emphasis, and stance,
+  including the Spanish expression "sin duda alguna".
+
+### Removed
+
+- Drafting from notes or from scratch from the skill's advertised scope.
+
 ## [2.0.0] - 2026-09-10
 
 A major release, because the same input comes back different. Where 1.0.0 dropped a
@@ -435,5 +466,6 @@ First published version.
 - The blacklist split into four subsections, so the reasoning on optimal ordering and on
   hedging is no longer buried inside a third-level bullet.
 
+[3.0.0]: https://github.com/BolivarTech/claude-skills/compare/humanize-v2.0.0...humanize-v3.0.0
 [2.0.0]: https://github.com/BolivarTech/claude-skills/releases/tag/humanize-v2.0.0
 [1.0.0]: https://github.com/BolivarTech/claude-skills/releases/tag/humanize-v1.0.0
