@@ -6,6 +6,58 @@ All notable changes to the `humanize` skill. The format follows
 [repository README](../README.md#versioning).
 
 
+## [4.1.0] - 2026-09-11
+
+Twelve small rules and two examples, each written against a failure seen in a
+clean-session run of a thirty-trap test text, then re-run to see whether it
+moved. Nothing from 4.0.0 changed meaning; the additions close gaps the runs
+exposed. Seven runs in total, five of them against 4.1.0 candidates.
+
+### Added
+
+- Direct quotations are excluded from the character scan, said twice: as a
+  rule next to the protected-material clause, and as a step before the search
+  runs, since a regular expression does not know what a quotation is.
+- Each passage stays in the language it was written in. A paragraph in another
+  language inside the draft was being translated.
+- A replaced or removed transition keeps its logical relationship in every
+  register. The rule used to sit inside the casual-prose clause and was read as
+  not applying to formal text.
+- "Not only X but Y" and its Spanish forms are recast as a plain conjunction or
+  two sentences, keeping neither half of the frame and keeping the contrast
+  between the halves. Swapping "sino" for a colon is not a rewrite.
+- Spanish stage directions ("a continuación analizaremos", "veamos") join the
+  Spanish list.
+- A superlative, intensifier, or evaluative adjective is part of a claim's
+  strength and is dropped only when another word already carries it. Without
+  this, a claim built on a formulaic word was deleted or replaced with
+  something the writer never said.
+- No title, question, list, or label is added before or after the text. The
+  old wording said "append"; a title went in at the top.
+- Consecutive paragraphs that open with the same subject are varied by entry
+  point (object, circumstance, verb), not by renaming the subject.
+- Two examples at the end, one for a quotation with curly quotes inside
+  straight ones and one for three paragraphs opening alike. **Under
+  observation.** They moved their targets one time in two; the rules alone
+  moved them one in three and none in three. That is not a measured effect,
+  so they stay for now to be judged in use, and go in the next release if
+  production shows nothing.
+
+### Known limits
+
+Measured on the same test text, seven clean runs:
+
+- A quotation with curly quotes nested inside straight ones is normalized in
+  most runs despite two rules and an example against it. Mixed typography
+  inside a quotation is the case to watch.
+- Three consecutive paragraphs opening with the same subject stay that way in
+  most runs, or get varied by rotating the noun, which another rule forbids.
+- Sentences come back longer on average, by one to two words, and no sentence
+  of three to eight words survives the pass in any measured run. The rhythm
+  rule's "shorten some" half fires less than its "join" half.
+- "Un espiral" is not corrected to "una espiral": the masculine exists for a
+  watch part, and the model does not read it as an error.
+
 ## [4.0.0] - 2026-09-11
 
 This release starts again from 2.0.0. Version 3.0.0 turned the editorial checks

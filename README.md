@@ -18,7 +18,7 @@ the body stays outside the context window, so its length adds no cost to those t
 
 | Skill | Version | What it does |
 |-------|---------|--------------|
-| [`humanize`](humanize/) | [4.0.0](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
+| [`humanize`](humanize/) | [4.1.0](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
 
 ---
 
@@ -148,7 +148,9 @@ To uninstall a skill, delete its directory.
 │   └── humanize.zip      contains humanize/SKILL.md for upload to Claude
 ├── scripts/
 │   ├── validate_skills.py       release gate, run before every tag
-│   └── test_validate_skills.py  validator regression tests
+│   ├── test_validate_skills.py  validator regression tests
+│   ├── prose_metrics.py         shape metrics of a text before and after an edit
+│   └── test_prose_metrics.py    metrics tests
 ├── LICENSE               MIT
 ├── LICENSE-APACHE        Apache-2.0
 └── README.md
@@ -207,7 +209,7 @@ the repository automatically. A release requires an exit code of zero.
 ## Versioning
 
 Skills here version independently, so a release names the skill it belongs to. The tag
-for the current version is `humanize-v4.0.0`. Creating a tag and publishing a
+for the current version is `humanize-v4.1.0`. Creating a tag and publishing a
 [GitHub release](https://github.com/BolivarTech/claude-skills/releases) are separate
 steps from updating the source and ZIP in this repository.
 
@@ -224,7 +226,7 @@ Claude which version it is running:
 
 ```yaml
 metadata:
-  version: 4.0.0
+  version: 4.1.0
 ```
 
 The file retains its version even after months in Claude Desktop. Compare it with the
