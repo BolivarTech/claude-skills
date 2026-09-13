@@ -6,6 +6,23 @@ All notable changes to the `humanize` skill. The format follows
 [repository README](../README.md#versioning).
 
 
+## [4.2.2] - 2026-09-13
+
+The ChatGPT package is now the full skill, byte for byte. A rule-by-rule
+comparison after 4.2.1 still found differences that change the output: a more
+permissive threshold for editing, no rule on superlatives and intensifiers, no
+entry-point variation for paragraphs opening alike, no ban on adding a title,
+missing Spanish stage directions, no freeze-and-flag step or fixed edit order,
+and two examples short. ChatGPT sets no size limit that would justify a
+condensed text, so the condensation is gone and the release gate now guarantees
+the two files cannot differ. The full skill is unchanged.
+
+### Changed
+
+- `chatgpt/SKILL.md` is identical to `SKILL.md`, description included.
+- `scripts/validate_skills.py` gains a `source-identical` scenario per variant:
+  a variant whose text differs from the parent's fails the gate.
+
 ## [4.2.1] - 2026-09-13
 
 The ChatGPT package now matches the full skill on the four points that 4.2.0

@@ -18,7 +18,7 @@ the body stays outside the context window, so its length adds no cost to those t
 
 | Skill | Version | What it does |
 |-------|---------|--------------|
-| [`humanize`](humanize/) | [4.2.1](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
+| [`humanize`](humanize/) | [4.2.2](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
 
 ---
 
@@ -59,9 +59,8 @@ for filler, repeated connectives, register shifts, and translated sentence patte
 just asking for text that sounds less like a machine wrote it.
 
 **A ChatGPT package** lives in [`humanize/chatgpt/`](humanize/chatgpt/): the same
-skill condensed to half the length, with the same name and version. Where the two
-read differently, the full skill is the reference; the
-[changelog](humanize/CHANGELOG.md) lists the differences per release.
+skill, same text, same name and version. The release gate fails if the two files
+ever differ.
 
 ---
 
@@ -97,8 +96,8 @@ private to your own account.
 
 Upload
 [`humanize/chatgpt/humanize-chatgpt.zip`](https://github.com/BolivarTech/claude-skills/raw/main/humanize/chatgpt/humanize-chatgpt.zip)
-to ChatGPT. The archive holds the same `humanize/SKILL.md` layout as the Claude
-package; the skill inside is the condensed variant, not the full one.
+to ChatGPT. The archive holds the same `humanize/SKILL.md` layout and the same
+text as the Claude package.
 
 ### Claude Code CLI
 
@@ -159,7 +158,7 @@ To uninstall a skill, delete its directory.
 │   ├── CHANGELOG.md      what changed, per version
 │   ├── humanize.zip      contains humanize/SKILL.md for upload to Claude
 │   └── chatgpt/
-│       ├── SKILL.md              the skill, condensed for ChatGPT
+│       ├── SKILL.md              the same skill, for ChatGPT
 │       └── humanize-chatgpt.zip  the same layout, for upload to ChatGPT
 ├── scripts/
 │   ├── validate_skills.py       release gate, run before every tag
@@ -174,7 +173,8 @@ To uninstall a skill, delete its directory.
 One directory per skill, named after the skill. Nothing skill-specific sits at the root.
 
 `scripts/validate_skills.py` checks that the source and ZIP are byte-identical,
-for the skill and for any variant nested under it.
+for the skill and for any variant nested under it, and that a variant carries the
+skill's text unchanged.
 It also checks the six allowed frontmatter keys, non-empty names and descriptions,
 the archive's root folder, and version agreement between the frontmatter, README
 table, and changelog. Run `python scripts/validate_skills.py --check-installed`
@@ -225,7 +225,7 @@ the repository automatically. A release requires an exit code of zero.
 ## Versioning
 
 Skills here version independently, so a release names the skill it belongs to. The tag
-for the current version is `humanize-v4.2.1`. Creating a tag and publishing a
+for the current version is `humanize-v4.2.2`. Creating a tag and publishing a
 [GitHub release](https://github.com/BolivarTech/claude-skills/releases) are separate
 steps from updating the source and ZIP in this repository.
 
@@ -242,7 +242,7 @@ Claude which version it is running:
 
 ```yaml
 metadata:
-  version: 4.2.1
+  version: 4.2.2
 ```
 
 The file retains its version even after months in Claude Desktop. Compare it with the
