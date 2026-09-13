@@ -2,11 +2,19 @@
 
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 
 import yaml
 
-from validate_skills import Outcome, SkillPackage, SkillValidator
+from validate_skills import (
+    Outcome,
+    SkillPackage,
+    SkillValidator,
+    SkillVariant,
+    VariantValidator,
+    discover_variants,
+)
 
 
 class ValidatorTests(unittest.TestCase):
@@ -62,6 +70,75 @@ class ValidatorTests(unittest.TestCase):
         self.assertEqual(enabled.check_installed_copy().outcome, Outcome.FAIL)
         package.installed.write_bytes(package.raw)
         self.assertEqual(enabled.check_installed_copy().outcome, Outcome.PASS)
+
+
+class VariantTests(unittest.TestCase):
+    """A variant is ``<name>/<variant>/SKILL.md``: same skill, another target."""
+
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+        self.directory = self.root / "humanize"
+        self.directory.mkdir()
+        self.write_skill(self.directory, "humanize", "3.0.0")
+        self.parent = SkillPackage(self.directory, self.root)
+        self.variant_dir = self.directory / "chatgpt"
+        self.variant_dir.mkdir()
+
+    @staticmethod
+    def write_skill(directory, name, version):
+        metadata = dict(name=name, description="Rewrite prose.",
+                        metadata={"version": version})
+        (directory / "SKILL.md").write_text(
+            "---\n" + yaml.safe_dump(metadata) + "---\nText.\n", encoding="utf-8"
+        )
+
+    def variant(self, name="humanize", version="3.0.0"):
+        self.write_skill(self.variant_dir, name, version)
+        return SkillVariant(self.variant_dir, self.parent)
+
+    def test_variant_is_labelled_under_its_parent(self):
+        variant = self.variant()
+        self.assertEqual(variant.label, "humanize/chatgpt")
+        self.assertEqual(variant.archive, self.variant_dir / "humanize-chatgpt.zip")
+        self.assertEqual(VariantValidator(variant).scenarios(),
+                         ["frontmatter-keys", "package-layout", "version-declared"])
+
+    def test_variant_name_must_match_parent(self):
+        self.assertEqual(VariantValidator(self.variant()).check_frontmatter_keys().outcome,
+                         Outcome.PASS)
+        self.assertEqual(VariantValidator(self.variant(name="chatgpt")).check_frontmatter_keys().outcome,
+                         Outcome.FAIL)
+
+    def test_variant_version_must_equal_parent_version(self):
+        self.assertEqual(VariantValidator(self.variant()).check_version_declared().outcome,
+                         Outcome.PASS)
+        for version in ("3.0.1", "13.0.0", "3.0"):
+            with self.subTest(version=version):
+                result = VariantValidator(self.variant(version=version)).check_version_declared()
+                self.assertEqual(result.outcome, Outcome.FAIL)
+
+    def test_variant_archive_holds_parent_folder(self):
+        variant = self.variant()
+        validator = VariantValidator(variant)
+        self.assertEqual(validator.check_package_layout().outcome, Outcome.FAIL)
+        for entry, payload, expected in (
+            ("humanize/SKILL.md", variant.raw, Outcome.PASS),
+            ("chatgpt/SKILL.md", variant.raw, Outcome.FAIL),
+            ("humanize/SKILL.md", b"stale", Outcome.FAIL),
+        ):
+            with self.subTest(entry=entry, payload=payload):
+                with zipfile.ZipFile(variant.archive, "w") as archive:
+                    archive.writestr(entry, payload)
+                self.assertEqual(validator.check_package_layout().outcome, expected)
+
+    def test_discover_variants_finds_only_nested_skill_files(self):
+        self.variant()
+        (self.directory / "notes").mkdir()
+        (self.directory / "notes" / "README.md").write_text("x", encoding="utf-8")
+        self.assertEqual(discover_variants(self.directory), [self.variant_dir])
+        self.assertEqual(discover_variants(self.root / "missing"), [])
 
 
 if __name__ == "__main__":
