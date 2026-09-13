@@ -6,6 +6,24 @@ All notable changes to the `humanize` skill. The format follows
 [repository README](../README.md#versioning).
 
 
+## [4.2.1] - 2026-09-13
+
+The ChatGPT package now matches the full skill on the four points that 4.2.0
+listed as known differences. The full skill is unchanged.
+
+### Fixed
+
+- `chatgpt/SKILL.md` scans for dashes, curly quotes, and ellipses last and
+  normalizes them in ordinary prose by default, with the same exemptions as the
+  full skill: protected material, direct quotations, dialogue dashes, and
+  numeric ranges.
+- "It's not just X; it's Y", "This isn't about X; it's about Y", and "Not only
+  X, but also Y" are named with their Spanish forms, and neither half of the
+  frame survives the rewrite. A replaced transition keeps its logical
+  relationship in every register.
+- The rhythm rule carries the 12-to-20-word threshold.
+- Each passage stays in the language it was written in.
+
 ## [4.2.0] - 2026-09-13
 
 A second package, for ChatGPT. The rules of the skill itself did not change;

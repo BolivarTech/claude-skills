@@ -6,7 +6,7 @@ description: >-
   to humanize, de-robotify, or make an existing draft sound less formulaic.
 license: MIT OR Apache-2.0
 metadata:
-  version: 4.2.0
+  version: 4.2.1
 ---
 
 # Humanize
@@ -14,6 +14,7 @@ metadata:
 Edit existing prose. Do not turn notes into a draft or add new content. Work from
 the writer's facts, vocabulary, stance, certainty, audience, medium, and register.
 Improve structure before substituting words. Formal writing need not become casual.
+Keep each passage in the language it was written in.
 
 ## Meaning and voice
 
@@ -43,9 +44,10 @@ repetition, hinders reading, or clashes with the voice or medium. Its presence
 alone is not a defect. Return the original only if the complete review finds no
 justified improvement.
 
-- **Rhythm:** Fix awkward rhythm by cutting, reordering, joining, or splitting
-  existing sentences. Do not add explanations, examples, or transitions merely to
-  vary length. Use passive voice when the affected thing is the topic or the actor
+- **Rhythm:** Vary openings, clause complexity, and sentence length. If more than
+  half the sentences cluster around 12 to 20 words, shorten some and let others
+  develop, by cutting, reordering, joining, or splitting existing sentences. Do
+  not add explanations, examples, or transitions merely to vary length. Use passive voice when the affected thing is the topic or the actor
   is unknown or irrelevant.
 - **Paragraphs:** Address repeated structures, excessive headings, identical
   paragraph shapes, and mechanical lists only when they affect reading. Preserve
@@ -53,19 +55,28 @@ justified improvement.
 - **Filler:** Remove empty framing, stage directions, redundant closers, and
   decorative asides only when they add no information or claim force. Familiar
   phrases can convey certainty, emphasis, or stance; they are not automatic filler.
-- **Constructions:** Rework negative parallelism when forced or repetitive, keeping
-  both halves and their relationship. Break mechanical tricolons without dropping
-  claims. In casual prose, simplify formal transitions that clash with the register.
+- **Constructions:** Rewrite "It's not just X; it's Y", "This isn't about X; it's
+  about Y", and "Not only X, but also Y", preserving both halves and the contrast
+  between them: recast the pair as a plain conjunction or as two sentences, keeping
+  neither half of the frame, not "not only", "not just", or "no solo", and not
+  "but", "sino", or "también"; a colon or dash in place of "sino" keeps the
+  construction. Break mechanical tricolons without dropping claims. In casual
+  prose, simplify formal transitions that clash with the register; whatever the
+  register, a replaced or removed transition keeps its logical relationship.
 - **Vocabulary:** Prefer plain verbs and exact nouns. Treat *delve*, *leverage*,
   *seamless*, *foster*, *elevate*, *unlock*, *holistic*, *game-changer*, and
   *cutting-edge* as signals to inspect, never as automatic substitutions.
 - **Repetition:** Keep the correct subject noun. Fix repeated openings and
   connectives by changing sentence construction, not by rotating synonyms.
 
-Correct dashes, quotation marks, and ellipses only when they disrupt reading or
-do not fit the medium. Preserve suitable typography, dialogue punctuation, ranges,
-meaningful pauses, and protected material. Normalize punctuation systematically
-only when the user or destination format requires it.
+Scan editable prose last for `—`, `–`, `--`, `…`, `“`, `”`, `‘`, and `’`, excluding
+protected material and direct quotations before replacing anything. Rewrite
+sentences that use an em dash or `--` as a separator, preferring a period, comma,
+parentheses, or colon over another dash; a dash that opens or closes dialogue, as
+in Spanish, is punctuation and stays. Replace prose-separator en dashes with a
+hyphen or restructure; `2010–2015` may become `2010-2015`. Replace curly quotes
+with straight quotes and `…` with `...` in ordinary prose. Leave typography inside
+protected material and direct quotations unchanged.
 
 ## Other languages and delivery
 
