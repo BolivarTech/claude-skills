@@ -103,7 +103,16 @@ class VariantTests(unittest.TestCase):
         self.assertEqual(variant.label, "humanize/chatgpt")
         self.assertEqual(variant.archive, self.variant_dir / "humanize-chatgpt.zip")
         self.assertEqual(VariantValidator(variant).scenarios(),
-                         ["frontmatter-keys", "package-layout", "version-declared"])
+                         ["frontmatter-keys", "package-layout", "source-identical",
+                          "version-declared"])
+
+    def test_variant_text_must_equal_parent_text(self):
+        self.assertEqual(VariantValidator(self.variant()).check_source_identical().outcome,
+                         Outcome.PASS)
+        (self.variant_dir / "SKILL.md").write_bytes(self.parent.raw + b"One more rule.\n")
+        variant = SkillVariant(self.variant_dir, self.parent)
+        self.assertEqual(VariantValidator(variant).check_source_identical().outcome,
+                         Outcome.FAIL)
 
     def test_variant_name_must_match_parent(self):
         self.assertEqual(VariantValidator(self.variant()).check_frontmatter_keys().outcome,
