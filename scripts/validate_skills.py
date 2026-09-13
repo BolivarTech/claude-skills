@@ -10,6 +10,11 @@ could never see them.
 Scenarios are declared before they run and reconciled afterwards, so one that
 disappears makes the harness fail instead of quietly shrinking the report.
 
+A skill may carry variants for other targets at ``<name>/<variant>/SKILL.md``,
+packaged as ``<name>-<variant>.zip`` next to them. A variant is checked for
+its frontmatter, its zip, and a version equal to the parent's; it releases
+with the parent, so the README and CHANGELOG checks stay the parent's.
+
 Outcomes:
     PASS          the property holds
     FAIL          the property is violated
@@ -88,36 +93,24 @@ class HarnessError(RuntimeError):
     """The harness could not do its job. Never a verdict about a skill."""
 
 
-class SkillPackage:
-    """The three copies of one skill, plus the repo files that cite its version.
+class SkillSource:
+    """One ``SKILL.md`` on disk: its bytes and its parsed frontmatter.
 
-    A skill lives in three places that must stay byte-identical (source,
-    installed copy, zip) and its version is repeated in two more (README table,
-    CHANGELOG). This class reads all five and answers questions about them.
-
-    Example:
-        >>> pkg = SkillPackage(Path("humanize"), Path("."))
-        >>> pkg.version
-        '1.1.0'
+    Base for the skill proper and for its variants; both are a Markdown file
+    with a frontmatter block, and only the files around them differ.
     """
 
-    def __init__(self, directory: Path, repo_root: Path) -> None:
-        """Load a skill from its directory.
+    def __init__(self, directory: Path) -> None:
+        """Read ``<directory>/SKILL.md``.
 
         Args:
-            directory: The skill directory, named after the skill.
-            repo_root: Repository root, holding ``README.md``.
+            directory: The directory holding the file.
 
         Raises:
             HarnessError: The directory holds no readable ``SKILL.md``.
         """
-        self.name = directory.name
         self.directory = directory
-        self.repo_root = repo_root
         self.source = directory / "SKILL.md"
-        self.installed = INSTALL_ROOT / self.name / "SKILL.md"
-        self.archive = directory / f"{self.name}.zip"
-        self.changelog = directory / "CHANGELOG.md"
         try:
             self.raw = self.source.read_bytes()
         except OSError as exc:
@@ -155,23 +148,137 @@ class SkillPackage:
         return str(value) if value is not None else None
 
 
-class SkillValidator:
-    """Runs every scenario against one skill.
+class SkillPackage(SkillSource):
+    """The three copies of one skill, plus the repo files that cite its version.
+
+    A skill lives in three places that must stay byte-identical (source,
+    installed copy, zip) and its version is repeated in two more (README table,
+    CHANGELOG). This class reads all five and answers questions about them.
+
+    Example:
+        >>> pkg = SkillPackage(Path("humanize"), Path("."))
+        >>> pkg.version
+        '1.1.0'
+    """
+
+    def __init__(self, directory: Path, repo_root: Path) -> None:
+        """Load a skill from its directory.
+
+        Args:
+            directory: The skill directory, named after the skill.
+            repo_root: Repository root, holding ``README.md``.
+
+        Raises:
+            HarnessError: The directory holds no readable ``SKILL.md``.
+        """
+        super().__init__(directory)
+        self.name = directory.name
+        self.repo_root = repo_root
+        self.installed = INSTALL_ROOT / self.name / "SKILL.md"
+        self.archive = directory / f"{self.name}.zip"
+        self.changelog = directory / "CHANGELOG.md"
+
+
+class SkillVariant(SkillSource):
+    """A skill rewritten for another target, kept under its parent.
+
+    Lives at ``<name>/<variant>/SKILL.md`` and ships as
+    ``<name>/<variant>/<name>-<variant>.zip``. It carries the parent's name
+    and version: it is the same skill, released together with it, not a
+    sibling with a life of its own.
+
+    Example:
+        >>> variant = SkillVariant(Path("humanize/chatgpt"), pkg)
+        >>> variant.label
+        'humanize/chatgpt'
+    """
+
+    def __init__(self, directory: Path, parent: SkillPackage) -> None:
+        """Load a variant from its directory.
+
+        Args:
+            directory: The variant directory, inside the parent's.
+            parent: The skill this is a variant of.
+
+        Raises:
+            HarnessError: The directory holds no readable ``SKILL.md``.
+        """
+        super().__init__(directory)
+        self.parent = parent
+        self.variant = directory.name
+        self.label = f"{parent.name}/{self.variant}"
+        self.archive = directory / f"{parent.name}-{self.variant}.zip"
+
+
+def frontmatter_problems(frontmatter: dict, expected_name: str) -> list[str]:
+    """List what is wrong with a frontmatter block, empty when nothing is.
+
+    Args:
+        frontmatter: The parsed block, empty when the file has none.
+        expected_name: The ``name`` the block must declare.
+
+    Returns:
+        One human-readable problem per line, in a stable order.
+    """
+    keys = set(frontmatter)
+    if not keys:
+        return ["no frontmatter block"]
+    unexpected = sorted(keys - ALLOWED_FRONTMATTER_KEYS)
+    missing = sorted(REQUIRED_FRONTMATTER_KEYS - keys)
+    problems = []
+    if unexpected:
+        problems.append(f"unexpected {unexpected} -- breaks the Desktop upload")
+    if missing:
+        problems.append(f"missing {missing}")
+    for key in sorted(REQUIRED_FRONTMATTER_KEYS & keys):
+        value = frontmatter[key]
+        if not isinstance(value, str) or not value.strip():
+            problems.append(f"{key} must be a non-empty string")
+    if frontmatter.get("name") != expected_name:
+        problems.append(
+            f"name is {frontmatter.get('name')!r}, expected {expected_name!r}"
+        )
+    return problems
+
+
+def archive_problem(archive: Path, expected_entry: str, raw: bytes) -> str:
+    """Say why a zip is not exactly one entry holding ``raw``, or nothing.
+
+    The uploader requires the skill folder at the archive root; a flat
+    ``SKILL.md`` is rejected, and that is invisible until upload time.
+
+    Args:
+        archive: The zip to inspect.
+        expected_entry: The one path the archive must hold.
+        raw: The bytes that entry must carry.
+
+    Returns:
+        The problem, or an empty string when the layout is right.
+    """
+    if not archive.exists():
+        return f"{archive} is absent"
+    try:
+        with zipfile.ZipFile(archive) as package:
+            names = package.namelist()
+            if names != [expected_entry]:
+                return f"holds {names}, expected exactly ['{expected_entry}']"
+            if package.read(expected_entry) != raw:
+                return "the packaged SKILL.md differs from the source"
+    except (zipfile.BadZipFile, OSError) as exc:
+        return f"unreadable: {exc}"
+    return ""
+
+
+class ScenarioRunner:
+    """Runs every ``check_*`` method of a subclass, in declared order.
 
     Each ``check_*`` method returns one Result. The scenario list is derived
     from the method names, so a scenario cannot be added without appearing in
     the declared list, and cannot vanish without the reconciliation catching it.
+    Subclasses set ``self.label``, the name the results are reported under.
     """
 
-    def __init__(self, package: SkillPackage, *, check_installed: bool = False) -> None:
-        """Bind the validator to a skill.
-
-        Args:
-            package: The skill to check.
-            check_installed: Also compare the personal installation with the source.
-        """
-        self.pkg = package
-        self.include_installed = check_installed
+    label: str
 
     def scenarios(self) -> list[str]:
         """Return the declared scenario names, in execution order."""
@@ -194,29 +301,26 @@ class SkillValidator:
         return results
 
     def _result(self, scenario: str, outcome: Outcome, detail: str = "") -> Result:
-        return Result(self.pkg.name, scenario, outcome, detail)
+        return Result(self.label, scenario, outcome, detail)
+
+
+class SkillValidator(ScenarioRunner):
+    """Runs every scenario against one skill."""
+
+    def __init__(self, package: SkillPackage, *, check_installed: bool = False) -> None:
+        """Bind the validator to a skill.
+
+        Args:
+            package: The skill to check.
+            check_installed: Also compare the personal installation with the source.
+        """
+        self.pkg = package
+        self.label = package.name
+        self.include_installed = check_installed
 
     def check_frontmatter_keys(self) -> Result:
         """Only the six accepted keys, and the two mandatory ones present."""
-        keys = set(self.pkg.frontmatter)
-        if not keys:
-            return self._result("frontmatter-keys", Outcome.FAIL, "no frontmatter block")
-        unexpected = sorted(keys - ALLOWED_FRONTMATTER_KEYS)
-        missing = sorted(REQUIRED_FRONTMATTER_KEYS - keys)
-        problems = []
-        if unexpected:
-            problems.append(f"unexpected {unexpected} -- breaks the Desktop upload")
-        if missing:
-            problems.append(f"missing {missing}")
-        for key in sorted(REQUIRED_FRONTMATTER_KEYS & keys):
-            value = self.pkg.frontmatter[key]
-            if not isinstance(value, str) or not value.strip():
-                problems.append(f"{key} must be a non-empty string")
-        if self.pkg.frontmatter.get("name") != self.pkg.name:
-            problems.append(
-                f"name is {self.pkg.frontmatter.get('name')!r}, "
-                f"directory is {self.pkg.name!r}"
-            )
+        problems = frontmatter_problems(self.pkg.frontmatter, self.pkg.name)
         if problems:
             return self._result("frontmatter-keys", Outcome.FAIL, "; ".join(problems))
         return self._result("frontmatter-keys", Outcome.PASS)
@@ -261,28 +365,11 @@ class SkillValidator:
         The uploader requires the skill folder at the archive root; a flat
         ``SKILL.md`` is rejected, and that is invisible until upload time.
         """
-        if not self.pkg.archive.exists():
-            return self._result(
-                "package-layout", Outcome.FAIL, f"{self.pkg.archive} is absent"
-            )
-        expected = f"{self.pkg.name}/SKILL.md"
-        try:
-            with zipfile.ZipFile(self.pkg.archive) as archive:
-                names = archive.namelist()
-                if names != [expected]:
-                    return self._result(
-                        "package-layout",
-                        Outcome.FAIL,
-                        f"holds {names}, expected exactly ['{expected}']",
-                    )
-                if archive.read(expected) != self.pkg.raw:
-                    return self._result(
-                        "package-layout",
-                        Outcome.FAIL,
-                        "the packaged SKILL.md differs from the source",
-                    )
-        except (zipfile.BadZipFile, OSError) as exc:
-            return self._result("package-layout", Outcome.FAIL, f"unreadable: {exc}")
+        problem = archive_problem(
+            self.pkg.archive, f"{self.pkg.name}/SKILL.md", self.pkg.raw
+        )
+        if problem:
+            return self._result("package-layout", Outcome.FAIL, problem)
         return self._result("package-layout", Outcome.PASS)
 
     def check_readme_version(self) -> Result:
@@ -347,6 +434,71 @@ class SkillValidator:
             Outcome.OUT_OF_SCOPE,
             "needs a live session -- verify by hand after release",
         )
+
+
+class VariantValidator(ScenarioRunner):
+    """Runs the scenarios a variant answers for itself.
+
+    Three of them: its frontmatter, its version (which must equal the
+    parent's, since they release together) and its zip. Installation,
+    README and CHANGELOG are the parent's business.
+    """
+
+    def __init__(self, variant: SkillVariant) -> None:
+        """Bind the validator to a variant.
+
+        Args:
+            variant: The variant to check.
+        """
+        self.variant = variant
+        self.label = variant.label
+
+    def check_frontmatter_keys(self) -> Result:
+        """Same accepted keys as the parent, and the parent's ``name``."""
+        problems = frontmatter_problems(self.variant.frontmatter, self.variant.parent.name)
+        if problems:
+            return self._result("frontmatter-keys", Outcome.FAIL, "; ".join(problems))
+        return self._result("frontmatter-keys", Outcome.PASS)
+
+    def check_version_declared(self) -> Result:
+        """``metadata.version`` equal to the parent's."""
+        version = self.variant.version
+        expected = self.variant.parent.version
+        if version is None:
+            return self._result(
+                "version-declared", Outcome.FAIL, "metadata.version is absent"
+            )
+        if version != expected:
+            return self._result(
+                "version-declared",
+                Outcome.FAIL,
+                f"{version!r} differs from the parent's {expected!r}",
+            )
+        return self._result("version-declared", Outcome.PASS, version)
+
+    def check_package_layout(self) -> Result:
+        """The zip holds exactly ``<parent name>/SKILL.md``, byte-identical."""
+        problem = archive_problem(
+            self.variant.archive, f"{self.variant.parent.name}/SKILL.md", self.variant.raw
+        )
+        if problem:
+            return self._result("package-layout", Outcome.FAIL, problem)
+        return self._result("package-layout", Outcome.PASS)
+
+
+def discover_variants(skill_directory: Path) -> list[Path]:
+    """Find the variant directories nested inside one skill directory.
+
+    Args:
+        skill_directory: The skill directory to look under.
+
+    Returns:
+        Directories holding a ``SKILL.md``, sorted by name. Empty when there
+        are none or the skill directory does not exist.
+    """
+    return sorted(
+        path.parent for path in skill_directory.glob("*/SKILL.md") if path.is_file()
+    )
 
 
 def discover(repo_root: Path, only: str | None) -> list[Path]:
@@ -438,8 +590,13 @@ def main(argv: list[str] | None = None) -> int:
     repo_root = Path(__file__).resolve().parent.parent
     try:
         packages = [SkillPackage(d, repo_root) for d in discover(repo_root, args.skill)]
-        validators = [SkillValidator(pkg, check_installed=args.check_installed) for pkg in packages]
-        declared = [(v.pkg.name, s) for v in validators for s in v.scenarios()]
+        validators: list[ScenarioRunner] = []
+        for pkg in packages:
+            validators.append(SkillValidator(pkg, check_installed=args.check_installed))
+            validators.extend(
+                VariantValidator(SkillVariant(d, pkg)) for d in discover_variants(pkg.directory)
+            )
+        declared = [(v.label, s) for v in validators for s in v.scenarios()]
         print(f"declared {len(declared)} scenarios over {len(packages)} skill(s)\n")
         results = [result for v in validators for result in v.run()]
         return report(results, declared)
