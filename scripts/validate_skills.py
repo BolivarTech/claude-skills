@@ -11,9 +11,10 @@ Scenarios are declared before they run and reconciled afterwards, so one that
 disappears makes the harness fail instead of quietly shrinking the report.
 
 A skill may carry variants for other targets at ``<name>/<variant>/SKILL.md``,
-packaged as ``<name>-<variant>.zip`` next to them. A variant is checked for
-its frontmatter, its zip, and a version equal to the parent's; it releases
-with the parent, so the README and CHANGELOG checks stay the parent's.
+packaged as ``<name>-<variant>.zip`` next to them. A variant is the same text
+as the parent, byte for byte, and is checked for that, for its frontmatter and
+its zip; it releases with the parent, so the README and CHANGELOG checks stay
+the parent's.
 
 Outcomes:
     PASS          the property holds
@@ -180,12 +181,12 @@ class SkillPackage(SkillSource):
 
 
 class SkillVariant(SkillSource):
-    """A skill rewritten for another target, kept under its parent.
+    """A skill packaged for another target, kept under its parent.
 
     Lives at ``<name>/<variant>/SKILL.md`` and ships as
-    ``<name>/<variant>/<name>-<variant>.zip``. It carries the parent's name
-    and version: it is the same skill, released together with it, not a
-    sibling with a life of its own.
+    ``<name>/<variant>/<name>-<variant>.zip``. It is the parent's text, byte
+    for byte, released together with it: a second package, not a sibling with
+    a life of its own.
 
     Example:
         >>> variant = SkillVariant(Path("humanize/chatgpt"), pkg)
@@ -439,9 +440,9 @@ class SkillValidator(ScenarioRunner):
 class VariantValidator(ScenarioRunner):
     """Runs the scenarios a variant answers for itself.
 
-    Three of them: its frontmatter, its version (which must equal the
-    parent's, since they release together) and its zip. Installation,
-    README and CHANGELOG are the parent's business.
+    Four of them: its frontmatter, its version (equal to the parent's), its
+    text (identical to the parent's) and its zip. Installation, README and
+    CHANGELOG are the parent's business.
     """
 
     def __init__(self, variant: SkillVariant) -> None:
@@ -475,6 +476,20 @@ class VariantValidator(ScenarioRunner):
                 f"{version!r} differs from the parent's {expected!r}",
             )
         return self._result("version-declared", Outcome.PASS, version)
+
+    def check_source_identical(self) -> Result:
+        """The variant's ``SKILL.md`` is byte-identical to the parent's.
+
+        A variant is the same skill packaged for another target; a text of
+        its own would drift from the reference without anything failing.
+        """
+        if self.variant.raw != self.variant.parent.raw:
+            return self._result(
+                "source-identical",
+                Outcome.FAIL,
+                f"{self.variant.source} differs from {self.variant.parent.source}",
+            )
+        return self._result("source-identical", Outcome.PASS)
 
     def check_package_layout(self) -> Result:
         """The zip holds exactly ``<parent name>/SKILL.md``, byte-identical."""
