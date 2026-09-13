@@ -6,6 +6,37 @@ All notable changes to the `humanize` skill. The format follows
 [repository README](../README.md#versioning).
 
 
+## [4.2.0] - 2026-09-13
+
+A second package, for ChatGPT. The rules of the skill itself did not change;
+the version moves because a release now ships something it did not before.
+
+### Added
+
+- `chatgpt/SKILL.md`, a condensed rewrite of the skill at half the length,
+  packaged as `chatgpt/humanize-chatgpt.zip`. It carries the same `name` and
+  the same version as the full skill and releases with it, so the two cannot
+  drift apart without the release gate noticing. `scripts/validate_skills.py`
+  now discovers `<name>/<variant>/SKILL.md`, checks its frontmatter and its
+  zip, and fails when its version differs from the parent's.
+
+### Known differences from the full skill
+
+The condensed text keeps the meaning-and-voice boundary, the editorial review,
+the vocabulary and repetition rules, and the Spanish guidance. Where it reads
+differently, the full skill is the reference:
+
+- Dashes, curly quotes, and ellipses are corrected only when they disrupt
+  reading or do not fit the medium. The full skill scans for them last and
+  normalizes them in ordinary prose by default.
+- "Not only X but Y" falls under a general rule on negative parallelism; the
+  full skill names the construction and its Spanish forms and forbids keeping
+  either half of the frame.
+- The rhythm check does not carry the 12-to-20-word threshold, and there is no
+  rule to keep each passage in the language it was written in.
+- The description is shorter and does not list the phrases that trigger the
+  skill.
+
 ## [4.1.0] - 2026-09-11
 
 Twelve small rules and two examples, each written against a failure seen in a

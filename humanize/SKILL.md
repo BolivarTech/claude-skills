@@ -8,7 +8,7 @@ description: >-
   Use for editing an existing draft, not composing from notes or from scratch.
 license: MIT OR Apache-2.0
 metadata:
-  version: 4.1.0
+  version: 4.2.0
 ---
 
 # Humanize
