@@ -2,7 +2,7 @@
 
 [![Claude](https://img.shields.io/badge/Claude-skills-blueviolet.svg)](https://support.claude.com/en/articles/12512176-what-are-skills)
 [![Runtime](https://img.shields.io/badge/runtime-none-success.svg)](#requirements)
-[![Skills](https://img.shields.io/badge/skills-1-blue.svg)](#skills)
+[![Skills](https://img.shields.io/badge/skills-2-blue.svg)](#skills)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
 Each directory contains a Claude skill. Claude Desktop and claude.ai install skills
@@ -19,6 +19,7 @@ the body stays outside the context window, so its length adds no cost to those t
 | Skill | Version | What it does |
 |-------|---------|--------------|
 | [`humanize`](humanize/) | [4.2.2](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
+| [`narrative-review`](narrative-review/) | [1.0.0](narrative-review/CHANGELOG.md) | Diagnoses a story's promises, structure, characters, twists, and weak devices, with evidence and the smallest fix for each |
 
 ---
 
@@ -61,6 +62,47 @@ just asking for text that sounds less like a machine wrote it.
 **A ChatGPT package** lives in [`humanize/chatgpt/`](humanize/chatgpt/): the same
 skill, same text, same name and version. The release gate fails if the two files
 ever differ.
+
+---
+
+## narrative-review
+
+Narrative Review reads a short story, novel, screenplay, synopsis, scene, or
+interactive route and reports how well it delivers what it promises. It diagnoses,
+and on request it applies the corrections it found; it does not copyedit.
+
+**Judges the story on its own terms.** The expectations come from the author's
+stated intent, from what the opening and tone promise, and from the conventions
+of the genre. No template is imposed: a contemplative story is not marked down
+for lacking a confrontation, and a tragedy is not a flaw because it ends badly.
+A lens table picks the structural model that clarifies the work, from three acts
+to kishōtenketsu to branching routes.
+
+**Verifies before it labels.** Each finding is located in the text, with chapter,
+scene, or a short quotation. It is then checked against an alternative explanation
+such as an unreliable narrator, an ellipsis, or a clue planted earlier. A table of
+twenty-four devices, from deus ex machina to head hopping, states what makes
+each one a problem and what to rule out first. Priority is kept separate from
+confidence, and a story may pass with no corrections.
+
+**Reports what to fix and in what order.** The report opens with a verdict and
+the strengths to preserve. Findings follow by priority, each with evidence,
+mechanism, and the smallest intervention that addresses the cause. A revision
+plan closes it, ordered by dependency: architecture first, then characters and
+information, then scenes and language.
+
+**Applies fixes without rewriting the author.** Ask for it and pick the findings.
+The skill edits only the passages those findings cite, matches the voice of the
+lines around each insertion, and returns the full text with a change log per
+finding. It then reviews the new version to confirm what was resolved and that
+the strengths it flagged are still there. When `humanize` is installed, the
+inserted lines pass through it with the rest of the story protected.
+
+**Trigger it** with `/narrative-review` in Claude Code, by naming it in Claude
+Desktop, or by asking for a story critique, a beta read, or "revisa mi cuento".
+
+**A ChatGPT package** lives in [`narrative-review/chatgpt/`](narrative-review/chatgpt/),
+identical to the skill, as with `humanize`.
 
 ---
 
@@ -160,6 +202,13 @@ To uninstall a skill, delete its directory.
 │   └── chatgpt/
 │       ├── SKILL.md              the same skill, for ChatGPT
 │       └── humanize-chatgpt.zip  the same layout, for upload to ChatGPT
+├── narrative-review/
+│   ├── SKILL.md
+│   ├── CHANGELOG.md
+│   ├── narrative-review.zip
+│   └── chatgpt/
+│       ├── SKILL.md
+│       └── narrative-review-chatgpt.zip
 ├── scripts/
 │   ├── validate_skills.py       release gate, run before every tag
 │   ├── test_validate_skills.py  validator regression tests
