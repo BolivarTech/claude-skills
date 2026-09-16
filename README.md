@@ -2,7 +2,7 @@
 
 [![Claude](https://img.shields.io/badge/Claude-skills-blueviolet.svg)](https://support.claude.com/en/articles/12512176-what-are-skills)
 [![Runtime](https://img.shields.io/badge/runtime-none-success.svg)](#requirements)
-[![Skills](https://img.shields.io/badge/skills-4-blue.svg)](#skills)
+[![Skills](https://img.shields.io/badge/skills-5-blue.svg)](#skills)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
 Each directory contains a Claude skill. Claude Desktop and claude.ai install skills
@@ -22,6 +22,7 @@ the body stays outside the context window, so its length adds no cost to those t
 | [`narrative-review`](narrative-review/) | [1.0.0](narrative-review/CHANGELOG.md) | Diagnoses a story's promises, structure, characters, twists, and weak devices, with evidence and the smallest fix for each |
 | [`video-script`](video-script/) | [1.0.1](video-script/CHANGELOG.md) | Turns a narration into a production-ready audiovisual script, or reviews a script or cut plan for narrative, image, sound, pacing, and production defects |
 | [`short-clip`](short-clip/) | [1.0.0](short-clip/CHANGELOG.md) | Turns an idea, meme, or image into a ten-second vertical clip: the prompt for the reference image and the prompt that animates it, with post copy when a platform is named |
+| [`story-writer`](story-writer/) | [1.0.0](story-writer/CHANGELOG.md) | Writes a literary story from one idea or a full dossier, reviews it, applies the verified corrections, and delivers it with the decisions that shaped it |
 
 ---
 
@@ -192,6 +193,44 @@ identical to the skill, as with `humanize`.
 
 ---
 
+## story-writer
+
+Story Writer takes one idea, or a dossier with characters, world, and ending
+already decided, and writes the story. What the user supplies is canon and enters
+the text without being contradicted; what the user leaves open is decided and
+declared. The story comes back in Markdown, in the user's language, followed by
+a short sheet of the decisions behind it.
+
+**Builds before it writes.** Ten steps in order: promise, engine, five
+milestones, a compatible model, cause-and-effect chains, a private table of who
+knows what, scenes with change, rhythm, an ending audit, and breaking the
+template only for a reason. A model table by main need, with a control question
+per row, keeps a contemplative story from getting a confrontation forced on it.
+
+**Dialogue to a professional standard.** Distinct voices, subtext, conflict in
+every exchange, verbal economy, rhythm. Lines are anchored in physical action,
+`dijo` is the base tag, and nobody explains what both already know. Spanish
+dialogue uses the em dash with its tag cases spelled out; that dash is dialogue
+punctuation, and `humanize` leaves it alone.
+
+**Reviews itself, and verifies the reviewer.** A self-audit runs first. Then
+`narrative-review` reads the story and each finding is checked against the text:
+the real ones are corrected with the smallest change; the false positives are
+rejected with a reason. Nothing is changed to please the reviewer. `humanize`
+runs last, with the dialogue protected.
+
+**Length follows the premise.** Two to ten thousand words by default, no hard
+ceiling; longer when asked, and parts proposed only when the causal chain needs
+more than one delivery.
+
+**Trigger it** with `/story-writer` in Claude Code, by naming it in Claude
+Desktop, or by asking for a story from an idea or saying "escribe un cuento sobre".
+
+**A ChatGPT package** lives in [`story-writer/chatgpt/`](story-writer/chatgpt/),
+identical to the skill, as with `humanize`.
+
+---
+
 ## Installation
 
 Each skill directory includes a `.zip` beside its `SKILL.md`. The archive contains
@@ -309,6 +348,13 @@ To uninstall a skill, delete its directory.
 │   └── chatgpt/
 │       ├── SKILL.md
 │       └── short-clip-chatgpt.zip
+├── story-writer/
+│   ├── SKILL.md
+│   ├── CHANGELOG.md
+│   ├── story-writer.zip
+│   └── chatgpt/
+│       ├── SKILL.md
+│       └── story-writer-chatgpt.zip
 ├── scripts/
 │   ├── validate_skills.py       release gate, run before every tag
 │   ├── test_validate_skills.py  validator regression tests
