@@ -2,7 +2,7 @@
 
 [![Claude](https://img.shields.io/badge/Claude-skills-blueviolet.svg)](https://support.claude.com/en/articles/12512176-what-are-skills)
 [![Runtime](https://img.shields.io/badge/runtime-none-success.svg)](#requirements)
-[![Skills](https://img.shields.io/badge/skills-2-blue.svg)](#skills)
+[![Skills](https://img.shields.io/badge/skills-3-blue.svg)](#skills)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
 Each directory contains a Claude skill. Claude Desktop and claude.ai install skills
@@ -20,6 +20,7 @@ the body stays outside the context window, so its length adds no cost to those t
 |-------|---------|--------------|
 | [`humanize`](humanize/) | [4.2.2](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
 | [`narrative-review`](narrative-review/) | [1.0.0](narrative-review/CHANGELOG.md) | Diagnoses a story's promises, structure, characters, twists, and weak devices, with evidence and the smallest fix for each |
+| [`video-script`](video-script/) | [1.0.0](video-script/CHANGELOG.md) | Turns a narration into a production-ready audiovisual script, or reviews a script or cut plan for narrative, image, sound, pacing, and production defects |
 
 ---
 
@@ -102,6 +103,49 @@ inserted lines pass through it with the rest of the story protected.
 Desktop, or by asking for a story critique, a beta read, or "revisa mi cuento".
 
 **A ChatGPT package** lives in [`narrative-review/chatgpt/`](narrative-review/chatgpt/),
+identical to the skill, as with `humanize`.
+
+---
+
+## video-script
+
+Video Script takes a narration, short story, treatment, or research dossier and
+turns it into a script that can be recorded, visualized, edited, and checked.
+Pointed at an existing script, shot list, storyboard, or cut plan, it reviews the
+work against the same standard and, on request, applies the corrections it found.
+
+**Adapts the experience, not the sentences.** The method starts with an
+extraction reading and a one-sentence statement of what the audience should feel
+and question, then a thesis, a motor, a point of view, and a sequence map in which
+every sequence changes something. Interiority becomes behavior, image, sound, or
+a voiceover that adds rather than describes. Every change to canon is recorded.
+
+**Audio first, timing honest.** Existing audio fixes duration; nothing else does.
+Without it, spoken material is estimated at a stated rate, labeled as an estimate,
+and given a margin. No shot or asset gets a duration before the audio question is
+settled.
+
+**Reviews what it can read.** The skill works from text and still images and says
+so: a cut is reviewed through a transcript, a timeline export, frames, or the
+user's viewing notes, and a pass with no evidence in the material is reported as
+not assessable. Seven passes run in order, from continuous experience to
+accessibility, and a stage table states what a treatment, a script, or an animatic
+allows to judge. Twenty-one frequent artifacts each come with a diagnostic test and
+a correction target.
+
+**Delivers a production master script.** The output is one document that works as
+performance script and production dossier: production metadata, record-ready
+spoken material per scene, music design, a scene-by-scene audio and visual plan,
+consolidated requirements, and canon verification. A project's own production
+instructions govern the naming scheme, segment limits, caption rules, and delivery
+specifications; without them the skill's defaults apply and are labeled as
+proposals. The full template is in the skill.
+
+**Trigger it** with `/video-script` in Claude Code, by naming it in Claude
+Desktop, or by asking to adapt a story for video, write a production script, or
+"revisa el guion del episodio".
+
+**A ChatGPT package** lives in [`video-script/chatgpt/`](video-script/chatgpt/),
 identical to the skill, as with `humanize`.
 
 ---
@@ -209,6 +253,13 @@ To uninstall a skill, delete its directory.
 │   └── chatgpt/
 │       ├── SKILL.md
 │       └── narrative-review-chatgpt.zip
+├── video-script/
+│   ├── SKILL.md
+│   ├── CHANGELOG.md
+│   ├── video-script.zip
+│   └── chatgpt/
+│       ├── SKILL.md
+│       └── video-script-chatgpt.zip
 ├── scripts/
 │   ├── validate_skills.py       release gate, run before every tag
 │   ├── test_validate_skills.py  validator regression tests
