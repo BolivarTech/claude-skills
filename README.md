@@ -20,7 +20,7 @@ the body stays outside the context window, so its length adds no cost to those t
 |-------|---------|--------------|
 | [`humanize`](humanize/) | [4.2.2](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
 | [`narrative-review`](narrative-review/) | [1.0.0](narrative-review/CHANGELOG.md) | Diagnoses a story's promises, structure, characters, twists, and weak devices, with evidence and the smallest fix for each |
-| [`video-script`](video-script/) | [1.0.0](video-script/CHANGELOG.md) | Turns a narration into a production-ready audiovisual script, or reviews a script or cut plan for narrative, image, sound, pacing, and production defects |
+| [`video-script`](video-script/) | [1.0.1](video-script/CHANGELOG.md) | Turns a narration into a production-ready audiovisual script, or reviews a script or cut plan for narrative, image, sound, pacing, and production defects |
 
 ---
 

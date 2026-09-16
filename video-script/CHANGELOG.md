@@ -6,6 +6,20 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html) as defined in
 the [repository README](../README.md#versioning).
 
 
+## [1.0.1] - 2026-09-15
+
+Aligned with the general production guide the skill's defaults derive from.
+
+### Changed
+
+- The production-instructions intake item now names the eight fields a
+  project's document fixes: project and piece code, platform and delivery,
+  tools per function, voices and markup, segment limits, asset references,
+  master-script format, and canon order.
+- The lip-sync limit states when it does not apply: a piece that shows
+  characters in attitude, from behind, or in detail uses no lip sync.
+
+
 ## [1.0.0] - 2026-09-15
 
 First release. The skill turns a narration, story, treatment, or research

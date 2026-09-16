@@ -14,7 +14,7 @@ description: >-
   alone.
 license: MIT OR Apache-2.0
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Audiovisual Script Production
@@ -43,7 +43,7 @@ Establish from the supplied material, and record what was inferred:
 - **Target:** platform, format, audience, language, duration, aspect ratio, and viewing conditions. The same story changes when it becomes a short, an episode, a documentary, an animation, a vertical piece, or an interactive route.
 - **Fidelity hierarchy:** fidelity to facts, to the emotional arc, to point of view, to tone, to theme, to the world and its rules, to a cultural or historical experience, or to a specific audience's expectations. When these conflict, state the order chosen.
 - **Production frame:** available voices, locations, characters, assets, tools, budget, calendar, rights, and delivery constraints. Distinguish facts from assumptions and proposals.
-- **Production instructions:** the project's own document defining its pipeline, tools, naming scheme, segment limits, caption rules, delivery specification, and house format, when one exists. It governs every production value in the deliverable. When the project has none, the defaults under The Production Master Script apply, and each one is labeled a proposal in the production notes.
+- **Production instructions:** the project's own document, when one exists, fixing its project code and piece-code scheme, target platform and delivery specification, the tool for each pipeline function, narrator and character voices with their system and supported markup, generated-clip and lip-sync segment limits, the location of asset references and prompt-base sheets, its own master-script format, and the order of canon authority. It governs every production value in the deliverable. When the project has none, the defaults under The Production Master Script apply, and each one is labeled a proposal in the production notes.
 - **Audio state:** whether recorded or synthesized audio already exists. Existing audio fixes timing; nothing else does.
 - **Output scope:** script only, full production dossier, review report, revised artifact, or a combination.
 
@@ -194,7 +194,7 @@ These values describe an audio-first pipeline with synthesized voices and genera
 |---|---|---|
 | Asset naming | `PROJ_S##E##_[TIPO]-[SEGMENTO]-##-v##.ext`, where `PROJ` is the project code; global references `PROJ_CHAR-[NOMBRE]_REF-##-v##.png`, likewise `LOC`, `STYLE`, `ARTIFACT` | Propose filenames only in the project's scheme; a standalone piece replaces `S##E##` with a piece code; asset types include `VOZ`, `MUSIC`, `SFX`, `IMG`, `KF`, `RAW`, `SYNC`, `COMP` |
 | Generated video segment | about 10 seconds per clip | Plan visual units as stills or as chains of clips no longer than that, with a continuity check between segments |
-| Lip-sync segment | 30 seconds maximum | Split on-camera dialogue blocks at meaningful beats within that limit |
+| Lip-sync segment | 30 seconds maximum | Split on-camera dialogue blocks at meaningful beats within that limit; a piece that shows characters in attitude, from behind, or in detail uses no lip sync, and then the limit does not apply |
 | Captions | 2 lines, 42 characters per line, 1 to 7 seconds, aligned to natural pauses | Write spoken text whose pauses allow that segmentation; caption text is drafted from dialogue and timed against final audio |
 | Delivery | H.265 or H.264, 4K or 1080p minimum, 24 or 30 fps; master audio WAV 48 kHz/24-bit, export AAC 320 kbps, -14 LUFS for YouTube | Record the project's or the destination's specification in the delivery row; these apply only when neither supplies one |
 
