@@ -2,7 +2,7 @@
 
 [![Claude](https://img.shields.io/badge/Claude-skills-blueviolet.svg)](https://support.claude.com/en/articles/12512176-what-are-skills)
 [![Runtime](https://img.shields.io/badge/runtime-none-success.svg)](#requirements)
-[![Skills](https://img.shields.io/badge/skills-3-blue.svg)](#skills)
+[![Skills](https://img.shields.io/badge/skills-4-blue.svg)](#skills)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
 Each directory contains a Claude skill. Claude Desktop and claude.ai install skills
@@ -21,6 +21,7 @@ the body stays outside the context window, so its length adds no cost to those t
 | [`humanize`](humanize/) | [4.2.2](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
 | [`narrative-review`](narrative-review/) | [1.0.0](narrative-review/CHANGELOG.md) | Diagnoses a story's promises, structure, characters, twists, and weak devices, with evidence and the smallest fix for each |
 | [`video-script`](video-script/) | [1.0.1](video-script/CHANGELOG.md) | Turns a narration into a production-ready audiovisual script, or reviews a script or cut plan for narrative, image, sound, pacing, and production defects |
+| [`short-clip`](short-clip/) | [1.0.0](short-clip/CHANGELOG.md) | Turns an idea, meme, or image into a ten-second vertical clip: the prompt for the reference image and the prompt that animates it, with post copy when a platform is named |
 
 ---
 
@@ -150,6 +151,47 @@ identical to the skill, as with `humanize`.
 
 ---
 
+## short-clip
+
+Short Clip takes an idea, a meme, a phrase, an anecdote, or a reference image and
+turns it into a vertical clip of about ten seconds for TikTok, Instagram Reels, or
+YouTube Shorts. What comes back is what the generation tools consume: a prompt
+for the reference image and a prompt that animates it with its dialogue and
+sound. Post copy is added when a platform is named.
+
+**Something has to happen.** The first question is whether the material is a
+phrase or a story. A phrase is a feeling with a caption: it produces recognition
+and nothing to wait for. A story has a character, an interaction, a change, and a
+consequence. A phrase gets converted before anything is written, or reported as
+better served by a still. Setup and turn must fit in one sentence; if they need
+two, the clip needs more seconds than it has.
+
+**Picks the structure by the effect.** An anecdote, a perspective-shift joke, a
+visual gag, an everyday problem, a pursuit, a scare, or a reflection each gets its
+own architecture and a control question. When later information can turn an
+ordinary situation into something absurd or unsettling, the frame shift is the
+default: it holds the strongest change ten seconds can carry.
+
+**Designs the turn to survive a rewatch.** It separates the first reading from
+the hidden truth, the facts compatible with both, and the visible consequence.
+The hook is a promise the ending pays. The clip ends after the strongest reaction
+and leaves something for the viewer to complete, which is also what gives the
+comments a reason to exist.
+
+**Writes prompts the tools can hold.** The image prompt fixes an invariant list
+(identity, hands, objects, wardrobe, text, environment) and the animation prompt
+repeats it. One central relationship, legible on a phone in a glance. Every
+segment of the animation changes something the viewer sees; a camera drift over
+a still frame does not count. Voice and image never say the same thing.
+
+**Trigger it** with `/short-clip` in Claude Code, by naming it in Claude Desktop,
+or by asking for a reel, a short, or "anima esta imagen".
+
+**A ChatGPT package** lives in [`short-clip/chatgpt/`](short-clip/chatgpt/),
+identical to the skill, as with `humanize`.
+
+---
+
 ## Installation
 
 Each skill directory includes a `.zip` beside its `SKILL.md`. The archive contains
@@ -260,6 +302,13 @@ To uninstall a skill, delete its directory.
 │   └── chatgpt/
 │       ├── SKILL.md
 │       └── video-script-chatgpt.zip
+├── short-clip/
+│   ├── SKILL.md
+│   ├── CHANGELOG.md
+│   ├── short-clip.zip
+│   └── chatgpt/
+│       ├── SKILL.md
+│       └── short-clip-chatgpt.zip
 ├── scripts/
 │   ├── validate_skills.py       release gate, run before every tag
 │   ├── test_validate_skills.py  validator regression tests
