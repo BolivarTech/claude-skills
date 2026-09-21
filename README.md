@@ -2,7 +2,7 @@
 
 [![Claude](https://img.shields.io/badge/Claude-skills-blueviolet.svg)](https://support.claude.com/en/articles/12512176-what-are-skills)
 [![Runtime](https://img.shields.io/badge/runtime-none-success.svg)](#requirements)
-[![Skills](https://img.shields.io/badge/skills-5-blue.svg)](#skills)
+[![Skills](https://img.shields.io/badge/skills-6-blue.svg)](#skills)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
 Each directory contains a Claude skill. Claude Desktop and claude.ai install skills
@@ -23,6 +23,7 @@ the body stays outside the context window, so its length adds no cost to those t
 | [`video-script`](video-script/) | [1.0.1](video-script/CHANGELOG.md) | Turns a narration into a production-ready audiovisual script, or reviews a script or cut plan for narrative, image, sound, pacing, and production defects |
 | [`short-clip`](short-clip/) | [1.0.0](short-clip/CHANGELOG.md) | Turns an idea, meme, or image into a ten-second vertical clip: the prompt for the reference image and the prompt that animates it, with post copy when a platform is named |
 | [`story-writer`](story-writer/) | [1.0.0](story-writer/CHANGELOG.md) | Writes a literary story from one idea or a full dossier, reviews it, applies the verified corrections, and delivers it with the decisions that shaped it |
+| [`premortem`](premortem/) | [1.0.0](premortem/CHANGELOG.md) | Places a plan in a future where it already failed, reconstructs and prioritizes the causes, and delivers a report with treatments, early signals, and the risks of not acting; or the kit to run the session with a team |
 
 ---
 
@@ -231,6 +232,50 @@ identical to the skill, as with `humanize`.
 
 ---
 
+## premortem
+
+Premortem takes a plan that exists and can still change, puts it in a future
+where it has already failed, and works backwards: what happened, which of it
+matters, and what the plan does about it now. The object can be a launch, a
+migration, an investment, a policy, a clinical program, a hire, or a career
+move; the procedure is the same. What comes back is a complete report, or,
+when there is a team, the kit to run the session and then the report built from
+the team's notes.
+
+**Analyzes with a fixed sequence.** A plan sheet with its assumptions and the
+base rates the plan needs. A failure scenario in the past tense with no cause
+built in. Cause generation with outsider prompts before any category sweep, then
+risks written as cause, event, and impact, and a six-criterion prioritization
+that orders without pretending to measure. Every treatment passes one test:
+what, who, when, how it is verified, and what happens if it is not done. "Be
+careful" and "coordinate better" do not make it into the report.
+
+**Asks about not acting too.** The second barrel runs the mirror scenario, in
+which the plan was shelved or diluted and the outcome was also bad, so that a
+long list of failure modes does not reward caution by default.
+
+**Keeps the user's causes first.** Causes the user or the team already wrote
+enter unchanged and ahead of the skill's own, which are labeled. Whoever speaks
+first sets the limits of what everyone else thinks of, so in facilitation mode
+the skill produces no causes until the team's notes arrive.
+
+**Universal, with probes per field.** Software gets the longest list (adoption,
+technical debt, data quality, cutover and rollback, go/no-go, observability),
+and engineering, strategy, public policy, health, and personal decisions each
+get their own. Probes run after free generation, never instead of it, and a
+plan from a field not listed runs the method unchanged. Where the plan needs
+FMEA, HAZOP, threat modeling, or a clinical or security review, the report
+names the handoff; the premortem produces hypotheses, not verified controls.
+
+**Trigger it** with `/premortem` in Claude Code, by naming it in Claude
+Desktop, or by asking what could make a plan fail or saying "haz un premortem
+de este plan".
+
+**A ChatGPT package** lives in [`premortem/chatgpt/`](premortem/chatgpt/),
+identical to the skill, as with `humanize`.
+
+---
+
 ## Installation
 
 Each skill directory includes a `.zip` beside its `SKILL.md`. The archive contains
@@ -355,6 +400,13 @@ To uninstall a skill, delete its directory.
 │   └── chatgpt/
 │       ├── SKILL.md
 │       └── story-writer-chatgpt.zip
+├── premortem/
+│   ├── SKILL.md
+│   ├── CHANGELOG.md
+│   ├── premortem.zip
+│   └── chatgpt/
+│       ├── SKILL.md
+│       └── premortem-chatgpt.zip
 ├── scripts/
 │   ├── validate_skills.py       release gate, run before every tag
 │   ├── test_validate_skills.py  validator regression tests
