@@ -2,7 +2,7 @@
 
 [![Claude](https://img.shields.io/badge/Claude-skills-blueviolet.svg)](https://support.claude.com/en/articles/12512176-what-are-skills)
 [![Runtime](https://img.shields.io/badge/runtime-none-success.svg)](#requirements)
-[![Skills](https://img.shields.io/badge/skills-6-blue.svg)](#skills)
+[![Skills](https://img.shields.io/badge/skills-7-blue.svg)](#skills)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
 Each directory contains a Claude skill. Claude Desktop and claude.ai install skills
@@ -24,6 +24,7 @@ the body stays outside the context window, so its length adds no cost to those t
 | [`short-clip`](short-clip/) | [1.1.0](short-clip/CHANGELOG.md) | Turns an idea, meme, or image into a ten-second vertical clip: the prompt for the reference image and the prompt that animates it, with post copy when a platform is named |
 | [`story-writer`](story-writer/) | [1.1.0](story-writer/CHANGELOG.md) | Writes a literary story from one idea or a full dossier, reviews it, applies the verified corrections, and delivers it with the decisions that shaped it |
 | [`premortem`](premortem/) | [1.1.0](premortem/CHANGELOG.md) | Places a plan in a future where it already failed, reconstructs and prioritizes the causes, and delivers a report with treatments, early signals, and the risks of not acting; or the kit to run the session with a team |
+| [`design-brainstorm`](design-brainstorm/) | [1.0.0](design-brainstorm/CHANGELOG.md) | Turns an idea or a proposed change into an approved design or specification before anything gets built, carrying premortem risks and open gaps into it |
 
 ---
 
@@ -277,6 +278,51 @@ the skill, as with `humanize`.
 
 ---
 
+## design-brainstorm
+
+Design Brainstorm takes an idea, a feature request, or a proposed change in
+behavior and turns it into the smallest design that satisfies the objective,
+then stops. Nothing gets built, scaffolded, or edited in production code until
+the user approves the direction. The ceremony scales with the request; the
+approval gate does not.
+
+**Classifies before it designs.** A spike is a feasibility question whose
+deliverable is an answer. A bounded change touches an existing flow whose
+interfaces and consumers can be inspected, and gets a short design in chat. An
+architectural change is a new subsystem, a shared interface, a persistent
+format, or anything that restructures components. It gets two or three
+approaches with trade-offs, a design in reviewable sections, and a written
+specification. When in doubt, the heavier path: the classification goes up when inspection
+reveals hidden complexity, never down.
+
+**Reads the repository before it asks.** Rules, the active spec and plan,
+implementation, tests, public interfaces, recent history, and existing
+baselines come first. A question is asked only when its answer changes
+behavior or scope, one at a time; what the repository already answers becomes
+a disclosed assumption.
+
+**Carries premortem findings with their IDs.** When a premortem report or gap
+registry covers the same objective, each finding is classified: already
+covered, clarification, planning obligation, implementation gap, external
+evidence, out of scope, or scope expansion. Prose never closes a gap; a gap ID
+stays open until the cited evidence exists. Repositories with a behavioral
+baseline, such as SBTDD, keep every requirement and scenario ID in the refined
+spec.
+
+**Approval authorizes only the next step.** Approving a probe allows the
+investigation; approving a design allows implementation under the repository's
+normal workflow; approving a spec allows planning. None of them authorizes
+commits, remote changes, or releases.
+
+**Trigger it** with `/design-brainstorm` in Claude Code, `$design-brainstorm`
+in Codex, by naming it in Claude Desktop, or by saying "design this before we
+build it" or "diseñemos esto antes de implementar".
+
+**A Codex package** lives in [`design-brainstorm/codex/`](design-brainstorm/codex/),
+identical to the skill, as with `humanize`.
+
+---
+
 ## Installation
 
 Each skill directory includes a `.zip` beside its `SKILL.md`. The archive contains
@@ -426,6 +472,14 @@ To uninstall a skill, delete its directory.
 │       ├── SKILL.md
 │       ├── agents/openai.yaml
 │       └── premortem-codex.zip
+├── design-brainstorm/
+│   ├── SKILL.md
+│   ├── CHANGELOG.md
+│   ├── design-brainstorm.zip
+│   └── codex/
+│       ├── SKILL.md
+│       ├── agents/openai.yaml
+│       └── design-brainstorm-codex.zip
 ├── scripts/
 │   ├── validate_skills.py       release gate, run before every tag
 │   ├── test_validate_skills.py  validator regression tests

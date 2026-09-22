@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Brainstorm"
+  short_description: "Turn ideas and premortem evidence into approved designs"
+  default_prompt: "Use $design-brainstorm to refine this idea into an approved design or specification."
