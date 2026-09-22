@@ -142,6 +142,37 @@ class VariantTests(unittest.TestCase):
                     archive.writestr(entry, payload)
                 self.assertEqual(validator.check_package_layout().outcome, expected)
 
+    def test_variant_archive_carries_every_file_beside_its_skill(self):
+        """A Codex variant ships ``agents/openai.yaml`` next to its SKILL.md.
+
+        The zip must hold that file too, under the parent folder, and the
+        archive itself is never one of the expected entries.
+        """
+        self.variant_dir = self.directory / "codex"
+        self.variant_dir.mkdir()
+        variant = self.variant()
+        (self.variant_dir / "agents").mkdir()
+        manifest = b"interface:\n  display_name: Humanize\n"
+        (self.variant_dir / "agents" / "openai.yaml").write_bytes(manifest)
+        variant = SkillVariant(self.variant_dir, self.parent)
+        self.assertEqual(variant.archive, self.variant_dir / "humanize-codex.zip")
+        validator = VariantValidator(variant)
+        for entries, expected in (
+            ({"humanize/SKILL.md": variant.raw}, Outcome.FAIL),
+            ({"humanize/SKILL.md": variant.raw,
+              "humanize/agents/openai.yaml": manifest}, Outcome.PASS),
+            ({"humanize/SKILL.md": variant.raw,
+              "humanize/agents/openai.yaml": b"stale"}, Outcome.FAIL),
+            ({"humanize/SKILL.md": variant.raw,
+              "humanize/agents/openai.yaml": manifest,
+              "humanize/extra.md": b"x"}, Outcome.FAIL),
+        ):
+            with self.subTest(entries=sorted(entries)):
+                with zipfile.ZipFile(variant.archive, "w") as archive:
+                    for entry, payload in entries.items():
+                        archive.writestr(entry, payload)
+                self.assertEqual(validator.check_package_layout().outcome, expected)
+
     def test_discover_variants_finds_only_nested_skill_files(self):
         self.variant()
         (self.directory / "notes").mkdir()
