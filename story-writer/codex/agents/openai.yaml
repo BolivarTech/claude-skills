@@ -1,0 +1,4 @@
+interface:
+  display_name: "Story Writer"
+  short_description: "Write a literary story from an idea or a dossier"
+  default_prompt: "Use $story-writer to write a story from this idea."

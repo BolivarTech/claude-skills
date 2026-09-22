@@ -1,0 +1,4 @@
+interface:
+  display_name: "Premortem"
+  short_description: "Imagine the plan already failed and work back to the causes"
+  default_prompt: "Use $premortem to run a premortem on this plan."

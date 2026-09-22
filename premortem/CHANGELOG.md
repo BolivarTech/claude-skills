@@ -6,6 +6,27 @@ All notable changes to the `premortem` skill. The format follows
 [repository README](../README.md#versioning).
 
 
+## [1.1.0] - 2026-09-21
+
+The ChatGPT package gives way to a Codex one. OpenAI documents a single skill
+format for Codex and ChatGPT, so one archive now serves both. The rules of the
+skill did not change; the version moves because a release ships a different
+package than before.
+
+### Added
+
+- `codex/SKILL.md`, identical to the skill, packaged with
+  `codex/agents/openai.yaml` as `codex/premortem-codex.zip`, the layout Codex
+  and ChatGPT read. The manifest carries the display name, a one-line
+  description, and the `$premortem` prompt. The release gate checks the
+  variant's text against the skill and every file in the zip against its
+  source.
+
+### Removed
+
+- `chatgpt/SKILL.md` and `chatgpt/premortem-chatgpt.zip`. The Codex package
+  carries the same text and is the one to upload to ChatGPT.
+
 ## [1.0.0] - 2026-09-21
 
 First release. The skill runs a premortem on a plan in any field: it places

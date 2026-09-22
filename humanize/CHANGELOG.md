@@ -6,6 +6,27 @@ All notable changes to the `humanize` skill. The format follows
 [repository README](../README.md#versioning).
 
 
+## [4.3.0] - 2026-09-21
+
+The ChatGPT package gives way to a Codex one. OpenAI documents a single skill
+format for Codex and ChatGPT, so one archive now serves both. The rules of the
+skill did not change; the version moves because a release ships a different
+package than before.
+
+### Added
+
+- `codex/SKILL.md`, identical to the skill, packaged with
+  `codex/agents/openai.yaml` as `codex/humanize-codex.zip`, the layout Codex
+  and ChatGPT read. The manifest carries the display name, a one-line
+  description, and the `$humanize` prompt. The release gate checks the
+  variant's text against the skill and every file in the zip against its
+  source.
+
+### Removed
+
+- `chatgpt/SKILL.md` and `chatgpt/humanize-chatgpt.zip`. The Codex package
+  carries the same text and is the one to upload to ChatGPT.
+
 ## [4.2.2] - 2026-09-13
 
 The ChatGPT package is now the full skill, byte for byte. A rule-by-rule

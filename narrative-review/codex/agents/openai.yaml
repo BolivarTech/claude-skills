@@ -1,0 +1,4 @@
+interface:
+  display_name: "Narrative Review"
+  short_description: "Diagnose a story's promises, structure, and devices"
+  default_prompt: "Use $narrative-review to review this story and report what to fix and in what order."

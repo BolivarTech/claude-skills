@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Script"
+  short_description: "Adapt prose into a production-ready audiovisual script"
+  default_prompt: "Use $video-script to turn this narration into a production script, or to review the script I share."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Short Clip"
+  short_description: "Turn an idea or meme into a ten-second vertical clip"
+  default_prompt: "Use $short-clip to turn this idea into the image prompt and the animation prompt for a vertical clip."

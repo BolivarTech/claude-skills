@@ -18,12 +18,12 @@ the body stays outside the context window, so its length adds no cost to those t
 
 | Skill | Version | What it does |
 |-------|---------|--------------|
-| [`humanize`](humanize/) | [4.2.2](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
-| [`narrative-review`](narrative-review/) | [1.0.0](narrative-review/CHANGELOG.md) | Diagnoses a story's promises, structure, characters, twists, and weak devices, with evidence and the smallest fix for each |
-| [`video-script`](video-script/) | [1.0.1](video-script/CHANGELOG.md) | Turns a narration into a production-ready audiovisual script, or reviews a script or cut plan for narrative, image, sound, pacing, and production defects |
-| [`short-clip`](short-clip/) | [1.0.0](short-clip/CHANGELOG.md) | Turns an idea, meme, or image into a ten-second vertical clip: the prompt for the reference image and the prompt that animates it, with post copy when a platform is named |
-| [`story-writer`](story-writer/) | [1.0.0](story-writer/CHANGELOG.md) | Writes a literary story from one idea or a full dossier, reviews it, applies the verified corrections, and delivers it with the decisions that shaped it |
-| [`premortem`](premortem/) | [1.0.0](premortem/CHANGELOG.md) | Places a plan in a future where it already failed, reconstructs and prioritizes the causes, and delivers a report with treatments, early signals, and the risks of not acting; or the kit to run the session with a team |
+| [`humanize`](humanize/) | [4.3.0](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
+| [`narrative-review`](narrative-review/) | [1.1.0](narrative-review/CHANGELOG.md) | Diagnoses a story's promises, structure, characters, twists, and weak devices, with evidence and the smallest fix for each |
+| [`video-script`](video-script/) | [1.1.0](video-script/CHANGELOG.md) | Turns a narration into a production-ready audiovisual script, or reviews a script or cut plan for narrative, image, sound, pacing, and production defects |
+| [`short-clip`](short-clip/) | [1.1.0](short-clip/CHANGELOG.md) | Turns an idea, meme, or image into a ten-second vertical clip: the prompt for the reference image and the prompt that animates it, with post copy when a platform is named |
+| [`story-writer`](story-writer/) | [1.1.0](story-writer/CHANGELOG.md) | Writes a literary story from one idea or a full dossier, reviews it, applies the verified corrections, and delivers it with the decisions that shaped it |
+| [`premortem`](premortem/) | [1.1.0](premortem/CHANGELOG.md) | Places a plan in a future where it already failed, reconstructs and prioritizes the causes, and delivers a report with treatments, early signals, and the risks of not acting; or the kit to run the session with a team |
 
 ---
 
@@ -63,9 +63,10 @@ for filler, repeated connectives, register shifts, and translated sentence patte
 **Trigger it** with `/humanize` in Claude Code, by naming it in Claude Desktop, or by
 just asking for text that sounds less like a machine wrote it.
 
-**A ChatGPT package** lives in [`humanize/chatgpt/`](humanize/chatgpt/): the same
-skill, same text, same name and version. The release gate fails if the two files
-ever differ.
+**A Codex package** lives in [`humanize/codex/`](humanize/codex/): the same
+skill, same text, same name and version, plus `agents/openai.yaml`, the
+manifest Codex and ChatGPT read. The release gate fails if the two texts ever
+differ.
 
 ---
 
@@ -105,8 +106,8 @@ inserted lines pass through it with the rest of the story protected.
 **Trigger it** with `/narrative-review` in Claude Code, by naming it in Claude
 Desktop, or by asking for a story critique, a beta read, or "revisa mi cuento".
 
-**A ChatGPT package** lives in [`narrative-review/chatgpt/`](narrative-review/chatgpt/),
-identical to the skill, as with `humanize`.
+**A Codex package** lives in [`narrative-review/codex/`](narrative-review/codex/), identical to
+the skill, as with `humanize`.
 
 ---
 
@@ -148,8 +149,8 @@ proposals. The full template is in the skill.
 Desktop, or by asking to adapt a story for video, write a production script, or
 "revisa el guion del episodio".
 
-**A ChatGPT package** lives in [`video-script/chatgpt/`](video-script/chatgpt/),
-identical to the skill, as with `humanize`.
+**A Codex package** lives in [`video-script/codex/`](video-script/codex/), identical to
+the skill, as with `humanize`.
 
 ---
 
@@ -189,8 +190,8 @@ a still frame does not count. Voice and image never say the same thing.
 **Trigger it** with `/short-clip` in Claude Code, by naming it in Claude Desktop,
 or by asking for a reel, a short, or "anima esta imagen".
 
-**A ChatGPT package** lives in [`short-clip/chatgpt/`](short-clip/chatgpt/),
-identical to the skill, as with `humanize`.
+**A Codex package** lives in [`short-clip/codex/`](short-clip/codex/), identical to
+the skill, as with `humanize`.
 
 ---
 
@@ -227,8 +228,8 @@ more than one delivery.
 **Trigger it** with `/story-writer` in Claude Code, by naming it in Claude
 Desktop, or by asking for a story from an idea or saying "escribe un cuento sobre".
 
-**A ChatGPT package** lives in [`story-writer/chatgpt/`](story-writer/chatgpt/),
-identical to the skill, as with `humanize`.
+**A Codex package** lives in [`story-writer/codex/`](story-writer/codex/), identical to
+the skill, as with `humanize`.
 
 ---
 
@@ -271,8 +272,8 @@ names the handoff; the premortem produces hypotheses, not verified controls.
 Desktop, or by asking what could make a plan fail or saying "haz un premortem
 de este plan".
 
-**A ChatGPT package** lives in [`premortem/chatgpt/`](premortem/chatgpt/),
-identical to the skill, as with `humanize`.
+**A Codex package** lives in [`premortem/codex/`](premortem/codex/), identical to
+the skill, as with `humanize`.
 
 ---
 
@@ -304,12 +305,24 @@ this draft."*
 Skills are available on Free, Pro, Max, Team and Enterprise. Anything you upload stays
 private to your own account.
 
-### ChatGPT
+### Codex and ChatGPT
 
-Upload
-[`humanize/chatgpt/humanize-chatgpt.zip`](https://github.com/BolivarTech/claude-skills/raw/main/humanize/chatgpt/humanize-chatgpt.zip)
-to ChatGPT. The archive holds the same `humanize/SKILL.md` layout and the same
-text as the Claude package.
+OpenAI's skill format is one and the same for Codex and ChatGPT, so one
+package serves both. Codex reads skills from `.agents/skills` in the working
+directory or the repository root, and from `~/.agents/skills` for every
+project. Unpack
+[`humanize/codex/humanize-codex.zip`](https://github.com/BolivarTech/claude-skills/raw/main/humanize/codex/humanize-codex.zip)
+into one of those locations; it already contains the skill folder:
+
+```bash
+unzip humanize-codex.zip -d ~/.agents/skills/
+```
+
+The archive holds the same `humanize/SKILL.md` text as the Claude package plus
+`humanize/agents/openai.yaml`, the manifest shown in the skill picker: display
+name, one-line description, and a default prompt. Invoke the skill with
+`$humanize` in Codex or `@humanize` in ChatGPT, or let either one match your
+request to its description.
 
 ### Claude Code CLI
 
@@ -369,44 +382,50 @@ To uninstall a skill, delete its directory.
 │   ├── SKILL.md          the skill
 │   ├── CHANGELOG.md      what changed, per version
 │   ├── humanize.zip      contains humanize/SKILL.md for upload to Claude
-│   └── chatgpt/
-│       ├── SKILL.md              the same skill, for ChatGPT
-│       └── humanize-chatgpt.zip  the same layout, for upload to ChatGPT
+│   └── codex/
+│       ├── SKILL.md              the same skill, for Codex and ChatGPT
+│       ├── agents/openai.yaml    display name, description, default prompt
+│       └── humanize-codex.zip    both files under humanize/, for upload
 ├── narrative-review/
 │   ├── SKILL.md
 │   ├── CHANGELOG.md
 │   ├── narrative-review.zip
-│   └── chatgpt/
+│   └── codex/
 │       ├── SKILL.md
-│       └── narrative-review-chatgpt.zip
+│       ├── agents/openai.yaml
+│       └── narrative-review-codex.zip
 ├── video-script/
 │   ├── SKILL.md
 │   ├── CHANGELOG.md
 │   ├── video-script.zip
-│   └── chatgpt/
+│   └── codex/
 │       ├── SKILL.md
-│       └── video-script-chatgpt.zip
+│       ├── agents/openai.yaml
+│       └── video-script-codex.zip
 ├── short-clip/
 │   ├── SKILL.md
 │   ├── CHANGELOG.md
 │   ├── short-clip.zip
-│   └── chatgpt/
+│   └── codex/
 │       ├── SKILL.md
-│       └── short-clip-chatgpt.zip
+│       ├── agents/openai.yaml
+│       └── short-clip-codex.zip
 ├── story-writer/
 │   ├── SKILL.md
 │   ├── CHANGELOG.md
 │   ├── story-writer.zip
-│   └── chatgpt/
+│   └── codex/
 │       ├── SKILL.md
-│       └── story-writer-chatgpt.zip
+│       ├── agents/openai.yaml
+│       └── story-writer-codex.zip
 ├── premortem/
 │   ├── SKILL.md
 │   ├── CHANGELOG.md
 │   ├── premortem.zip
-│   └── chatgpt/
+│   └── codex/
 │       ├── SKILL.md
-│       └── premortem-chatgpt.zip
+│       ├── agents/openai.yaml
+│       └── premortem-codex.zip
 ├── scripts/
 │   ├── validate_skills.py       release gate, run before every tag
 │   ├── test_validate_skills.py  validator regression tests
@@ -420,8 +439,8 @@ To uninstall a skill, delete its directory.
 One directory per skill, named after the skill. Nothing skill-specific sits at the root.
 
 `scripts/validate_skills.py` checks that the source and ZIP are byte-identical,
-for the skill and for any variant nested under it, and that a variant carries the
-skill's text unchanged.
+for the skill and for any variant nested under it, that a variant carries the
+skill's text unchanged, and that a variant's ZIP holds every file beside it.
 It also checks the six allowed frontmatter keys, non-empty names and descriptions,
 the archive's root folder, and version agreement between the frontmatter, README
 table, and changelog. Run `python scripts/validate_skills.py --check-installed`
@@ -472,7 +491,7 @@ the repository automatically. A release requires an exit code of zero.
 ## Versioning
 
 Skills here version independently, so a release names the skill it belongs to. The tag
-for the current version is `humanize-v4.2.2`. Creating a tag and publishing a
+for the current version is `humanize-v4.3.0`. Creating a tag and publishing a
 [GitHub release](https://github.com/BolivarTech/claude-skills/releases) are separate
 steps from updating the source and ZIP in this repository.
 
@@ -489,7 +508,7 @@ Claude which version it is running:
 
 ```yaml
 metadata:
-  version: 4.2.2
+  version: 4.3.0
 ```
 
 The file retains its version even after months in Claude Desktop. Compare it with the
