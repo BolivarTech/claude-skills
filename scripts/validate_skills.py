@@ -14,7 +14,8 @@ A skill may carry variants for other targets at ``<name>/<variant>/SKILL.md``,
 packaged as ``<name>-<variant>.zip`` next to them. A variant is the same text
 as the parent, byte for byte, and is checked for that, for its frontmatter and
 its zip; it releases with the parent, so the README and CHANGELOG checks stay
-the parent's.
+the parent's. A target may ask for files beside the skill (Codex reads
+``agents/openai.yaml``); every file in the variant directory ships in its zip.
 
 Outcomes:
     PASS          the property holds
@@ -186,12 +187,14 @@ class SkillVariant(SkillSource):
     Lives at ``<name>/<variant>/SKILL.md`` and ships as
     ``<name>/<variant>/<name>-<variant>.zip``. It is the parent's text, byte
     for byte, released together with it: a second package, not a sibling with
-    a life of its own.
+    a life of its own. Whatever else the target needs beside the skill (Codex
+    reads ``agents/openai.yaml``) lives in the same directory and ships in the
+    zip under the parent's folder.
 
     Example:
-        >>> variant = SkillVariant(Path("humanize/chatgpt"), pkg)
+        >>> variant = SkillVariant(Path("humanize/codex"), pkg)
         >>> variant.label
-        'humanize/chatgpt'
+        'humanize/codex'
     """
 
     def __init__(self, directory: Path, parent: SkillPackage) -> None:
@@ -209,6 +212,21 @@ class SkillVariant(SkillSource):
         self.variant = directory.name
         self.label = f"{parent.name}/{self.variant}"
         self.archive = directory / f"{parent.name}-{self.variant}.zip"
+
+    @property
+    def payload(self) -> dict[str, bytes]:
+        """What the zip must hold: every file here, under the parent's folder.
+
+        Returns:
+            Archive entry path mapped to the bytes it must carry. The archive
+            itself is excluded; paths use forward slashes as zip entries do.
+        """
+        return {
+            f"{self.parent.name}/{path.relative_to(self.directory).as_posix()}":
+                path.read_bytes()
+            for path in sorted(self.directory.rglob("*"))
+            if path.is_file() and path != self.archive
+        }
 
 
 def frontmatter_problems(frontmatter: dict, expected_name: str) -> list[str]:
@@ -242,16 +260,15 @@ def frontmatter_problems(frontmatter: dict, expected_name: str) -> list[str]:
     return problems
 
 
-def archive_problem(archive: Path, expected_entry: str, raw: bytes) -> str:
-    """Say why a zip is not exactly one entry holding ``raw``, or nothing.
+def archive_problem(archive: Path, expected: dict[str, bytes]) -> str:
+    """Say why a zip does not hold exactly ``expected``, or nothing.
 
     The uploader requires the skill folder at the archive root; a flat
     ``SKILL.md`` is rejected, and that is invisible until upload time.
 
     Args:
         archive: The zip to inspect.
-        expected_entry: The one path the archive must hold.
-        raw: The bytes that entry must carry.
+        expected: Every entry the archive must hold, mapped to its bytes.
 
     Returns:
         The problem, or an empty string when the layout is right.
@@ -260,11 +277,12 @@ def archive_problem(archive: Path, expected_entry: str, raw: bytes) -> str:
         return f"{archive} is absent"
     try:
         with zipfile.ZipFile(archive) as package:
-            names = package.namelist()
-            if names != [expected_entry]:
-                return f"holds {names}, expected exactly ['{expected_entry}']"
-            if package.read(expected_entry) != raw:
-                return "the packaged SKILL.md differs from the source"
+            names = sorted(package.namelist())
+            if names != sorted(expected):
+                return f"holds {names}, expected exactly {sorted(expected)}"
+            for entry, raw in expected.items():
+                if package.read(entry) != raw:
+                    return f"the packaged {entry} differs from the source"
     except (zipfile.BadZipFile, OSError) as exc:
         return f"unreadable: {exc}"
     return ""
@@ -367,7 +385,7 @@ class SkillValidator(ScenarioRunner):
         ``SKILL.md`` is rejected, and that is invisible until upload time.
         """
         problem = archive_problem(
-            self.pkg.archive, f"{self.pkg.name}/SKILL.md", self.pkg.raw
+            self.pkg.archive, {f"{self.pkg.name}/SKILL.md": self.pkg.raw}
         )
         if problem:
             return self._result("package-layout", Outcome.FAIL, problem)
@@ -441,8 +459,9 @@ class VariantValidator(ScenarioRunner):
     """Runs the scenarios a variant answers for itself.
 
     Four of them: its frontmatter, its version (equal to the parent's), its
-    text (identical to the parent's) and its zip. Installation, README and
-    CHANGELOG are the parent's business.
+    text (identical to the parent's) and its zip, which carries every file
+    in the variant directory. Installation, README and CHANGELOG are the
+    parent's business.
     """
 
     def __init__(self, variant: SkillVariant) -> None:
@@ -492,10 +511,13 @@ class VariantValidator(ScenarioRunner):
         return self._result("source-identical", Outcome.PASS)
 
     def check_package_layout(self) -> Result:
-        """The zip holds exactly ``<parent name>/SKILL.md``, byte-identical."""
-        problem = archive_problem(
-            self.variant.archive, f"{self.variant.parent.name}/SKILL.md", self.variant.raw
-        )
+        """The zip holds every file of the variant directory, byte-identical.
+
+        Each file sits under ``<parent name>/`` at its own relative path, so
+        a Codex package carries ``<name>/agents/openai.yaml`` next to
+        ``<name>/SKILL.md``; the archive itself is not an entry.
+        """
+        problem = archive_problem(self.variant.archive, self.variant.payload)
         if problem:
             return self._result("package-layout", Outcome.FAIL, problem)
         return self._result("package-layout", Outcome.PASS)
