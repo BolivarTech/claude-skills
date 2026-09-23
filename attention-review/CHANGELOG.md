@@ -6,6 +6,17 @@ All notable changes to the `attention-review` skill. The format follows
 [repository README](../README.md#versioning).
 
 
+## [2.1.0] - 2026-09-23
+
+Spelling, grammar, and typography errors now go to proofread instead of
+being reported as covered by no skill.
+
+### Changed
+
+- "Outside this review" gives orthotypographic errors one line, naming the
+  kind of error and a few locations, and points to the proofread skill, which
+  runs once the text is final.
+
 ## [2.0.0] - 2026-09-22
 
 Applying corrections now ends with a humanize pass over the whole piece, the

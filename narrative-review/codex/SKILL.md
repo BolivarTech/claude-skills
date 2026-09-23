@@ -13,7 +13,7 @@ description: >-
   scratch.
 license: MIT OR Apache-2.0
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
 # Narrative Review
@@ -174,7 +174,7 @@ Write the report in the user's language unless requested otherwise. Match its le
 4. **Prioritized findings.** For each high or medium finding, provide an identifier, priority, confidence, location, evidence, mechanism, impact, and concrete proposal. A low finding may be compact: identifier, location, evidence, and proposal. Distinguish optional recommendations from necessary corrections.
 5. **Revision plan.** Order interventions by dependency: architecture and causality, characters and information, then scenes and language. For each major change, state how to verify that it works and what should be preserved.
 
-Do not provide a lengthy plot summary unless it is needed to explain a finding. For focused assignments, develop only the requested area and the dependencies that affect it.
+Spelling, grammar, punctuation, and typography are not narrative findings. When the text has such errors, say so in one line at the end of the report and point to the proofread skill, which runs once the text is final. Do not provide a lengthy plot summary unless it is needed to explain a finding. For focused assignments, develop only the requested area and the dependencies that affect it.
 
 A review authorizes diagnosis and recommendations. Modify the manuscript only when the user requests corrections or rewriting, following the rules under Applying Corrections. You may include a short example labeled as a proposal when it clarifies an intervention; never present it as a quotation from the original. For a second review, verify the findings against the new version and identify which are resolved, remain, or have changed.
 

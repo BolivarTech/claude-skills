@@ -15,7 +15,7 @@ description: >-
   rewriting prose style or voice, or writing clip prompts.
 license: MIT OR Apache-2.0
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
 # Attention Review
@@ -222,7 +222,7 @@ Write the report in the user's language unless requested otherwise. Match its le
    A finding that touches several stages sets "supported problem" on each stage it keeps from working and "partial" on each it only weakens. When the feed section applies, add rows for its checks; when there is an ethical finding, add an ethics row. Do not use numerical scores unless the Score subsection applies.
 4. **Prioritized findings.** Number findings A1, A2, and so on in one sequence, in priority order. For each high or medium finding: identifier, priority, type, confidence, location, stage, evidence, mechanism, impact, and a concrete proposal marked as a necessary correction or an optional recommendation. A low finding may be compact: identifier, priority, type, stage, location, evidence, and a proposal marked as necessary or optional, adding confidence when it is not high.
 5. **Revision plan.** When one intervention depends on another, the dependency sets the order: a conflict with the stated intent comes first, because its direction decides the rest; the alignment between gap, promise, and payoff comes before proof and progress, which come before the opening and the close, which come before feed checks. Where no such dependency exists, order by priority. A finding that is both an opening and a feed issue goes with the opening; an ethical finding goes with the stage it damages. For each major change, state how to verify that it works and what to preserve. When nothing needs a necessary correction, say so and list the optional recommendations briefly.
-6. **Outside this review.** One line per symptom that belongs to another kind of review (plot or character, production, prose voice, copyediting), with its location and the skill that covers it, or a note that no available skill does. Prose-voice symptoms, such as stiff or redundant phrasing, repeated or near-identical lines, or a register that slips, belong to the humanize pass that runs over the whole text when corrections are applied; list them with their locations, and say which repetitions look deliberate so the style instruction protects them. Omit the section when there is nothing to list.
+6. **Outside this review.** One line per symptom that belongs to another kind of review (plot or character, production, prose voice, copyediting), with its location and the skill that covers it, or a note that no available skill does. Prose-voice symptoms, such as stiff or redundant phrasing, repeated or near-identical lines, or a register that slips, belong to the humanize pass that runs over the whole text when corrections are applied; list them with their locations, and say which repetitions look deliberate so the style instruction protects them. Spelling, grammar, punctuation, and typography errors belong to the proofread skill, which runs once the text is final: give them one line naming the kind of error and a few locations, not a line each. Omit the section when there is nothing to list.
 
 When no performance data was supplied, end the report, after the last section, with one line recommending that the user share it if it exists, saying which symptom it would help confirm. Do not provide a long summary of the piece unless it is needed to explain a finding. For focused assignments, such as "only the opening", develop only the requested area and the dependencies that affect it.
 

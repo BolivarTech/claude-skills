@@ -19,13 +19,13 @@ the body stays outside the context window, so its length adds no cost to those t
 | Skill | Version | What it does |
 |-------|---------|--------------|
 | [`humanize`](humanize/) | [4.3.0](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
-| [`narrative-review`](narrative-review/) | [2.0.0](narrative-review/CHANGELOG.md) | Diagnoses a story's promises, structure, characters, twists, and weak devices, with evidence and the smallest fix for each |
+| [`narrative-review`](narrative-review/) | [2.1.0](narrative-review/CHANGELOG.md) | Diagnoses a story's promises, structure, characters, twists, and weak devices, with evidence and the smallest fix for each |
 | [`video-script`](video-script/) | [1.1.0](video-script/CHANGELOG.md) | Turns a narration into a production-ready audiovisual script, or reviews a script or cut plan for narrative, image, sound, pacing, and production defects |
 | [`short-clip`](short-clip/) | [1.1.0](short-clip/CHANGELOG.md) | Turns an idea, meme, or image into a ten-second vertical clip: the prompt for the reference image and the prompt that animates it, with post copy when a platform is named |
 | [`story-writer`](story-writer/) | [1.2.0](story-writer/CHANGELOG.md) | Writes a literary story from one idea or a full dossier, reviews it, applies the verified corrections, and delivers it with the decisions that shaped it |
 | [`premortem`](premortem/) | [1.1.0](premortem/CHANGELOG.md) | Places a plan in a future where it already failed, reconstructs and prioritizes the causes, and delivers a report with treatments, early signals, and the risks of not acting; or the kit to run the session with a team |
 | [`design-brainstorm`](design-brainstorm/) | [1.0.0](design-brainstorm/CHANGELOG.md) | Turns an idea or a proposed change into an approved design or specification before anything gets built, carrying premortem risks and open gaps into it |
-| [`attention-review`](attention-review/) | [2.0.0](attention-review/CHANGELOG.md) | Reviews how a piece earns and holds attention, from the opening hook to the payoff, with feed checks for short vertical video and the smallest fix for each problem |
+| [`attention-review`](attention-review/) | [2.1.0](attention-review/CHANGELOG.md) | Reviews how a piece earns and holds attention, from the opening hook to the payoff, with feed checks for short vertical video and the smallest fix for each problem |
 | [`proofread`](proofread/) | [1.0.0](proofread/CHANGELOG.md) | Corrects spelling, grammar, punctuation, and typography in Spanish or English against the norm or the project's style guide, without touching style, and reports every change |
 
 **Using them together.** [docs/workflow.md](docs/workflow.md) walks through the whole flow, from an idea to a finished story and a production script, and shows which skill to call at each step and what to say.

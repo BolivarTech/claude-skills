@@ -6,6 +6,18 @@ All notable changes to the `narrative-review` skill. The format follows
 [repository README](../README.md#versioning).
 
 
+## [2.1.0] - 2026-09-23
+
+Spelling, grammar, and typography errors now have a skill to go to. The
+report mentions them in one line and points to proofread instead of leaving
+them unnamed.
+
+### Added
+
+- A closing line in the report when the text has spelling, grammar,
+  punctuation, or typography errors, pointing to the proofread skill. They are
+  still not narrative findings.
+
 ## [2.0.0] - 2026-09-22
 
 Applying corrections now ends with a humanize pass over the whole text, the
