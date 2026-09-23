@@ -2,7 +2,7 @@
 
 [![Claude](https://img.shields.io/badge/Claude-skills-blueviolet.svg)](https://support.claude.com/en/articles/12512176-what-are-skills)
 [![Runtime](https://img.shields.io/badge/runtime-none-success.svg)](#requirements)
-[![Skills](https://img.shields.io/badge/skills-8-blue.svg)](#skills)
+[![Skills](https://img.shields.io/badge/skills-9-blue.svg)](#skills)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
 Each directory contains a Claude skill. Claude Desktop and claude.ai install skills
@@ -26,6 +26,9 @@ the body stays outside the context window, so its length adds no cost to those t
 | [`premortem`](premortem/) | [1.1.0](premortem/CHANGELOG.md) | Places a plan in a future where it already failed, reconstructs and prioritizes the causes, and delivers a report with treatments, early signals, and the risks of not acting; or the kit to run the session with a team |
 | [`design-brainstorm`](design-brainstorm/) | [1.0.0](design-brainstorm/CHANGELOG.md) | Turns an idea or a proposed change into an approved design or specification before anything gets built, carrying premortem risks and open gaps into it |
 | [`attention-review`](attention-review/) | [2.0.0](attention-review/CHANGELOG.md) | Reviews how a piece earns and holds attention, from the opening hook to the payoff, with feed checks for short vertical video and the smallest fix for each problem |
+| [`proofread`](proofread/) | [1.0.0](proofread/CHANGELOG.md) | Corrects spelling, grammar, punctuation, and typography in Spanish or English against the norm or the project's style guide, without touching style, and reports every change |
+
+**Using them together.** [docs/workflow.md](docs/workflow.md) walks through the whole flow, from an idea to a finished story and a production script, and shows which skill to call at each step and what to say.
 
 ---
 
@@ -378,6 +381,47 @@ identical to the skill, as with `humanize`.
 
 ---
 
+## proofread
+
+The name comes from the printer's proof: the copy that came off the press to be
+checked for errors before the print run. In Spanish the trade is called
+*corrección de pruebas* or *corrección ortotipográfica*. Proofreading is the last
+check of a finished text, and it is not copyediting: copyediting works on
+clarity and voice, which here belongs to `humanize` and to the review skills.
+
+Proofread corrects what the norm declares wrong, in Spanish or English:
+spelling, accents, grammar, punctuation, and typography. It leaves style,
+voice, rhythm, and content alone.
+
+**Follows your rules first.** A project's style guide or the author's declared
+criteria come before the general norm. After them come RAE and ASALE for
+Spanish, and *The Chicago Manual of Style* (18th edition) with Merriam-Webster
+for US English. A British text keeps its variant. The rules were checked
+against those sources, down to the current status of the accent on *solo* and
+Chicago 18's capital after a colon.
+
+**Knows what not to touch.** A repetition, a fragment, or a comma splice used
+for rhythm is style. An error in a character's grammar may be
+characterization, so it is flagged rather than changed; spelling and
+punctuation inside dialogue are corrected, because a reader cannot hear them.
+In English it never adds a new em dash, since that dash is also a sign of
+generated text. In a script it corrects the words inside SSML, leaves every
+tag as it is, and follows the project's convention on accents.
+
+**Shows every change.** The corrected text goes to a new file beside the
+original, with the same line endings. A report lists each change with its rule,
+the doubts left for the author, and the criteria applied to the whole text.
+Say "solo revisa" to get the report without any change.
+
+**Trigger it** with `/proofread` in Claude Code, `$proofread` in Codex, by
+naming it in Claude Desktop, or by saying "corrige la ortografía", "revisa
+tildes y puntuación" or "proofread this".
+
+**A Codex package** lives in [`proofread/codex/`](proofread/codex/), identical
+to the skill, as with `humanize`.
+
+---
+
 ## Installation
 
 Each skill directory includes a `.zip` beside its `SKILL.md`. The archive contains
@@ -543,6 +587,16 @@ To uninstall a skill, delete its directory.
 │       ├── SKILL.md
 │       ├── agents/openai.yaml
 │       └── attention-review-codex.zip
+├── proofread/
+│   ├── SKILL.md
+│   ├── CHANGELOG.md
+│   ├── proofread.zip
+│   └── codex/
+│       ├── SKILL.md
+│       ├── agents/openai.yaml
+│       └── proofread-codex.zip
+├── docs/
+│   └── workflow.md       how the skills work together, from an idea to a script
 ├── scripts/
 │   ├── validate_skills.py       release gate, run before every tag
 │   ├── test_validate_skills.py  validator regression tests

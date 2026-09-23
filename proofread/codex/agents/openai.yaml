@@ -1,0 +1,4 @@
+interface:
+  display_name: "Proofread"
+  short_description: "Correct spelling, grammar, and typography, not style"
+  default_prompt: "Use $proofread to correct this text against the norm and report every change."
