@@ -6,6 +6,27 @@ All notable changes to the `story-writer` skill. The format follows
 [repository README](../README.md#versioning).
 
 
+## [1.2.0] - 2026-09-22
+
+The humanize pass that closes a story now receives a style instruction, and the
+Spanish raya of a narrator's inciso is declared as correct typography. A test on
+a gothic chapter showed that, without that instruction, humanize turned an
+inciso into parentheses and flattened an anaphora. With it, every declared
+device came through intact.
+
+### Changed
+
+- The humanize pass receives the genre, the register, and the deliberate
+  devices the story uses: anaphora and parallel negations, deliberate
+  fragments, escalation by repetition, and the raya of dialogue and of
+  narrative incisos. After the pass, any edit that removed a declared device
+  is reverted.
+- The format rules now state that the raya also sets off a narrator's inciso
+  in Spanish prose, and that humanize rewrites it unless the style instruction
+  declares it.
+- The final humanize pass runs by default and is skipped only when the user
+  asks for that explicitly, never by inference; the sheet records the skip.
+
 ## [1.1.0] - 2026-09-21
 
 The ChatGPT package gives way to a Codex one. OpenAI documents a single skill

@@ -19,13 +19,13 @@ the body stays outside the context window, so its length adds no cost to those t
 | Skill | Version | What it does |
 |-------|---------|--------------|
 | [`humanize`](humanize/) | [4.3.0](humanize/CHANGELOG.md) | Rewrites existing prose for a natural voice while preserving meaning and limiting unnecessary changes |
-| [`narrative-review`](narrative-review/) | [1.1.0](narrative-review/CHANGELOG.md) | Diagnoses a story's promises, structure, characters, twists, and weak devices, with evidence and the smallest fix for each |
+| [`narrative-review`](narrative-review/) | [2.0.0](narrative-review/CHANGELOG.md) | Diagnoses a story's promises, structure, characters, twists, and weak devices, with evidence and the smallest fix for each |
 | [`video-script`](video-script/) | [1.1.0](video-script/CHANGELOG.md) | Turns a narration into a production-ready audiovisual script, or reviews a script or cut plan for narrative, image, sound, pacing, and production defects |
 | [`short-clip`](short-clip/) | [1.1.0](short-clip/CHANGELOG.md) | Turns an idea, meme, or image into a ten-second vertical clip: the prompt for the reference image and the prompt that animates it, with post copy when a platform is named |
-| [`story-writer`](story-writer/) | [1.1.0](story-writer/CHANGELOG.md) | Writes a literary story from one idea or a full dossier, reviews it, applies the verified corrections, and delivers it with the decisions that shaped it |
+| [`story-writer`](story-writer/) | [1.2.0](story-writer/CHANGELOG.md) | Writes a literary story from one idea or a full dossier, reviews it, applies the verified corrections, and delivers it with the decisions that shaped it |
 | [`premortem`](premortem/) | [1.1.0](premortem/CHANGELOG.md) | Places a plan in a future where it already failed, reconstructs and prioritizes the causes, and delivers a report with treatments, early signals, and the risks of not acting; or the kit to run the session with a team |
 | [`design-brainstorm`](design-brainstorm/) | [1.0.0](design-brainstorm/CHANGELOG.md) | Turns an idea or a proposed change into an approved design or specification before anything gets built, carrying premortem risks and open gaps into it |
-| [`attention-review`](attention-review/) | [1.0.0](attention-review/CHANGELOG.md) | Reviews how a piece earns and holds attention, from the opening hook to the payoff, with feed checks for short vertical video and the smallest fix for each problem |
+| [`attention-review`](attention-review/) | [2.0.0](attention-review/CHANGELOG.md) | Reviews how a piece earns and holds attention, from the opening hook to the payoff, with feed checks for short vertical video and the smallest fix for each problem |
 
 ---
 
@@ -98,12 +98,15 @@ mechanism, and the smallest intervention that addresses the cause. A revision
 plan closes it, ordered by dependency: architecture first, then characters and
 information, then scenes and language.
 
-**Applies fixes without rewriting the author.** Ask for it and pick the findings.
-The skill edits only the passages those findings cite, matches the voice of the
-lines around each insertion, and returns the full text with a change log per
-finding. It then reviews the new version to confirm what was resolved and that
-the strengths it flagged are still there. When `humanize` is installed, the
-inserted lines pass through it with the rest of the story protected.
+**Applies the chosen fixes, then polishes the whole text.** Ask for it and pick
+the findings. The first stage edits only the passages those findings cite and
+matches the voice of the lines around each insertion. When `humanize` is
+installed, a second stage passes the whole text through it, the author's own
+prose included, with a style instruction drawn from the review so the
+deliberate devices stay. The change log lists the findings and every edit of
+that pass separately, so each one can be reverted. The skill then reviews the
+new version to confirm what was resolved and that the strengths it flagged are
+still there.
 
 **Trigger it** with `/narrative-review` in Claude Code, by naming it in Claude
 Desktop, or by asking for a story critique, a beta read, or "revisa mi cuento".
@@ -221,7 +224,8 @@ punctuation, and `humanize` leaves it alone.
 `narrative-review` reads the story and each finding is checked against the text:
 the real ones are corrected with the smallest change; the false positives are
 rejected with a reason. Nothing is changed to please the reviewer. `humanize`
-runs last, with the dialogue protected.
+runs last, with the dialogue protected and the story's register and deliberate
+devices declared, the raya of narrative incisos included.
 
 **Length follows the premise.** Two to ten thousand words by default, no hard
 ceiling; longer when asked, and parts proposed only when the causal chain needs
@@ -361,8 +365,9 @@ help.
 a status table by stage, located findings with priority, type, and
 confidence, a revision plan, and what falls outside the review. A numeric
 score appears only on request or when two versions of the same piece are
-compared. Corrections are applied only when asked, and only to the findings
-the user picks.
+compared. Corrections are applied only when asked, to the findings the user
+picks, followed by a `humanize` pass over the whole text that keeps the
+devices the review marked as deliberate.
 
 **Trigger it** with `/attention-review` in Claude Code, `$attention-review` in
 Codex, by naming it in Claude Desktop, or by saying "revisa la atención de mi

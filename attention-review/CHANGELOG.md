@@ -6,6 +6,41 @@ All notable changes to the `attention-review` skill. The format follows
 [repository README](../README.md#versioning).
 
 
+## [2.0.0] - 2026-09-22
+
+Applying corrections now ends with a humanize pass over the whole piece, the
+author's own prose included, as in narrative-review 2.0.0. The same request
+returns a text edited beyond the chosen findings, which makes this a major
+version one day after the first release.
+
+### Changed
+
+- Corrections run in two stages: the chosen findings first, with everything
+  else byte for byte, including markup, cues, production notes, and line
+  endings; then a humanize pass over the whole piece when it is available.
+- The humanize pass receives a style instruction built from the review, with
+  the same deliberate devices protected as in narrative-review. In a script,
+  markup, cues, and production notes stay protected, and the words a listener
+  hears may be edited like any narration.
+- Prose-voice symptoms, such as stiff phrasing, repeated lines, or a register
+  that slips, now go to that humanize pass instead of being reported as
+  covered by no skill. The report says which repetitions look deliberate, so
+  the style instruction protects them.
+- The change log lists the findings and every edit of the humanize pass
+  separately.
+- Both humanize passes run by default and are skipped only on the user's
+  explicit request, never by inference. An explicit request skips both, the
+  inserted lines included, and the change log records the skip.
+- A request to change little keeps the passes but limits them to errors and
+  clarity problems, leaving rhythm and style alone; the change log says so.
+- The change log locates an insertion as "after Lnn", writes "none" with the
+  reason in its humanize part when humanize was skipped, and the second review
+  marks the findings the user did not select as not selected.
+
+### Removed
+
+- The rule that humanize never runs on the author's prose.
+
 ## [1.0.0] - 2026-09-22
 
 First release. The skill reviews how a piece earns and holds its audience's
