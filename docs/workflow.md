@@ -42,9 +42,9 @@ idea
 ```
 
 The order matters. Story problems come before polish, because fixing the plot
-changes the sentences. Polish comes before proofreading, because every rewrite
-can bring new errors. Proofreading comes last, because nothing after it should
-change the text.
+changes the sentences. Polish comes before proofreading since every rewrite can
+bring new errors, and proofreading goes last: nothing after it should change the
+text.
 
 ---
 
