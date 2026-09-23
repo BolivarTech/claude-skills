@@ -1,0 +1,4 @@
+interface:
+  display_name: "Attention Review"
+  short_description: "Find where a piece loses its audience, and why"
+  default_prompt: "Use $attention-review to review how this piece holds attention and what to change first."

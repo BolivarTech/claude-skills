@@ -2,7 +2,7 @@
 
 [![Claude](https://img.shields.io/badge/Claude-skills-blueviolet.svg)](https://support.claude.com/en/articles/12512176-what-are-skills)
 [![Runtime](https://img.shields.io/badge/runtime-none-success.svg)](#requirements)
-[![Skills](https://img.shields.io/badge/skills-7-blue.svg)](#skills)
+[![Skills](https://img.shields.io/badge/skills-8-blue.svg)](#skills)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
 Each directory contains a Claude skill. Claude Desktop and claude.ai install skills
@@ -25,6 +25,7 @@ the body stays outside the context window, so its length adds no cost to those t
 | [`story-writer`](story-writer/) | [1.1.0](story-writer/CHANGELOG.md) | Writes a literary story from one idea or a full dossier, reviews it, applies the verified corrections, and delivers it with the decisions that shaped it |
 | [`premortem`](premortem/) | [1.1.0](premortem/CHANGELOG.md) | Places a plan in a future where it already failed, reconstructs and prioritizes the causes, and delivers a report with treatments, early signals, and the risks of not acting; or the kit to run the session with a team |
 | [`design-brainstorm`](design-brainstorm/) | [1.0.0](design-brainstorm/CHANGELOG.md) | Turns an idea or a proposed change into an approved design or specification before anything gets built, carrying premortem risks and open gaps into it |
+| [`attention-review`](attention-review/) | [1.0.0](attention-review/CHANGELOG.md) | Reviews how a piece earns and holds attention, from the opening hook to the payoff, with feed checks for short vertical video and the smallest fix for each problem |
 
 ---
 
@@ -323,6 +324,55 @@ identical to the skill, as with `humanize`.
 
 ---
 
+## attention-review
+
+Attention Review reads a piece that has to hold an audience and says where
+people are likely to stop, why, and what to change. It works on explainers,
+videos, podcasts, talks, classes, articles, threads, posts, and stories, and
+predicts nothing about views: its criteria guide editing and forecast no
+results.
+
+**Seven stages, in the order the audience needs them.** Recognition, gap,
+promise, proof, progress, payoff, and transmission. Each has its checks and
+its usual failures: a gap that only teases, a promise that says "secret", a
+credential standing in for a demonstration, an insight parked in the last
+second, a close that asks for four things at once. The insight test ("I used
+to think ___. Now I understand ___, because ___") tells information apart
+from a payoff.
+
+**Knows where its job ends.** In a story it reviews only the attention layer
+and sends plot, character, and fairness questions to `narrative-review`. In a
+production script it judges what the audience hears and sees, reads the words
+inside markup such as SSML, and leaves shots, sound, and continuity to
+`video-script`. Humor gets its own reading: recognition, expectation, turn,
+punchline, identification.
+
+**Feed checks only for feed pieces.** For TikTok, Reels, or Shorts it adds the
+first frame, sound-off readability, safe zones, a payoff with margin before
+the end, the loop, and one call to action. Platform limits come with the date
+they were verified.
+
+**Uses results when they exist.** Retention curves, analytics, comments, or
+reader reactions are mapped to the stage that best explains them. Without
+them the review still runs in full and ends with one line on which data would
+help.
+
+**Reports like `narrative-review`.** Verdict and scope, strengths to preserve,
+a status table by stage, located findings with priority, type, and
+confidence, a revision plan, and what falls outside the review. A numeric
+score appears only on request or when two versions of the same piece are
+compared. Corrections are applied only when asked, and only to the findings
+the user picks.
+
+**Trigger it** with `/attention-review` in Claude Code, `$attention-review` in
+Codex, by naming it in Claude Desktop, or by saying "revisa la atención de mi
+guion", "¿esto engancha?" or "check my hook".
+
+**A Codex package** lives in [`attention-review/codex/`](attention-review/codex/),
+identical to the skill, as with `humanize`.
+
+---
+
 ## Installation
 
 Each skill directory includes a `.zip` beside its `SKILL.md`. The archive contains
@@ -480,6 +530,14 @@ To uninstall a skill, delete its directory.
 │       ├── SKILL.md
 │       ├── agents/openai.yaml
 │       └── design-brainstorm-codex.zip
+├── attention-review/
+│   ├── SKILL.md
+│   ├── CHANGELOG.md
+│   ├── attention-review.zip
+│   └── codex/
+│       ├── SKILL.md
+│       ├── agents/openai.yaml
+│       └── attention-review-codex.zip
 ├── scripts/
 │   ├── validate_skills.py       release gate, run before every tag
 │   ├── test_validate_skills.py  validator regression tests
