@@ -1,0 +1,4 @@
+interface:
+  display_name: "Negotiator"
+  short_description: "Read the other side's move and draft the reply to send"
+  default_prompt: "Use $negotiator to answer this message from the other side of my negotiation."

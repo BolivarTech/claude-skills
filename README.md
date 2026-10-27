@@ -2,7 +2,7 @@
 
 [![Claude](https://img.shields.io/badge/Claude-skills-blueviolet.svg)](https://support.claude.com/en/articles/12512176-what-are-skills)
 [![Runtime](https://img.shields.io/badge/runtime-none-success.svg)](#requirements)
-[![Skills](https://img.shields.io/badge/skills-9-blue.svg)](#skills)
+[![Skills](https://img.shields.io/badge/skills-10-blue.svg)](#skills)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
 Each directory contains a Claude skill. Claude Desktop and claude.ai install skills
@@ -27,6 +27,7 @@ the body stays outside the context window, so its length adds no cost to those t
 | [`design-brainstorm`](design-brainstorm/) | [1.0.0](design-brainstorm/CHANGELOG.md) | Turns an idea or a proposed change into an approved design or specification before anything gets built, carrying premortem risks and open gaps into it |
 | [`attention-review`](attention-review/) | [2.1.0](attention-review/CHANGELOG.md) | Reviews how a piece earns and holds attention, from the opening hook to the payoff, with feed checks for short vertical video and the smallest fix for each problem |
 | [`proofread`](proofread/) | [1.0.0](proofread/CHANGELOG.md) | Corrects spelling, grammar, punctuation, and typography in Spanish or English against the norm or the project's style guide, without touching style, and reports every change |
+| [`negotiator`](negotiator/) | [1.0.0](negotiator/CHANGELOG.md) | Reads the other side's message, detects its tactics and bluffs, and drafts the reply to send; also prepares you for a negotiation or coaches you through one, keeping a case file per negotiation |
 
 **Using them together.** [docs/workflow.md](docs/workflow.md) walks through the whole flow, from an idea to a finished story and a production script, and shows which skill to call at each step and what to say.
 
@@ -422,6 +423,46 @@ to the skill, as with `humanize`.
 
 ---
 
+## negotiator
+
+Negotiator works for you in a negotiation. Most of the time that means you
+paste what the other side sent and get back the reply to send. It can also
+prepare you before a negotiation or coach you through one.
+
+**Asks before it writes.** A good reply depends on things the message never
+says: your limit, your alternative if there's no deal, the real deadline, who
+decides. When one of those is missing, the skill asks for all of them in one
+message, then writes.
+
+**Reads the other side.** It names the pressure tactic in each message, such
+as an extreme anchor, an artificial deadline, or authority that vanishes at
+the end, and decides whether to neutralize it, ignore it, call it out, or
+use it. Each claim the other side leans on gets tested as a possible bluff on
+its content, never on tone, and the reply checks it without accusing anyone.
+
+**Remembers the case.** Each negotiation gets a file at
+`.negotiator/<slug>.md` in your working directory, with the facts, your
+standing instructions, every round, and the claims under test, so the next
+session picks up where the last one stopped. Where there is no file system,
+ask for the file and upload it next time.
+
+**Won't lie for you on its own.** It keeps your limit to itself whenever that
+helps. It may suggest a bluff, set apart with its risk, but a bluff only goes
+into the reply after you approve that one, for that round.
+
+Tone and tactics are yours to steer ("más firme", "don't risk the
+relationship"). The one fixed rule is brevity. Every reply goes through
+`humanize`, with figures, dates, and conditions protected.
+
+**Trigger it** with `/negotiator` in Claude Code, `$negotiator` in Codex, by
+naming it in Claude Desktop, or by pasting a message and saying "¿qué le
+respondo?", "revisa esta propuesta" or "how should I reply to this offer".
+
+**A Codex package** lives in [`negotiator/codex/`](negotiator/codex/),
+identical to the skill.
+
+---
+
 ## Installation
 
 Each skill directory includes a `.zip` beside its `SKILL.md`. The archive contains
@@ -595,6 +636,14 @@ To uninstall a skill, delete its directory.
 │       ├── SKILL.md
 │       ├── agents/openai.yaml
 │       └── proofread-codex.zip
+├── negotiator/
+│   ├── SKILL.md
+│   ├── CHANGELOG.md
+│   ├── negotiator.zip
+│   └── codex/
+│       ├── SKILL.md
+│       ├── agents/openai.yaml
+│       └── negotiator-codex.zip
 ├── docs/
 │   └── workflow.md       how the skills work together, from an idea to a script
 ├── scripts/
