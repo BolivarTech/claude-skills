@@ -7,8 +7,10 @@ from prose_metrics import ProseMetrics, Report, split_sentences, words_of
 
 class SentenceSplittingTests(unittest.TestCase):
     def test_splits_on_terminator_followed_by_capital(self):
-        self.assertEqual(split_sentences("Uno va. Dos viene. ¿Tres? ¡Cuatro!"),
-                         ["Uno va.", "Dos viene.", "¿Tres?", "¡Cuatro!"])
+        self.assertEqual(
+            split_sentences("Uno va. Dos viene. ¿Tres? ¡Cuatro!"),
+            ["Uno va.", "Dos viene.", "¿Tres?", "¡Cuatro!"],
+        )
 
     def test_decimal_and_abbreviation_before_digit_do_not_split(self):
         self.assertEqual(len(split_sentences("Dejó 3.000 muertos, p. 471 de la edición.")), 1)
@@ -35,8 +37,10 @@ class WordTokenTests(unittest.TestCase):
 
 
 class MetricsTests(unittest.TestCase):
-    TEXT = ("La novela es breve. Macondo muere. A lo largo del relato, a lo largo de "
-            "los años, todo vuelve al mismo punto de partida sin que nadie lo note.")
+    TEXT = (
+        "La novela es breve. Macondo muere. A lo largo del relato, a lo largo de "
+        "los años, todo vuelve al mismo punto de partida sin que nadie lo note."
+    )
 
     def test_counts_words_and_sentences(self):
         m = ProseMetrics.measure(self.TEXT)
@@ -46,8 +50,8 @@ class MetricsTests(unittest.TestCase):
     def test_length_bands(self):
         m = ProseMetrics.measure(self.TEXT)
         self.assertEqual((m.min_len, m.max_len), (2, 23))
-        self.assertEqual(m.short, 1)        # "La novela es breve." = 4 words
-        self.assertEqual(m.very_short, 1)   # "Macondo muere." = 2 words
+        self.assertEqual(m.short, 1)  # "La novela es breve." = 4 words
+        self.assertEqual(m.very_short, 1)  # "Macondo muere." = 2 words
         self.assertEqual(m.long, 0)
 
     def test_long_band_starts_at_31(self):
@@ -58,12 +62,12 @@ class MetricsTests(unittest.TestCase):
 
     def test_repeated_trigrams_counted_with_top_list(self):
         m = ProseMetrics.measure(self.TEXT)
-        self.assertEqual(m.trigram_types, 1)          # "a lo largo" x2
+        self.assertEqual(m.trigram_types, 1)  # "a lo largo" x2
         self.assertEqual(m.trigram_occurrences, 2)
         self.assertEqual(m.top_trigrams, (("a lo largo", 2),))
 
     def test_function_word_ratio(self):
-        m = ProseMetrics.measure("el de la casa")   # 3 of 4
+        m = ProseMetrics.measure("el de la casa")  # 3 of 4
         self.assertAlmostEqual(m.function_ratio, 0.75)
 
     def test_single_sentence_has_zero_stdev(self):

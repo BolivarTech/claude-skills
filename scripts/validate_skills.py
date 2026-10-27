@@ -222,8 +222,7 @@ class SkillVariant(SkillSource):
             itself is excluded; paths use forward slashes as zip entries do.
         """
         return {
-            f"{self.parent.name}/{path.relative_to(self.directory).as_posix()}":
-                path.read_bytes()
+            f"{self.parent.name}/{path.relative_to(self.directory).as_posix()}": path.read_bytes()
             for path in sorted(self.directory.rglob("*"))
             if path.is_file() and path != self.archive
         }
@@ -254,9 +253,7 @@ def frontmatter_problems(frontmatter: dict, expected_name: str) -> list[str]:
         if not isinstance(value, str) or not value.strip():
             problems.append(f"{key} must be a non-empty string")
     if frontmatter.get("name") != expected_name:
-        problems.append(
-            f"name is {frontmatter.get('name')!r}, expected {expected_name!r}"
-        )
+        problems.append(f"name is {frontmatter.get('name')!r}, expected {expected_name!r}")
     return problems
 
 
@@ -348,20 +345,17 @@ class SkillValidator(ScenarioRunner):
         """``metadata.version`` present and a plain semantic version."""
         version = self.pkg.version
         if version is None:
-            return self._result(
-                "version-declared", Outcome.FAIL, "metadata.version is absent"
-            )
+            return self._result("version-declared", Outcome.FAIL, "metadata.version is absent")
         if not SEMVER.match(version):
-            return self._result(
-                "version-declared", Outcome.FAIL, f"{version!r} is not X.Y.Z"
-            )
+            return self._result("version-declared", Outcome.FAIL, f"{version!r} is not X.Y.Z")
         return self._result("version-declared", Outcome.PASS, version)
 
     def check_installed_copy(self) -> Result:
         """The copy Claude executes is byte-identical to the source."""
         if not self.include_installed:
             return self._result(
-                "installed-copy", Outcome.OUT_OF_SCOPE,
+                "installed-copy",
+                Outcome.OUT_OF_SCOPE,
                 "use --check-installed to compare the personal installation",
             )
         if not self.pkg.installed.exists():
@@ -384,9 +378,7 @@ class SkillValidator(ScenarioRunner):
         The uploader requires the skill folder at the archive root; a flat
         ``SKILL.md`` is rejected, and that is invisible until upload time.
         """
-        problem = archive_problem(
-            self.pkg.archive, {f"{self.pkg.name}/SKILL.md": self.pkg.raw}
-        )
+        problem = archive_problem(self.pkg.archive, {f"{self.pkg.name}/SKILL.md": self.pkg.raw})
         if problem:
             return self._result("package-layout", Outcome.FAIL, problem)
         return self._result("package-layout", Outcome.PASS)
@@ -411,6 +403,7 @@ class SkillValidator(ScenarioRunner):
                 "readme-version", Outcome.FAIL, "no row for this skill in the table"
             )
         version_cells = [row.split("|")[2].strip() for row in rows if len(row.split("|")) >= 4]
+
         def version_label(cell: str) -> str:
             link = re.fullmatch(r"\[([^\]]+)\]\([^\n]+\)", cell)
             return link.group(1) if link else cell
@@ -427,18 +420,14 @@ class SkillValidator(ScenarioRunner):
         """The CHANGELOG carries an entry for the declared version."""
         version = self.pkg.version
         if version is None:
-            return self._result(
-                "changelog-version", Outcome.CANNOT_TEST, "no version to look for"
-            )
+            return self._result("changelog-version", Outcome.CANNOT_TEST, "no version to look for")
         if not self.pkg.changelog.exists():
             return self._result(
                 "changelog-version", Outcome.FAIL, f"{self.pkg.changelog} is absent"
             )
         text = self.pkg.changelog.read_text(encoding="utf-8")
         if f"## [{version}]" not in text:
-            return self._result(
-                "changelog-version", Outcome.FAIL, f"no '## [{version}]' entry"
-            )
+            return self._result("changelog-version", Outcome.FAIL, f"no '## [{version}]' entry")
         return self._result("changelog-version", Outcome.PASS, version)
 
     def check_trigger_fires(self) -> Result:
@@ -485,9 +474,7 @@ class VariantValidator(ScenarioRunner):
         version = self.variant.version
         expected = self.variant.parent.version
         if version is None:
-            return self._result(
-                "version-declared", Outcome.FAIL, "metadata.version is absent"
-            )
+            return self._result("version-declared", Outcome.FAIL, "metadata.version is absent")
         if version != expected:
             return self._result(
                 "version-declared",
@@ -533,9 +520,7 @@ def discover_variants(skill_directory: Path) -> list[Path]:
         Directories holding a ``SKILL.md``, sorted by name. Empty when there
         are none or the skill directory does not exist.
     """
-    return sorted(
-        path.parent for path in skill_directory.glob("*/SKILL.md") if path.is_file()
-    )
+    return sorted(path.parent for path in skill_directory.glob("*/SKILL.md") if path.is_file())
 
 
 def discover(repo_root: Path, only: str | None) -> list[Path]:
@@ -552,9 +537,7 @@ def discover(repo_root: Path, only: str | None) -> list[Path]:
         HarnessError: ``only`` names a directory with no SKILL.md, or the repo
             holds no skills at all.
     """
-    directories = sorted(
-        path.parent for path in repo_root.glob("*/SKILL.md") if path.is_file()
-    )
+    directories = sorted(path.parent for path in repo_root.glob("*/SKILL.md") if path.is_file())
     if only is not None:
         directories = [d for d in directories if d.name == only]
         if not directories:
@@ -619,7 +602,8 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("skill", nargs="?", help="check only this skill")
     parser.add_argument(
-        "--check-installed", action="store_true",
+        "--check-installed",
+        action="store_true",
         help="also compare personal copies under ~/.claude/skills with the source",
     )
     args = parser.parse_args(argv)

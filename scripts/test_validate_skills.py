@@ -26,8 +26,9 @@ class ValidatorTests(unittest.TestCase):
         self.directory.mkdir()
 
     def package(self, **overrides):
-        metadata = dict(name="humanize", description="Rewrite prose.",
-                        metadata={"version": "3.0.0"})
+        metadata = dict(
+            name="humanize", description="Rewrite prose.", metadata={"version": "3.0.0"}
+        )
         metadata.update(overrides)
         (self.directory / "SKILL.md").write_text(
             "---\n" + yaml.safe_dump(metadata) + "---\nText.\n", encoding="utf-8"
@@ -35,8 +36,9 @@ class ValidatorTests(unittest.TestCase):
         return SkillPackage(self.directory, self.root)
 
     def test_required_text_fields(self):
-        self.assertEqual(SkillValidator(self.package()).check_frontmatter_keys().outcome,
-                         Outcome.PASS)
+        self.assertEqual(
+            SkillValidator(self.package()).check_frontmatter_keys().outcome, Outcome.PASS
+        )
         for field in ("name", "description"):
             for value in (None, "", "  ", 12, [], {}):
                 with self.subTest(field=field, value=value):
@@ -88,8 +90,7 @@ class VariantTests(unittest.TestCase):
 
     @staticmethod
     def write_skill(directory, name, version):
-        metadata = dict(name=name, description="Rewrite prose.",
-                        metadata={"version": version})
+        metadata = dict(name=name, description="Rewrite prose.", metadata={"version": version})
         (directory / "SKILL.md").write_text(
             "---\n" + yaml.safe_dump(metadata) + "---\nText.\n", encoding="utf-8"
         )
@@ -102,27 +103,32 @@ class VariantTests(unittest.TestCase):
         variant = self.variant()
         self.assertEqual(variant.label, "humanize/chatgpt")
         self.assertEqual(variant.archive, self.variant_dir / "humanize-chatgpt.zip")
-        self.assertEqual(VariantValidator(variant).scenarios(),
-                         ["frontmatter-keys", "package-layout", "source-identical",
-                          "version-declared"])
+        self.assertEqual(
+            VariantValidator(variant).scenarios(),
+            ["frontmatter-keys", "package-layout", "source-identical", "version-declared"],
+        )
 
     def test_variant_text_must_equal_parent_text(self):
-        self.assertEqual(VariantValidator(self.variant()).check_source_identical().outcome,
-                         Outcome.PASS)
+        self.assertEqual(
+            VariantValidator(self.variant()).check_source_identical().outcome, Outcome.PASS
+        )
         (self.variant_dir / "SKILL.md").write_bytes(self.parent.raw + b"One more rule.\n")
         variant = SkillVariant(self.variant_dir, self.parent)
-        self.assertEqual(VariantValidator(variant).check_source_identical().outcome,
-                         Outcome.FAIL)
+        self.assertEqual(VariantValidator(variant).check_source_identical().outcome, Outcome.FAIL)
 
     def test_variant_name_must_match_parent(self):
-        self.assertEqual(VariantValidator(self.variant()).check_frontmatter_keys().outcome,
-                         Outcome.PASS)
-        self.assertEqual(VariantValidator(self.variant(name="chatgpt")).check_frontmatter_keys().outcome,
-                         Outcome.FAIL)
+        self.assertEqual(
+            VariantValidator(self.variant()).check_frontmatter_keys().outcome, Outcome.PASS
+        )
+        self.assertEqual(
+            VariantValidator(self.variant(name="chatgpt")).check_frontmatter_keys().outcome,
+            Outcome.FAIL,
+        )
 
     def test_variant_version_must_equal_parent_version(self):
-        self.assertEqual(VariantValidator(self.variant()).check_version_declared().outcome,
-                         Outcome.PASS)
+        self.assertEqual(
+            VariantValidator(self.variant()).check_version_declared().outcome, Outcome.PASS
+        )
         for version in ("3.0.1", "13.0.0", "3.0"):
             with self.subTest(version=version):
                 result = VariantValidator(self.variant(version=version)).check_version_declared()
@@ -159,13 +165,22 @@ class VariantTests(unittest.TestCase):
         validator = VariantValidator(variant)
         for entries, expected in (
             ({"humanize/SKILL.md": variant.raw}, Outcome.FAIL),
-            ({"humanize/SKILL.md": variant.raw,
-              "humanize/agents/openai.yaml": manifest}, Outcome.PASS),
-            ({"humanize/SKILL.md": variant.raw,
-              "humanize/agents/openai.yaml": b"stale"}, Outcome.FAIL),
-            ({"humanize/SKILL.md": variant.raw,
-              "humanize/agents/openai.yaml": manifest,
-              "humanize/extra.md": b"x"}, Outcome.FAIL),
+            (
+                {"humanize/SKILL.md": variant.raw, "humanize/agents/openai.yaml": manifest},
+                Outcome.PASS,
+            ),
+            (
+                {"humanize/SKILL.md": variant.raw, "humanize/agents/openai.yaml": b"stale"},
+                Outcome.FAIL,
+            ),
+            (
+                {
+                    "humanize/SKILL.md": variant.raw,
+                    "humanize/agents/openai.yaml": manifest,
+                    "humanize/extra.md": b"x",
+                },
+                Outcome.FAIL,
+            ),
         ):
             with self.subTest(entries=sorted(entries)):
                 with zipfile.ZipFile(variant.archive, "w") as archive:

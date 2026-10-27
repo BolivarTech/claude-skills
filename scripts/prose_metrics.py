@@ -37,7 +37,8 @@ SHORT_MIN, SHORT_MAX = 3, 8
 LONG_MIN = 31
 TOP_TRIGRAMS = 5
 
-FUNCTION_WORDS = frozenset("""
+FUNCTION_WORDS = frozenset(
+    """
 de la el en y a los las del que un una por con se su sus al lo como para es son o
 no más pero ya sin sobre este esta esto ese esa eso estos estas esos esas entre
 cuando muy hasta desde también ni si le les me mi nos sí ha han era fue está están
@@ -55,7 +56,8 @@ i my me not no so if than then there here which who whom whose what when where
 while into over under again further once all any both each few more most other
 some such only own same too very can will just should would could may might must
 do does did have has had
-""".split())
+""".split()
+)
 
 _WORD = re.compile(r"[a-záéíóúñüA-ZÁÉÍÓÚÑÜ]+")
 # A dash opens a sentence only when an opening mark or a capital follows it;
@@ -189,10 +191,15 @@ class Report:
         return "\n".join(lines)
 
     _NUMERIC = {
-        "words": "words", "sentences": "sentences", "mean length": "mean_len",
-        "median length": "median_len", "stdev length": "stdev_len",
-        f"{SHORT_MIN}-{SHORT_MAX} words": "short", f"< {SHORT_MIN} words": "very_short",
-        f">= {LONG_MIN} words": "long", "function words": "function_ratio",
+        "words": "words",
+        "sentences": "sentences",
+        "mean length": "mean_len",
+        "median length": "median_len",
+        "stdev length": "stdev_len",
+        f"{SHORT_MIN}-{SHORT_MAX} words": "short",
+        f"< {SHORT_MIN} words": "very_short",
+        f">= {LONG_MIN} words": "long",
+        "function words": "function_ratio",
         "repeated 3-grams": "trigram_occurrences",
     }
 
