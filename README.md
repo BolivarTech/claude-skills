@@ -450,7 +450,7 @@ ask for the file and upload it next time.
 helps. It may suggest a bluff, set apart with its risk, but a bluff only goes
 into the reply after you approve that one, for that round.
 
-Tone and tactics are yours to steer ("más firme", "don't risk the
+Tone and tactics are yours to steer ("be firmer", "don't risk the
 relationship"). The one fixed rule is brevity. Every reply goes through
 `humanize`, with figures, dates, and conditions protected.
 
